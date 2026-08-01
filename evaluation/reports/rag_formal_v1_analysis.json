@@ -1,0 +1,343 @@
+{
+  "generated_at": "2026-07-27T14:57:24.666571+00:00",
+  "evaluation_type": "rag_frozen_v1_analysis",
+  "dataset": "evaluation/datasets/rag_eval.formal.v1.jsonl",
+  "dataset_sha256": "248e590044d1643fdad54b884db54eaa6e8d5404579fc3abd9bd74647e4e7fe9",
+  "sample_count": 60,
+  "retrieval_report": "evaluation/datasets/rag_eval.formal.v1.jsonl",
+  "valid_answer_report": "evaluation/reports/rag_formal_v1_answers_attempt3.json",
+  "metrics": {
+    "answerable_count": 50,
+    "recall_at_5": 1.0,
+    "any_source_hit_at_5": 1.0,
+    "all_sources_recalled_at_5": 0.96,
+    "mean_source_recall_at_5": 0.98,
+    "mrr": 0.9133,
+    "key_point_coverage": 0.865,
+    "unanswerable_hallucination_rate": null,
+    "answerable_false_refusal_rate": null,
+    "error_rate": 0.0,
+    "rate_limit_retry_count": 0,
+    "manual_answer_score_mean": 1.86,
+    "automatic_correct_refusal_rate": 1.0,
+    "answer_error_rate": 0.0,
+    "manual_correct_refusal_rate": 1.0
+  },
+  "threshold_checks": {
+    "recall_at_5": {
+      "actual": 1.0,
+      "threshold": 0.9,
+      "passed": true
+    },
+    "automatic_correct_refusal_rate": {
+      "actual": 1.0,
+      "threshold": 0.9,
+      "passed": true
+    },
+    "manual_answer_score_mean": {
+      "actual": 1.86,
+      "threshold": 1.6,
+      "passed": true
+    }
+  },
+  "category_metrics": [
+    {
+      "category": "booking",
+      "sample_count": 6,
+      "answerable_count": 6,
+      "unanswerable_count": 0,
+      "key_point_coverage": 0.8947,
+      "correct_refusal_rate": null
+    },
+    {
+      "category": "city_guide",
+      "sample_count": 4,
+      "answerable_count": 4,
+      "unanswerable_count": 0,
+      "key_point_coverage": 1.0,
+      "correct_refusal_rate": null
+    },
+    {
+      "category": "cross_document",
+      "sample_count": 5,
+      "answerable_count": 5,
+      "unanswerable_count": 0,
+      "key_point_coverage": 0.6923,
+      "correct_refusal_rate": null
+    },
+    {
+      "category": "emergency",
+      "sample_count": 6,
+      "answerable_count": 6,
+      "unanswerable_count": 0,
+      "key_point_coverage": 0.9697,
+      "correct_refusal_rate": null
+    },
+    {
+      "category": "environment",
+      "sample_count": 4,
+      "answerable_count": 4,
+      "unanswerable_count": 0,
+      "key_point_coverage": 0.7,
+      "correct_refusal_rate": null
+    },
+    {
+      "category": "faq",
+      "sample_count": 5,
+      "answerable_count": 5,
+      "unanswerable_count": 0,
+      "key_point_coverage": 0.9545,
+      "correct_refusal_rate": null
+    },
+    {
+      "category": "platform",
+      "sample_count": 5,
+      "answerable_count": 5,
+      "unanswerable_count": 0,
+      "key_point_coverage": 0.6364,
+      "correct_refusal_rate": null
+    },
+    {
+      "category": "reimbursement",
+      "sample_count": 7,
+      "answerable_count": 7,
+      "unanswerable_count": 0,
+      "key_point_coverage": 0.9565,
+      "correct_refusal_rate": null
+    },
+    {
+      "category": "travel_standards",
+      "sample_count": 8,
+      "answerable_count": 8,
+      "unanswerable_count": 0,
+      "key_point_coverage": 0.9,
+      "correct_refusal_rate": null
+    },
+    {
+      "category": "unanswerable",
+      "sample_count": 10,
+      "answerable_count": 0,
+      "unanswerable_count": 10,
+      "key_point_coverage": null,
+      "correct_refusal_rate": 1.0
+    }
+  ],
+  "incomplete_source_rows": [
+    {
+      "id": "rag_formal_047",
+      "question": "航班延误导致临时住宿，处理和报销分别需要哪些证明？",
+      "expected_sources": [
+        "05_emergency_procedures.txt",
+        "02_reimbursement_policy.txt"
+      ],
+      "retrieved_sources": [
+        "04_faq.txt",
+        "05_emergency_procedures.txt",
+        "05_emergency_procedures.txt",
+        "05_emergency_procedures.txt",
+        "04_faq.txt"
+      ],
+      "source_recall_at_5": 0.5
+    },
+    {
+      "id": "rag_formal_048",
+      "question": "酒店因旺季超过住宿标准时，申请和最终报销应如何处理？",
+      "expected_sources": [
+        "01_travel_standards.txt",
+        "04_faq.txt"
+      ],
+      "retrieved_sources": [
+        "04_faq.txt",
+        "02_reimbursement_policy.txt",
+        "05_emergency_procedures.txt",
+        "02_reimbursement_policy.txt",
+        "05_emergency_procedures.txt"
+      ],
+      "source_recall_at_5": 0.5
+    }
+  ],
+  "low_substring_coverage_rows": [
+    {
+      "id": "rag_formal_017",
+      "category": "booking",
+      "question": "航班转机或中转至少应预留多长时间？",
+      "covered": 0,
+      "total": 1,
+      "coverage": 0.0
+    },
+    {
+      "id": "rag_formal_018",
+      "category": "booking",
+      "question": "火车开车前24到48小时退票会收取多少退票费？",
+      "covered": 0,
+      "total": 1,
+      "coverage": 0.0
+    },
+    {
+      "id": "rag_formal_035",
+      "category": "platform",
+      "question": "平台如何帮助员工控制差旅合规性？",
+      "covered": 0,
+      "total": 4,
+      "coverage": 0.0
+    },
+    {
+      "id": "rag_formal_045",
+      "category": "environment",
+      "question": "北京上海往返三天两夜选择高铁而不是飞机，文档估算可减排约多少？",
+      "covered": 0,
+      "total": 1,
+      "coverage": 0.0
+    },
+    {
+      "id": "rag_formal_047",
+      "category": "cross_document",
+      "question": "航班延误导致临时住宿，处理和报销分别需要哪些证明？",
+      "covered": 2,
+      "total": 6,
+      "coverage": 0.3333
+    },
+    {
+      "id": "rag_formal_037",
+      "category": "platform",
+      "question": "在平台提交报销时，订单和发票如何处理？",
+      "covered": 2,
+      "total": 5,
+      "coverage": 0.4
+    },
+    {
+      "id": "rag_formal_003",
+      "category": "travel_standards",
+      "question": "夜间乘高铁出差在什么时间段可以选择卧铺？",
+      "covered": 1,
+      "total": 2,
+      "coverage": 0.5
+    },
+    {
+      "id": "rag_formal_004",
+      "category": "travel_standards",
+      "question": "四小时以上的国际长途航线允许预订什么舱位？",
+      "covered": 1,
+      "total": 2,
+      "coverage": 0.5
+    },
+    {
+      "id": "rag_formal_044",
+      "category": "environment",
+      "question": "环保酒店常见的认证标识有哪些？",
+      "covered": 3,
+      "total": 5,
+      "coverage": 0.6
+    },
+    {
+      "id": "rag_formal_010",
+      "category": "reimbursement",
+      "question": "交通费用报销时，火车票、机票和打车费分别需要什么凭证？",
+      "covered": 2,
+      "total": 3,
+      "coverage": 0.6667
+    },
+    {
+      "id": "rag_formal_024",
+      "category": "faq",
+      "question": "出差时家属能否随行，相关费用由谁承担？",
+      "covered": 2,
+      "total": 3,
+      "coverage": 0.6667
+    },
+    {
+      "id": "rag_formal_002",
+      "category": "travel_standards",
+      "question": "跨国出差和超过十天的长期出差分别需要什么审批？",
+      "covered": 3,
+      "total": 4,
+      "coverage": 0.75
+    },
+    {
+      "id": "rag_formal_036",
+      "category": "platform",
+      "question": "怎样注册为企业用户并自动获得企业政策与协议价格？",
+      "covered": 3,
+      "total": 4,
+      "coverage": 0.75
+    },
+    {
+      "id": "rag_formal_046",
+      "category": "cross_document",
+      "question": "因特殊情况自行订酒店后报销，需要事前做什么，价格高于平台时按什么金额报？",
+      "covered": 3,
+      "total": 4,
+      "coverage": 0.75
+    },
+    {
+      "id": "rag_formal_048",
+      "category": "cross_document",
+      "question": "酒店因旺季超过住宿标准时，申请和最终报销应如何处理？",
+      "covered": 4,
+      "total": 5,
+      "coverage": 0.8
+    },
+    {
+      "id": "rag_formal_050",
+      "category": "cross_document",
+      "question": "短途出差选择高铁的制度建议和环保建议分别是什么？",
+      "covered": 4,
+      "total": 5,
+      "coverage": 0.8
+    },
+    {
+      "id": "rag_formal_031",
+      "category": "emergency",
+      "question": "国外出差护照遗失后需要联系哪些机构并准备哪些材料？",
+      "covered": 5,
+      "total": 6,
+      "coverage": 0.8333
+    },
+    {
+      "id": "rag_formal_049",
+      "category": "cross_document",
+      "question": "国际出差的漫游费用怎样控制和报销，需要提供什么记录？",
+      "covered": 5,
+      "total": 6,
+      "coverage": 0.8333
+    }
+  ],
+  "valid_answer_latency": {
+    "request_count": 60,
+    "mean_seconds": 7.2127,
+    "p50_seconds": 3.9106,
+    "p95_seconds": 22.9245,
+    "max_seconds": 58.9819
+  },
+  "invalid_attempts": [
+    {
+      "path": "evaluation/reports/rag_formal_v1_answers.json",
+      "dataset_sha256": "248e590044d1643fdad54b884db54eaa6e8d5404579fc3abd9bd74647e4e7fe9",
+      "sample_count": 60,
+      "error_rate": 1.0,
+      "error_count": 60,
+      "error_groups": {
+        "cannot access local variable 'json' where it is not associated with a value": 60
+      },
+      "valid": false
+    },
+    {
+      "path": "evaluation/reports/rag_formal_v1_answers_attempt2.json",
+      "dataset_sha256": "248e590044d1643fdad54b884db54eaa6e8d5404579fc3abd9bd74647e4e7fe9",
+      "sample_count": 60,
+      "error_rate": 0.0333,
+      "error_count": 2,
+      "error_groups": {
+        "知识库中找到相关信息，但生成答案时出错：Request timed out.": 2
+      },
+      "valid": false
+    }
+  ],
+  "manual_review_status": "human_confirmed",
+  "caveats": [
+    "Substring key-point coverage is diagnostic, not semantic accuracy.",
+    "The automatic refusal metric uses phrase matching and still requires human review.",
+    "Answer latency includes current provider/network variance and is not a controlled optimization benchmark.",
+    "Two invalid attempts are retained and excluded from final quality metrics."
+  ]
+}

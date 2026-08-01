@@ -1,0 +1,30 @@
+{
+  "dataset": "evaluation/datasets/rag_eval.formal.v1.jsonl",
+  "sha256": "248e590044d1643fdad54b884db54eaa6e8d5404579fc3abd9bd74647e4e7fe9",
+  "sample_count": 60,
+  "answerable_count": 50,
+  "unanswerable_count": 10,
+  "multi_source_count": 5,
+  "answer_key_point_count": 200,
+  "line_level_evidence_coverage": 1.0,
+  "source_counts": {
+    "01_travel_standards.txt": 11,
+    "02_reimbursement_policy.txt": 10,
+    "03_booking_guide.txt": 7,
+    "04_faq.txt": 6,
+    "05_emergency_procedures.txt": 7,
+    "06_platform_guide.txt": 5,
+    "07_city_specific_tips.txt": 4,
+    "08_environmental_initiatives.txt": 5
+  },
+  "frozen_at": "2026-07-27T12:41:33.882495+00:00",
+  "reviewer": "项目负责人（用户确认）",
+  "approval_phrase": "I_REVIEWED_ALL_60_RAG",
+  "status": "frozen",
+  "rules": [
+    "Do not edit the frozen JSONL file.",
+    "Do not change questions, expected sources or key points after evaluation.",
+    "Create a new independently reviewed version for annotation changes.",
+    "Keep retrieval and answer-generation metrics separate."
+  ]
+}

@@ -1,0 +1,4454 @@
+{
+  "evaluation_type": "paired_orchestration_latency",
+  "generated_at": "2026-07-28T04:31:10.497640+00:00",
+  "completed_at": "2026-07-28T05:55:36.987208+00:00",
+  "dataset": "evaluation/datasets/latency_orchestration.formal.v1.jsonl",
+  "dataset_sha256": "ccd36766214fe7536fe57a8c31838e286e886938eaeb87bc767f63cf8f975db5",
+  "sample_count": 4,
+  "repeats_per_mode": 10,
+  "measured_requests_per_mode": 40,
+  "warmup_rounds_per_mode": 1,
+  "model": "glm-4.7",
+  "thinking": "disabled",
+  "temperature": 0.1,
+  "max_tokens": 5000,
+  "python_version": "3.12.7",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "order_control": "Sequential-first and parallel-first order alternates by repeat and case.",
+  "valid_benchmark": true,
+  "mode_metrics": {
+    "sequential": {
+      "request_count": 40,
+      "success_count": 40,
+      "success_rate": 1.0,
+      "total_seconds": {
+        "mean": 32.0057,
+        "p50": 20.2273,
+        "p95": 94.3554,
+        "min": 14.0828,
+        "max": 104.4396
+      },
+      "intent_seconds": {
+        "mean": 21.455,
+        "p50": 14.0975,
+        "p95": 76.2957,
+        "min": 7.036,
+        "max": 86.3556
+      },
+      "execution_seconds": {
+        "mean": 10.5505,
+        "p50": 6.7812,
+        "p95": 35.7387,
+        "min": 2.2726,
+        "max": 48.2254
+      },
+      "schedule_match_rate": 1.0,
+      "partial_failure_count": 0,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "intent_retry_count": 3
+    },
+    "parallel": {
+      "request_count": 40,
+      "success_count": 40,
+      "success_rate": 1.0,
+      "total_seconds": {
+        "mean": 27.8552,
+        "p50": 23.0278,
+        "p95": 68.3605,
+        "min": 11.1019,
+        "max": 77.4967
+      },
+      "intent_seconds": {
+        "mean": 19.5567,
+        "p50": 14.989,
+        "p95": 50.3795,
+        "min": 8.1996,
+        "max": 74.9515
+      },
+      "execution_seconds": {
+        "mean": 8.2979,
+        "p50": 3.6762,
+        "p95": 19.3031,
+        "min": 1.6031,
+        "max": 59.8641
+      },
+      "schedule_match_rate": 1.0,
+      "partial_failure_count": 0,
+      "agent_retry_count": 10,
+      "agent_error_count": 0,
+      "intent_retry_count": 1
+    }
+  },
+  "comparison": {
+    "complete_pair_count": 40,
+    "aggregate_improvement": {
+      "total_seconds": {
+        "mean": 0.1297,
+        "p50": -0.1385,
+        "p95": 0.2755
+      },
+      "execution_seconds": {
+        "mean": 0.2135,
+        "p50": 0.4579,
+        "p95": 0.4599
+      },
+      "intent_seconds": {
+        "mean": 0.0885,
+        "p50": -0.0632,
+        "p95": 0.3397
+      }
+    },
+    "paired_total_improvement": {
+      "mean": -0.1612,
+      "p50": 0.0016,
+      "p95": 0.7377,
+      "min": -2.8375,
+      "max": 0.798
+    },
+    "paired_execution_improvement": {
+      "mean": -0.2762,
+      "p50": 0.43,
+      "p95": 0.8066,
+      "min": -6.9721,
+      "max": 0.9292
+    },
+    "parallel_total_win_rate": 0.5,
+    "parallel_execution_win_rate": 0.725,
+    "success_rate_delta": 0.0
+  },
+  "warmup_rows": [
+    {
+      "mode": "sequential",
+      "warmup_round": 1,
+      "id": "latency_formal_001",
+      "status": "success",
+      "seconds": 42.4033,
+      "error": null
+    },
+    {
+      "mode": "sequential",
+      "warmup_round": 1,
+      "id": "latency_formal_002",
+      "status": "success",
+      "seconds": 134.0211,
+      "error": null
+    },
+    {
+      "mode": "sequential",
+      "warmup_round": 1,
+      "id": "latency_formal_003",
+      "status": "success",
+      "seconds": 16.515,
+      "error": null
+    },
+    {
+      "mode": "sequential",
+      "warmup_round": 1,
+      "id": "latency_formal_004",
+      "status": "success",
+      "seconds": 21.7425,
+      "error": null
+    },
+    {
+      "mode": "parallel",
+      "warmup_round": 1,
+      "id": "latency_formal_001",
+      "status": "success",
+      "seconds": 14.4484,
+      "error": null
+    },
+    {
+      "mode": "parallel",
+      "warmup_round": 1,
+      "id": "latency_formal_002",
+      "status": "success",
+      "seconds": 15.9625,
+      "error": null
+    },
+    {
+      "mode": "parallel",
+      "warmup_round": 1,
+      "id": "latency_formal_003",
+      "status": "success",
+      "seconds": 14.4574,
+      "error": null
+    },
+    {
+      "mode": "parallel",
+      "warmup_round": 1,
+      "id": "latency_formal_004",
+      "status": "success",
+      "seconds": 11.2711,
+      "error": null
+    }
+  ],
+  "rows": [
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 1,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 13.3932,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 4.3723,
+      "total_seconds": 17.7655,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好，需要调用 MemoryQueryAgent 访问长期记忆。",
+          "expected_output": "用户原有的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新长期偏好，需要调用 PreferenceAgent 并通过 MemoryManager 持久化。",
+          "expected_output": "偏好更新成功的确认信息。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 1,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 14.1029,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 3.1179,
+      "total_seconds": 17.2209,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好，需要调用MemoryQueryAgent访问长期记忆。",
+          "expected_output": "用户原有的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新偏好，需要调用PreferenceAgent并持久化到MemoryManager。",
+          "expected_output": "偏好设置成功的确认信息。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 1,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 12.8304,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 18.1173,
+      "total_seconds": 30.9478,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求记录未来的酒店选择偏好（有健身房），需要调用偏好管理智能体进行存储。",
+          "expected_output": "偏好设置成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业差旅制度（住宿报销标准），需要从知识库检索信息。",
+          "expected_output": "一线城市住宿报销的具体标准或政策文档内容。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 1,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 14.1803,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 2.2726,
+      "total_seconds": 16.4529,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确声明了未来的住宿偏好（优先有健身房），需要持久化保存。",
+          "expected_output": "偏好保存成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业差旅制度（住宿报销标准），需要从知识库检索信息。",
+          "expected_output": "一线城市住宿报销的具体标准或政策说明。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 1,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 12.055,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 8.9758,
+      "total_seconds": 21.0308,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，需调用MemoryQueryAgent。",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅制度，需调用RAGKnowledgeAgent检索知识库。",
+          "expected_output": "公司高铁座位等级的相关规定内容"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 1,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 11.7827,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 12.7864,
+      "total_seconds": 24.5691,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅制度",
+          "expected_output": "公司高铁座位等级的相关规定"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 1,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 27.639,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 12.6577,
+      "total_seconds": 40.2968,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好，需从记忆中读取数据。",
+          "expected_output": "用户原有的酒店偏好设置"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新偏好，需持久化新的设置。",
+          "expected_output": "偏好更新成功的确认"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问报销政策，需检索企业知识库。",
+          "expected_output": "公司酒店报销所需的凭证清单"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 1,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 16.0486,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 48.2254,
+      "total_seconds": 64.2741,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要查看原有的酒店偏好历史",
+          "expected_output": "用户当前保存的酒店偏好信息"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户要求将酒店偏好修改为优先住汉庭",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问公司酒店报销凭证的相关规定",
+          "expected_output": "关于酒店报销所需凭证的政策内容"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 2,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 65.3328,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 2.5577,
+      "total_seconds": 67.8905,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询原有的酒店偏好，需要从长期记忆中读取数据。",
+          "expected_output": "用户原有的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新酒店偏好为亚朵，需要持久化保存该偏好。",
+          "expected_output": "偏好更新成功的确认信息。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 2,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 15.389,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 12.4015,
+      "total_seconds": 27.7906,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询原有的酒店偏好，需要从长期记忆中读取数据。",
+          "expected_output": "用户原有的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求记住新的酒店偏好（亚朵），需要持久化到长期记忆中。",
+          "expected_output": "偏好设置成功的确认信息。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 2,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 11.0922,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 6.2025,
+      "total_seconds": 17.2948,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确声明了未来的住宿偏好（有健身房），需要调用PreferenceAgent并持久化到MemoryManager。",
+          "expected_output": "偏好设置成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业差旅制度（住宿报销标准），需要从知识库检索相关信息。",
+          "expected_output": "一线城市住宿报销的具体金额或政策条款。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 2,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 13.6116,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 1.6031,
+      "total_seconds": 15.2148,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求记录未来的酒店选择偏好。",
+          "expected_output": "偏好设置成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业内部关于住宿报销的具体政策规定。",
+          "expected_output": "一线城市住宿报销的具体标准金额或政策条款。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 2,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 11.7615,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 15.3884,
+      "total_seconds": 27.1504,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，需调用MemoryQueryAgent。",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅制度，需调用RAGKnowledgeAgent检索知识库。",
+          "expected_output": "公司高铁座位等级的相关规定内容"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 2,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 46.9909,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 3.8618,
+      "total_seconds": 50.8527,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，需调用MemoryQueryAgent。",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅制度，需调用RAGKnowledgeAgent检索知识库。",
+          "expected_output": "公司高铁座位等级的相关规定内容"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 2,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 14.0265,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 8.1524,
+      "total_seconds": 22.179,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好，需要从长期记忆中读取数据",
+          "expected_output": "用户原有的酒店偏好设置详情"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新偏好，需要将新的偏好设置持久化到长期记忆",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问报销凭证政策，需要从企业知识库检索相关信息",
+          "expected_output": "公司酒店报销所需的凭证清单及相关规定"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 2,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 15.0056,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 11.3967,
+      "total_seconds": 26.4024,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户询问原有的酒店偏好，需要从长期记忆中读取。",
+          "expected_output": "用户原有的酒店偏好设置"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求修改偏好为优先住汉庭，需要持久化保存。",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问报销凭证相关的企业政策，需要检索知识库。",
+          "expected_output": "公司酒店报销所需的凭证清单"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 3,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 3,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 13.4115,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 5.2932,
+      "total_seconds": 18.7049,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好数据，需要调用 MemoryQueryAgent。",
+          "expected_output": "用户原有的酒店偏好设置"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新长期偏好，需要调用 PreferenceAgent 并通过 MemoryManager 持久化。",
+          "expected_output": "偏好更新成功的确认信息"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 3,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 49.5925,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 3.4604,
+      "total_seconds": 53.053,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户询问'原来的酒店偏好'，需要从长期记忆中检索历史偏好数据。",
+          "expected_output": "用户历史保存的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户要求'记住我以后优先住亚朵'，需要调用PreferenceAgent保存新的偏好设置。",
+          "expected_output": "偏好保存成功的确认信息。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 3,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 17.9412,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 2.876,
+      "total_seconds": 20.8172,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求记录未来的住宿偏好（有健身房），需调用PreferenceAgent并使用MemoryManager持久化。",
+          "expected_output": "偏好保存成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业内部差旅制度（住宿报销标准），需调用RAGKnowledgeAgent从知识库检索。",
+          "expected_output": "一线城市住宿报销的具体标准金额或政策条款。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 3,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 13.0871,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 7.1729,
+      "total_seconds": 20.2602,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户声明了长期住宿偏好，需要调用PreferenceAgent并持久化存储该偏好。",
+          "expected_output": "偏好设置成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业差旅制度，需要从知识库中检索一线城市住宿报销标准。",
+          "expected_output": "一线城市住宿报销的具体金额或政策条款。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 3,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 11.4704,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 4.8043,
+      "total_seconds": 16.2748,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，需调用MemoryQueryAgent。",
+          "expected_output": "用户保存过的座位偏好列表。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅制度，需调用RAGKnowledgeAgent检索知识库。",
+          "expected_output": "公司关于高铁座位等级的具体规定。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 3,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 8.3469,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 35.0013,
+      "total_seconds": 43.3483,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，属于信息收集类，优先级为1。",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅制度，属于信息收集类，优先级为1。",
+          "expected_output": "公司高铁座位等级的相关规定"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 3,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 12.7342,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 5.015,
+      "total_seconds": 17.7492,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要查看原有的酒店偏好，需调用MemoryQueryAgent",
+          "expected_output": "用户当前的酒店偏好历史记录"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户要求修改偏好为汉庭，需调用PreferenceAgent保存设置",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问报销凭证政策，需调用RAGKnowledgeAgent检索知识库",
+          "expected_output": "公司酒店报销所需的凭证清单或相关规定"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 2,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 3,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 7.036,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 8.1068,
+      "total_seconds": 15.1429,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要查看原有的酒店偏好记录",
+          "expected_output": "用户当前保存的酒店偏好信息"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户要求将酒店偏好更新为汉庭",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问关于酒店报销凭证的企业规定",
+          "expected_output": "公司酒店报销所需的凭证清单或相关政策说明"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 4,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 14.8416,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 2.4435,
+      "total_seconds": 17.2852,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查看原有的酒店偏好，需要从长期记忆中检索。",
+          "expected_output": "用户之前保存的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求记录新的酒店偏好（亚朵），需要持久化到长期记忆中。",
+          "expected_output": "偏好保存成功的确认信息。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 4,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 68.622,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 5.0525,
+      "total_seconds": 73.6745,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询原有的酒店偏好，需要从长期记忆中读取数据。",
+          "expected_output": "用户原有的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新酒店偏好为亚朵，需要持久化保存到长期记忆中。",
+          "expected_output": "偏好设置成功的确认信息。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 4,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 10.2052,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 39.0004,
+      "total_seconds": 49.2057,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求记录'以后优先选择有健身房的酒店'这一长期偏好，需持久化保存。",
+          "expected_output": "偏好设置成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业内部关于住宿报销的具体政策标准，需从知识库中检索。",
+          "expected_output": "一线城市住宿报销的具体金额或标准说明。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 4,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 11.9997,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 2.7613,
+      "total_seconds": 14.7611,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求记录长期偏好（优先选择有健身房的酒店），需要持久化存储。",
+          "expected_output": "偏好设置成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业差旅制度（住宿报销标准），需要从知识库检索信息。",
+          "expected_output": "一线城市住宿报销的具体标准或政策说明。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 4,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 11.8656,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 4.1866,
+      "total_seconds": 16.0523,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅制度中的高铁座位标准",
+          "expected_output": "公司高铁座位等级规定的具体内容"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 4,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 11.6801,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 8.3243,
+      "total_seconds": 20.0046,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，需调用MemoryQueryAgent。",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅制度，需调用RAGKnowledgeAgent检索知识库。",
+          "expected_output": "公司高铁座位等级的相关规定内容"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 4,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 32.2472,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 12.0539,
+      "total_seconds": 44.3012,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好数据",
+          "expected_output": "用户原有的酒店偏好设置"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求修改偏好设置",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业差旅报销政策",
+          "expected_output": "公司酒店报销所需的凭证清单"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 4,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 14.9724,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 7.7345,
+      "total_seconds": 22.7069,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要查看历史偏好数据",
+          "expected_output": "用户原有的酒店偏好设置"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求修改偏好设置",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业内部报销政策",
+          "expected_output": "公司酒店报销所需的凭证清单或相关规定"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 1,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 5,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 12.9805,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 10.4625,
+      "total_seconds": 23.4431,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好，需要从长期记忆中读取数据。",
+          "expected_output": "用户原有的酒店偏好信息"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求保存新的偏好设置，需要持久化到长期记忆。",
+          "expected_output": "偏好设置成功的确认信息"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 5,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 27.1842,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 2.5331,
+      "total_seconds": 29.7173,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询原有的酒店偏好历史。",
+          "expected_output": "用户原有的酒店偏好设置。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求保存新的酒店偏好（亚朵）。",
+          "expected_output": "偏好保存成功的确认信息。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 5,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 74.9515,
+      "intent_retry_count": 1,
+      "intent_attempt_count": 2,
+      "execution_seconds": 2.5452,
+      "total_seconds": 77.4967,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确声明了未来的住宿偏好（优先有健身房），需要调用PreferenceAgent并持久化存储。",
+          "expected_output": "偏好设置成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业差旅制度（住宿报销标准），需要从知识库检索相关信息。",
+          "expected_output": "一线城市住宿报销的具体标准或政策条款。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 5,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 15.9773,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 4.217,
+      "total_seconds": 20.1944,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求记录长期偏好（优先选择有健身房的酒店），需要调用MemoryManager持久化该偏好。",
+          "expected_output": "偏好设置成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业差旅制度（住宿报销标准），需要从知识库检索相关信息。",
+          "expected_output": "一线城市住宿报销的具体标准或政策文档内容。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 5,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 11.7998,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 5.0663,
+      "total_seconds": 16.8662,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，需调用MemoryQueryAgent。",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅制度，需调用RAGKnowledgeAgent检索知识库。",
+          "expected_output": "公司关于高铁座位等级的具体规定"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 5,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 11.8543,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 2.9062,
+      "total_seconds": 14.7605,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅制度中的高铁座位标准",
+          "expected_output": "公司关于高铁座位等级的具体规定"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 5,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 19.2196,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 10.3174,
+      "total_seconds": 29.5371,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好数据",
+          "expected_output": "用户原有的酒店偏好设置"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新酒店品牌偏好",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户请求查询企业报销政策",
+          "expected_output": "公司酒店报销所需的凭证列表或相关规定"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 5,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 83.2219,
+      "intent_retry_count": 1,
+      "intent_attempt_count": 2,
+      "execution_seconds": 21.2176,
+      "total_seconds": 104.4396,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要查看历史偏好数据",
+          "expected_output": "用户之前保存的酒店偏好设置"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求修改偏好设置",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业内部报销政策",
+          "expected_output": "公司酒店报销所需的凭证清单或相关规定"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 6,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 17.3115,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 2.5088,
+      "total_seconds": 19.8205,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询原有的酒店偏好历史。",
+          "expected_output": "用户当前存储的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求记录新的酒店偏好（亚朵）。",
+          "expected_output": "偏好更新成功的确认信息。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 6,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 12.9796,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 4.0696,
+      "total_seconds": 17.0493,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好数据",
+          "expected_output": "用户原有的酒店偏好信息"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求设置新的长期偏好",
+          "expected_output": "偏好更新成功的确认信息"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 6,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 14.1684,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 5.0469,
+      "total_seconds": 19.2154,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确声明了未来的住宿偏好（优先有健身房），需要持久化保存。",
+          "expected_output": "偏好保存成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业差旅制度（住宿报销标准），需要从知识库检索相关信息。",
+          "expected_output": "一线城市住宿报销的具体标准或政策说明。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 6,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 25.3131,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 1.7677,
+      "total_seconds": 27.0809,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确声明了未来的住宿偏好（有健身房），需要持久化保存到长期记忆中。",
+          "expected_output": "偏好保存成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业差旅制度中的住宿报销标准，需要从知识库检索相关信息。",
+          "expected_output": "一线城市住宿报销的具体标准或政策文档内容。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 6,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 12.5195,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 3.6192,
+      "total_seconds": 16.1388,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业内部差旅制度",
+          "expected_output": "公司关于高铁座位等级的具体规定"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 6,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 13.7535,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 6.3896,
+      "total_seconds": 20.1432,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，需调用MemoryQueryAgent。",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业内部差旅制度，需调用RAGKnowledgeAgent检索知识库。",
+          "expected_output": "公司关于高铁座位等级的规定说明"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 6,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 14.5186,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 35.567,
+      "total_seconds": 50.0857,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要查看原有的酒店偏好记录",
+          "expected_output": "用户当前保存的酒店偏好信息"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求修改酒店偏好为汉庭",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业内部关于酒店报销凭证的规定",
+          "expected_output": "公司酒店报销所需的凭证清单及相关政策说明"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 6,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 17.4259,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 59.8641,
+      "total_seconds": 77.2901,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好数据",
+          "expected_output": "用户原有的酒店偏好信息"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新酒店品牌偏好",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户请求查询报销政策知识",
+          "expected_output": "公司酒店报销所需的凭证清单"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 3,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 7,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 12.8337,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 5.0262,
+      "total_seconds": 17.8599,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好信息",
+          "expected_output": "用户原有的酒店偏好设置"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新长期偏好设置",
+          "expected_output": "偏好更新成功的确认信息"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 7,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 14.1422,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 18.4769,
+      "total_seconds": 32.6192,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好，需要从长期记忆中读取数据。",
+          "expected_output": "用户原有的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求设置新的酒店偏好，需要持久化保存到长期记忆中。",
+          "expected_output": "偏好更新成功的确认信息。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 7,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 14.0213,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 4.9621,
+      "total_seconds": 18.9835,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求记录长期住宿偏好，需要持久化存储该偏好。",
+          "expected_output": "偏好设置成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业差旅制度，需要从知识库检索相关信息。",
+          "expected_output": "公司一线城市住宿报销的具体标准或政策文档。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 7,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 86.3556,
+      "intent_retry_count": 1,
+      "intent_attempt_count": 2,
+      "execution_seconds": 7.631,
+      "total_seconds": 93.9909,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确声明了未来的住宿偏好（优先有健身房），需要持久化保存。",
+          "expected_output": "偏好保存成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业差旅制度（住宿报销标准），需要从知识库检索相关信息。",
+          "expected_output": "一线城市住宿报销的具体标准或政策文档内容。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 7,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 22.9218,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 8.8042,
+      "total_seconds": 31.727,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，属于信息收集类，优先级1。",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅政策，属于信息收集类，优先级1。",
+          "expected_output": "公司高铁座位等级的相关规定内容"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 7,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 14.0466,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 4.1468,
+      "total_seconds": 18.1935,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，该操作属于信息收集类，无前置依赖。",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅制度，该操作属于信息收集类，无前置依赖。",
+          "expected_output": "公司关于高铁座位等级的具体规定"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 7,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 14.5867,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 2.9382,
+      "total_seconds": 17.525,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要查看原有的酒店偏好记录",
+          "expected_output": "用户当前保存的酒店偏好信息"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户要求将酒店偏好更新为汉庭",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业报销凭证政策",
+          "expected_output": "公司酒店报销所需的凭证清单或相关规定"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 7,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 14.902,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 15.0267,
+      "total_seconds": 29.9287,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好数据",
+          "expected_output": "用户原有的酒店偏好信息"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新酒店品牌偏好",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户请求查询报销制度知识",
+          "expected_output": "公司酒店报销所需的凭证列表或相关规定"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 8,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 14.5275,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 2.485,
+      "total_seconds": 17.0126,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询原有的酒店偏好，需要从长期记忆中读取数据。",
+          "expected_output": "用户当前保存的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求更新偏好为'以后优先住亚朵'，需要持久化该偏好设置。",
+          "expected_output": "偏好更新成功的确认信息。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 8,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 7.9444,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 6.1384,
+      "total_seconds": 14.0828,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史酒店偏好，需要从长期记忆中读取数据",
+          "expected_output": "用户之前的酒店偏好设置"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求设置新的酒店偏好，需要持久化到长期记忆中",
+          "expected_output": "偏好更新成功的确认信息"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 8,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 15.3587,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 2.3877,
+      "total_seconds": 17.7465,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求记录未来的住宿偏好（有健身房），需要持久化该偏好。",
+          "expected_output": "偏好保存成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业内部差旅制度（住宿报销标准），需要从知识库检索答案。",
+          "expected_output": "一线城市住宿报销的具体金额或政策条款。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 8,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 13.941,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 15.5501,
+      "total_seconds": 29.4911,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确表达了长期的酒店偏好（有健身房），需持久化保存。",
+          "expected_output": "偏好保存成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业内部差旅制度（住宿报销标准），需从知识库检索。",
+          "expected_output": "一线城市住宿报销的具体标准或政策条款。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 8,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 23.1076,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 10.1997,
+      "total_seconds": 33.3073,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，需调用MemoryQueryAgent。",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅制度，需调用RAGKnowledgeAgent检索知识库。",
+          "expected_output": "公司高铁座位等级的相关规定内容"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 8,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 12.6835,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 5.1019,
+      "total_seconds": 17.7855,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，需调用MemoryQueryAgent。",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅制度，需调用RAGKnowledgeAgent检索知识库。",
+          "expected_output": "公司关于高铁座位等级的具体规定"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 8,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 14.6659,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 8.0155,
+      "total_seconds": 22.6815,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要查看原有的酒店偏好信息",
+          "expected_output": "用户当前保存的酒店偏好设置"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户要求将酒店偏好更新为汉庭",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业内部关于酒店报销凭证的规定",
+          "expected_output": "公司酒店报销所需的凭证清单或相关政策说明"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 8,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 15.2641,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 2.5243,
+      "total_seconds": 17.7884,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要查看原有的酒店偏好，需调用MemoryQueryAgent。",
+          "expected_output": "用户原有的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户要求修改偏好为汉庭，需调用PreferenceAgent保存新偏好。",
+          "expected_output": "偏好更新成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问报销凭证政策，需调用RAGKnowledgeAgent检索知识库。",
+          "expected_output": "公司酒店报销所需的凭证清单。"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 9,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 16.8072,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 15.9167,
+      "total_seconds": 32.724,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户要求先查询原有偏好，需优先执行以满足'先...再...'的逻辑顺序。",
+          "expected_output": "用户原有的酒店偏好信息"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户要求在查询后记住新偏好，需在memory_query之后执行。",
+          "expected_output": "偏好设置成功的确认信息"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 9,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 20.9199,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 2.4286,
+      "total_seconds": 23.3486,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询原有的酒店偏好，需要从长期记忆中读取数据。",
+          "expected_output": "用户当前保存的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求设置新的酒店偏好（亚朵），需要持久化到长期记忆中。",
+          "expected_output": "偏好设置成功的确认信息。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 9,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 15.0366,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 1.9346,
+      "total_seconds": 16.9713,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求记录长期住宿偏好（有健身房），需调用PreferenceAgent并使用MemoryManager保存。",
+          "expected_output": "偏好保存成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业内部差旅制度（住宿报销标准），需调用RAGKnowledgeAgent从知识库检索。",
+          "expected_output": "一线城市住宿报销的具体标准或政策文档内容。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 9,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 15.8103,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 2.7969,
+      "total_seconds": 18.6073,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确声明了未来的住宿偏好（优先有健身房），需要调用MemoryManager保存该偏好。",
+          "expected_output": "偏好保存成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业内部差旅制度（住宿报销标准），需要从知识库检索相关信息。",
+          "expected_output": "一线城市住宿报销的具体标准或政策条款。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 9,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 75.9312,
+      "intent_retry_count": 1,
+      "intent_attempt_count": 2,
+      "execution_seconds": 25.3485,
+      "total_seconds": 101.2805,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，属于信息收集类，优先级为1。",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅制度，属于信息收集类，优先级为1。",
+          "expected_output": "公司高铁座位等级的相关规定内容"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 9,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 16.4022,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 10.2981,
+      "total_seconds": 26.7185,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，该操作属于信息收集，无前置依赖。",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业内部差旅政策，该操作属于信息收集，无前置依赖。",
+          "expected_output": "公司关于高铁座位等级的具体规定"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 9,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 17.9813,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 14.7967,
+      "total_seconds": 32.7804,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好，需从记忆中读取数据。",
+          "expected_output": "用户原有的酒店偏好信息"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新偏好，需持久化新的设置。",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问报销政策，需检索企业知识库。",
+          "expected_output": "公司酒店报销所需的凭证清单"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 1,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 9,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 15.8583,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 11.7083,
+      "total_seconds": 27.5667,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好数据",
+          "expected_output": "用户当前的酒店偏好设置"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新酒店品牌偏好",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户请求查询报销政策知识",
+          "expected_output": "公司酒店报销所需的凭证清单及相关规定"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 10,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 8.1996,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 2.9022,
+      "total_seconds": 11.1019,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好，需要调用MemoryQueryAgent获取旧数据。",
+          "expected_output": "用户当前的酒店偏好设置"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新偏好，需要调用PreferenceAgent保存新的酒店品牌偏好。",
+          "expected_output": "偏好更新成功的确认信息"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 10,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 13.1521,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 6.3019,
+      "total_seconds": 19.454,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户询问'原来的酒店偏好'，需要从长期记忆中检索历史偏好数据。",
+          "expected_output": "用户原有的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户要求'记住我以后优先住亚朵'，需要将新的偏好持久化到长期记忆中。",
+          "expected_output": "偏好设置成功的确认信息。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 10,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 12.8297,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 4.9911,
+      "total_seconds": 17.8208,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求记录未来的酒店选择偏好（有健身房），需要持久化存储。",
+          "expected_output": "偏好设置成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业差旅制度（住宿报销标准），需要从知识库检索相关信息。",
+          "expected_output": "一线城市住宿报销的具体金额或政策条款。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 10,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 17.3518,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 1.9066,
+      "total_seconds": 19.2586,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求记录长期偏好（优先选择有健身房的酒店），需要持久化存储。",
+          "expected_output": "偏好设置成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业差旅制度（住宿报销标准），需要从知识库检索信息。",
+          "expected_output": "一线城市住宿报销的具体标准或政策说明。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 10,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 24.4195,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 5.4661,
+      "total_seconds": 29.8866,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，该操作属于信息收集，且不依赖其他智能体。",
+          "expected_output": "用户之前保存的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业内部差旅制度，该操作属于信息收集，且不依赖其他智能体。",
+          "expected_output": "公司高铁座位等级的相关规定内容"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 10,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 10.8284,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 4.4203,
+      "total_seconds": 15.2488,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，该操作独立且属于信息收集。",
+          "expected_output": "用户之前保存的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业内部差旅制度，该操作独立且属于信息收集。",
+          "expected_output": "公司高铁座位等级的相关规定内容"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 10,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 18.9827,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 16.095,
+      "total_seconds": 35.0778,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要查看原有的酒店偏好，需要从记忆中读取。",
+          "expected_output": "用户原有的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户要求修改偏好为'优先住汉庭'，需要持久化保存。",
+          "expected_output": "偏好更新成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问报销凭证相关的企业制度，需要检索知识库。",
+          "expected_output": "公司酒店报销所需的凭证清单或相关规定。"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 10,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 18.18,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 3.7332,
+      "total_seconds": 21.9133,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要查看历史偏好数据",
+          "expected_output": "用户原有的酒店偏好设置"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求修改偏好为汉庭",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问报销凭证相关的企业政策",
+          "expected_output": "酒店报销所需的凭证清单"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    }
+  ],
+  "caveats": [
+    "Provider and network variance still affect absolute latency.",
+    "The paired order-balanced design reduces but cannot eliminate time-varying external load.",
+    "End-to-end latency includes intent recognition, which is not parallelized; execution_seconds isolates orchestration.",
+    "A latency reduction claim is allowed only when schedule matching is 100% and success rate does not materially regress."
+  ]
+}

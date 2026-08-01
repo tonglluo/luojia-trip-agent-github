@@ -1,0 +1,92 @@
+{
+  "evaluation_type": "final_technical_evaluation",
+  "version": "V1",
+  "status": "frozen_with_documented_caveats",
+  "frozen_on": "2026-07-30",
+  "completion_decision": {
+    "code_and_evaluation_stage": "complete",
+    "next_stage": "PRD and portfolio packaging"
+  },
+  "datasets": {
+    "intent_v2": {
+      "path": "evaluation/datasets/intent_eval.holdout.v2.jsonl",
+      "sha256": "3c89c80ab5fbd92d28269571b3f4e7adb8699f8c3164561f86c29350cd0ba526",
+      "sample_count": 60,
+      "valid_runs": 3
+    },
+    "rag_v1": {
+      "path": "evaluation/datasets/rag_eval.formal.v1.jsonl",
+      "sha256": "248e590044d1643fdad54b884db54eaa6e8d5404579fc3abd9bd74647e4e7fe9",
+      "sample_count": 60
+    },
+    "latency_v1": {
+      "path": "evaluation/datasets/latency_orchestration.formal.v1.jsonl",
+      "sha256": "ccd36766214fe7536fe57a8c31838e286e886938eaeb87bc767f63cf8f975db5",
+      "measured_requests_per_mode": 40,
+      "complete_pairs": 40
+    }
+  },
+  "reviewed_results": {
+    "intent_summary": {
+      "path": "evaluation/reports/intent_holdout_v2_repeated/summary.json",
+      "sha256": "578a28521f8e693ee903c39ae6adb355bbe3264ab8ef565033668876e9d69316"
+    },
+    "rag_analysis": {
+      "path": "evaluation/reports/rag_formal_v1_analysis.json",
+      "sha256": "f4bc7e88e43d31d019738d9bed69f5ea24f13d9c8b293f57645653789946aeb2"
+    },
+    "latency_raw": {
+      "path": "evaluation/reports/latency_orchestration_paired_v1.json",
+      "sha256": "a7ea00e2c1fbee65d69b8103b17ba9d5b8683db74fce8028098a0fa98a49356b"
+    },
+    "latency_analysis": {
+      "path": "evaluation/reports/latency_orchestration_paired_v1_analysis.json",
+      "sha256": "d8061a2a196e611093686e3506c48e3ece8e33ecfd6312c4148cb5cedbced4bf"
+    }
+  },
+  "final_report": {
+    "artifact": {
+      "path": "evaluation/reports/final_technical_evaluation_artifact.json",
+      "sha256": "d49bf6a28468543fbd63848a93ab0b495f19edd3aeb89469b6d462562d26e2bc"
+    },
+    "html": {
+      "path": "evaluation/reports/final_technical_evaluation.html",
+      "sha256": "818e8044fd58405230adc4d2c0cf2ad98a567ff24eda640016cc9116f74154a0",
+      "validation": "passed",
+      "package": "passed",
+      "verification": "structural_only",
+      "browser_qa_limitation": "No installed Chromium headless-shell was available; desktop, narrow-width and source-dialog interaction checks were not run."
+    },
+    "source_notes": {
+      "path": "evaluation/reports/final_technical_evaluation_source_notes.json",
+      "sha256": "a1432e0882a646e785e36e43be41d27575da1ab619a3031bf271909aa981c067"
+    }
+  },
+  "headline_metrics": {
+    "intent_exact_match_mean": 0.9944,
+    "intent_macro_f1_mean": 0.9968,
+    "schedule_exact_match_mean": 0.9944,
+    "entity_field_accuracy_mean": 0.9086,
+    "rag_recall_at_5": 1.0,
+    "rag_manual_answer_score_mean_out_of_2": 1.86,
+    "rag_manual_correct_refusal_rate": 1.0,
+    "parallel_execution_p50_reduction": 0.4579,
+    "parallel_execution_p95_reduction": 0.4599,
+    "parallel_end_to_end_mean_reduction": 0.1297,
+    "parallel_end_to_end_p50_reduction": -0.1385,
+    "parallel_success_rate": 1.0
+  },
+  "offline_regression": {
+    "test_modules": 6,
+    "passed": 14,
+    "failed": 0,
+    "duration_seconds": 7.10,
+    "known_warning": "pytest-asyncio asyncio_default_fixture_loop_scope is unset."
+  },
+  "claim_boundaries": [
+    "Do not claim a 50% end-to-end response-time reduction.",
+    "Do not describe Recall@5 as answer accuracy or full-source recall.",
+    "Do not generalize frozen-set intent performance to all online traffic.",
+    "Parallel execution increased rate-limit pressure: 10 child-agent retries across 5 requests."
+  ]
+}

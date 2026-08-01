@@ -1,0 +1,495 @@
+{
+  "generated_at": "2026-07-27T08:09:54.160142+00:00",
+  "dataset": "evaluation/datasets/intent_eval.holdout.v2.jsonl",
+  "dataset_sha256": "3c89c80ab5fbd92d28269571b3f4e7adb8699f8c3164561f86c29350cd0ba526",
+  "model": "glm-4.7",
+  "thinking": "disabled",
+  "valid_run_count": 3,
+  "sample_count_per_run": 60,
+  "threshold_checks": {
+    "exact_match": {
+      "actual_mean": 0.9944,
+      "threshold": 0.9,
+      "passed": true
+    },
+    "macro_f1": {
+      "actual_mean": 0.9968,
+      "threshold": 0.95,
+      "passed": true
+    },
+    "schedule_exact_match": {
+      "actual_mean": 0.9944,
+      "threshold": 0.95,
+      "passed": true
+    },
+    "entity_field_accuracy": {
+      "actual_mean": 0.9086,
+      "threshold": 0.9,
+      "passed": true
+    },
+    "error_rate": {
+      "actual_mean": 0.0,
+      "threshold": 0.0,
+      "passed": true
+    }
+  },
+  "all_quality_thresholds_passed": true,
+  "metrics": {
+    "exact_match": {
+      "mean": 0.9944,
+      "min": 0.9833,
+      "max": 1.0
+    },
+    "macro_f1": {
+      "mean": 0.9968,
+      "min": 0.9905,
+      "max": 1.0
+    },
+    "schedule_exact_match": {
+      "mean": 0.9944,
+      "min": 0.9833,
+      "max": 1.0
+    },
+    "schedule_intent_consistency": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "entity_field_accuracy": {
+      "mean": 0.9086,
+      "min": 0.8952,
+      "max": 0.9274
+    },
+    "error_rate": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    }
+  },
+  "per_label": {
+    "event_collection": {
+      "precision": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "recall": {
+        "mean": 0.9815,
+        "min": 0.9444,
+        "max": 1.0
+      },
+      "f1": {
+        "mean": 0.9905,
+        "min": 0.9714,
+        "max": 1.0
+      }
+    },
+    "information_query": {
+      "precision": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "recall": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "f1": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      }
+    },
+    "itinerary_planning": {
+      "precision": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "recall": {
+        "mean": 0.9815,
+        "min": 0.9444,
+        "max": 1.0
+      },
+      "f1": {
+        "mean": 0.9905,
+        "min": 0.9714,
+        "max": 1.0
+      }
+    },
+    "memory_query": {
+      "precision": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "recall": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "f1": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      }
+    },
+    "preference": {
+      "precision": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "recall": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "f1": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      }
+    },
+    "rag_knowledge": {
+      "precision": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "recall": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      },
+      "f1": {
+        "mean": 1.0,
+        "min": 1.0,
+        "max": 1.0
+      }
+    }
+  },
+  "failure_summary": {
+    "cases_with_any_failure": 16,
+    "common_failure_count": 8,
+    "variable_failure_count": 8
+  },
+  "common_failures": [
+    {
+      "id": "holdout_v2_006",
+      "category": "single_itinerary",
+      "intent_fail_runs": [],
+      "schedule_fail_runs": [],
+      "entity_fail_runs": [
+        1,
+        2,
+        3
+      ],
+      "failed_entity_fields": {
+        "other": 3
+      },
+      "predicted_intent_sets": {
+        "event_collection, itinerary_planning": 3
+      },
+      "failure_type": "common"
+    },
+    {
+      "id": "holdout_v2_010",
+      "category": "single_preference",
+      "intent_fail_runs": [],
+      "schedule_fail_runs": [],
+      "entity_fail_runs": [
+        1,
+        2,
+        3
+      ],
+      "failed_entity_fields": {
+        "other": 3
+      },
+      "predicted_intent_sets": {
+        "preference": 3
+      },
+      "failure_type": "common"
+    },
+    {
+      "id": "holdout_v2_015",
+      "category": "single_preference",
+      "intent_fail_runs": [],
+      "schedule_fail_runs": [],
+      "entity_fail_runs": [
+        1,
+        2,
+        3
+      ],
+      "failed_entity_fields": {
+        "other": 3
+      },
+      "predicted_intent_sets": {
+        "preference": 3
+      },
+      "failure_type": "common"
+    },
+    {
+      "id": "holdout_v2_016",
+      "category": "single_memory",
+      "intent_fail_runs": [],
+      "schedule_fail_runs": [],
+      "entity_fail_runs": [
+        1,
+        2,
+        3
+      ],
+      "failed_entity_fields": {
+        "other": 3
+      },
+      "predicted_intent_sets": {
+        "memory_query": 3
+      },
+      "failure_type": "common"
+    },
+    {
+      "id": "holdout_v2_023",
+      "category": "single_rag",
+      "intent_fail_runs": [],
+      "schedule_fail_runs": [],
+      "entity_fail_runs": [
+        1,
+        2,
+        3
+      ],
+      "failed_entity_fields": {
+        "other": 3
+      },
+      "predicted_intent_sets": {
+        "rag_knowledge": 3
+      },
+      "failure_type": "common"
+    },
+    {
+      "id": "holdout_v2_032",
+      "category": "single_information",
+      "intent_fail_runs": [],
+      "schedule_fail_runs": [],
+      "entity_fail_runs": [
+        1,
+        2,
+        3
+      ],
+      "failed_entity_fields": {
+        "duration": 3
+      },
+      "predicted_intent_sets": {
+        "information_query": 3
+      },
+      "failure_type": "common"
+    },
+    {
+      "id": "holdout_v2_038",
+      "category": "multi_preference_itinerary",
+      "intent_fail_runs": [],
+      "schedule_fail_runs": [],
+      "entity_fail_runs": [
+        1,
+        2,
+        3
+      ],
+      "failed_entity_fields": {
+        "other": 3
+      },
+      "predicted_intent_sets": {
+        "event_collection, itinerary_planning, preference": 3
+      },
+      "failure_type": "common"
+    },
+    {
+      "id": "holdout_v2_048",
+      "category": "multi_preference_itinerary",
+      "intent_fail_runs": [
+        1
+      ],
+      "schedule_fail_runs": [
+        1
+      ],
+      "entity_fail_runs": [
+        1,
+        2,
+        3
+      ],
+      "failed_entity_fields": {
+        "other": 3
+      },
+      "predicted_intent_sets": {
+        "event_collection, itinerary_planning, preference": 2,
+        "preference": 1
+      },
+      "failure_type": "common"
+    }
+  ],
+  "variable_failures": [
+    {
+      "id": "holdout_v2_011",
+      "category": "single_preference",
+      "intent_fail_runs": [],
+      "schedule_fail_runs": [],
+      "entity_fail_runs": [
+        2
+      ],
+      "failed_entity_fields": {
+        "other": 1
+      },
+      "predicted_intent_sets": {
+        "preference": 3
+      },
+      "failure_type": "variable"
+    },
+    {
+      "id": "holdout_v2_018",
+      "category": "single_memory",
+      "intent_fail_runs": [],
+      "schedule_fail_runs": [],
+      "entity_fail_runs": [
+        1
+      ],
+      "failed_entity_fields": {
+        "other": 1
+      },
+      "predicted_intent_sets": {
+        "memory_query": 3
+      },
+      "failure_type": "variable"
+    },
+    {
+      "id": "holdout_v2_020",
+      "category": "single_memory",
+      "intent_fail_runs": [],
+      "schedule_fail_runs": [],
+      "entity_fail_runs": [
+        1,
+        2
+      ],
+      "failed_entity_fields": {
+        "other": 2
+      },
+      "predicted_intent_sets": {
+        "memory_query": 3
+      },
+      "failure_type": "variable"
+    },
+    {
+      "id": "holdout_v2_025",
+      "category": "single_rag",
+      "intent_fail_runs": [],
+      "schedule_fail_runs": [],
+      "entity_fail_runs": [
+        3
+      ],
+      "failed_entity_fields": {
+        "other": 1
+      },
+      "predicted_intent_sets": {
+        "rag_knowledge": 3
+      },
+      "failure_type": "variable"
+    },
+    {
+      "id": "holdout_v2_033",
+      "category": "single_information",
+      "intent_fail_runs": [],
+      "schedule_fail_runs": [],
+      "entity_fail_runs": [
+        1
+      ],
+      "failed_entity_fields": {
+        "other": 1
+      },
+      "predicted_intent_sets": {
+        "information_query": 3
+      },
+      "failure_type": "variable"
+    },
+    {
+      "id": "holdout_v2_035",
+      "category": "single_information",
+      "intent_fail_runs": [],
+      "schedule_fail_runs": [],
+      "entity_fail_runs": [
+        2
+      ],
+      "failed_entity_fields": {
+        "other": 1
+      },
+      "predicted_intent_sets": {
+        "information_query": 3
+      },
+      "failure_type": "variable"
+    },
+    {
+      "id": "holdout_v2_037",
+      "category": "multi_preference_itinerary",
+      "intent_fail_runs": [],
+      "schedule_fail_runs": [],
+      "entity_fail_runs": [
+        1,
+        2
+      ],
+      "failed_entity_fields": {
+        "other": 2
+      },
+      "predicted_intent_sets": {
+        "event_collection, itinerary_planning, preference": 3
+      },
+      "failure_type": "variable"
+    },
+    {
+      "id": "holdout_v2_047",
+      "category": "multi_rag_preference",
+      "intent_fail_runs": [],
+      "schedule_fail_runs": [],
+      "entity_fail_runs": [
+        1
+      ],
+      "failed_entity_fields": {
+        "other": 1
+      },
+      "predicted_intent_sets": {
+        "preference, rag_knowledge": 3
+      },
+      "failure_type": "variable"
+    }
+  ],
+  "latency_all_valid_requests": {
+    "request_count": 180,
+    "mean_seconds": 23.4133,
+    "p50_seconds": 15.9906,
+    "p95_seconds": 64.4753,
+    "max_seconds": 222.3165
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "result": "evaluation\\reports\\intent_holdout_v2_repeated\\attempt_1.json",
+      "log": "evaluation\\reports\\intent_holdout_v2_repeated\\attempt_1.log",
+      "process_exit_code": 0,
+      "valid": true,
+      "error_rate": 0.0
+    },
+    {
+      "attempt": 2,
+      "result": "evaluation\\reports\\intent_holdout_v2_repeated\\attempt_2.json",
+      "log": "evaluation\\reports\\intent_holdout_v2_repeated\\attempt_2.log",
+      "process_exit_code": 0,
+      "valid": true,
+      "error_rate": 0.0
+    },
+    {
+      "attempt": 3,
+      "result": "evaluation\\reports\\intent_holdout_v2_repeated\\attempt_3.json",
+      "log": "evaluation\\reports\\intent_holdout_v2_repeated\\attempt_3.log",
+      "process_exit_code": 0,
+      "valid": true,
+      "error_rate": 0.0
+    }
+  ],
+  "method_note": "Common failures occur in all valid runs; variable failures occur in only some runs. Frozen annotations were not changed."
+}

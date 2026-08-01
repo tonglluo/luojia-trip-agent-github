@@ -1,0 +1,976 @@
+{
+  "evaluation_type": "paired_latency_validated_analysis",
+  "generated_at": "2026-07-30T03:26:14.687333+00:00",
+  "source_report": "evaluation\\reports\\latency_orchestration_paired_v1.json",
+  "source_report_sha256": "a7ea00e2c1fbee65d69b8103b17ba9d5b8683db74fce8028098a0fa98a49356b",
+  "dataset": "evaluation/datasets/latency_orchestration.formal.v1.jsonl",
+  "dataset_sha256": "ccd36766214fe7536fe57a8c31838e286e886938eaeb87bc767f63cf8f975db5",
+  "as_of": "2026-07-28T05:55:36.987208+00:00",
+  "protocol": {
+    "model": "glm-4.7",
+    "thinking": "disabled",
+    "temperature": 0.1,
+    "max_tokens": 5000,
+    "warmup_rounds_per_mode": 1,
+    "repeats_per_mode": 10,
+    "requests_per_mode": 40,
+    "cooldown_seconds": 10,
+    "order_control": "Sequential-first and parallel-first order alternates by repeat and case."
+  },
+  "validation_status": "ready_to_share_with_caveats",
+  "integrity_checks": {
+    "raw_report_declares_valid": true,
+    "dataset_hash_matches_manifest": true,
+    "row_count_is_80": true,
+    "all_rows_unique": true,
+    "ten_repeats_present": true,
+    "forty_requests_per_mode": true,
+    "balanced_pair_order": true,
+    "all_schedules_match": true,
+    "all_pairs_complete": true
+  },
+  "metric_reconciliation": {
+    "sequential": {
+      "success_rate_matches": true,
+      "total_seconds_matches": true,
+      "intent_seconds_matches": true,
+      "execution_seconds_matches": true,
+      "retry_totals_match": true
+    },
+    "parallel": {
+      "success_rate_matches": true,
+      "total_seconds_matches": true,
+      "intent_seconds_matches": true,
+      "execution_seconds_matches": true,
+      "retry_totals_match": true
+    }
+  },
+  "mode_metrics": {
+    "sequential": {
+      "request_count": 40,
+      "success_count": 40,
+      "success_rate": 1.0,
+      "total_seconds": {
+        "mean": 32.0057,
+        "p50": 20.2273,
+        "p95": 94.3554,
+        "min": 14.0828,
+        "max": 104.4396
+      },
+      "intent_seconds": {
+        "mean": 21.455,
+        "p50": 14.0975,
+        "p95": 76.2957,
+        "min": 7.036,
+        "max": 86.3556
+      },
+      "execution_seconds": {
+        "mean": 10.5505,
+        "p50": 6.7812,
+        "p95": 35.7387,
+        "min": 2.2726,
+        "max": 48.2254
+      },
+      "schedule_match_rate": 1.0,
+      "agent_retry_count": 0,
+      "agent_retry_request_count": 0,
+      "intent_retry_count": 3,
+      "intent_retry_request_count": 3,
+      "partial_failure_count": 0
+    },
+    "parallel": {
+      "request_count": 40,
+      "success_count": 40,
+      "success_rate": 1.0,
+      "total_seconds": {
+        "mean": 27.8552,
+        "p50": 23.0278,
+        "p95": 68.3605,
+        "min": 11.1019,
+        "max": 77.4967
+      },
+      "intent_seconds": {
+        "mean": 19.5567,
+        "p50": 14.989,
+        "p95": 50.3795,
+        "min": 8.1996,
+        "max": 74.9515
+      },
+      "execution_seconds": {
+        "mean": 8.2979,
+        "p50": 3.6762,
+        "p95": 19.3031,
+        "min": 1.6031,
+        "max": 59.8641
+      },
+      "schedule_match_rate": 1.0,
+      "agent_retry_count": 10,
+      "agent_retry_request_count": 5,
+      "intent_retry_count": 1,
+      "intent_retry_request_count": 1,
+      "partial_failure_count": 0
+    }
+  },
+  "comparison": {
+    "complete_pair_count": 40,
+    "aggregate_improvement": {
+      "total_seconds": {
+        "mean": 0.1297,
+        "p50": -0.1385,
+        "p95": 0.2755
+      },
+      "execution_seconds": {
+        "mean": 0.2135,
+        "p50": 0.4579,
+        "p95": 0.4599
+      },
+      "intent_seconds": {
+        "mean": 0.0885,
+        "p50": -0.0632,
+        "p95": 0.3397
+      }
+    },
+    "paired_total_improvement": {
+      "mean": -0.1612,
+      "p50": 0.0016,
+      "p95": 0.7377,
+      "min": -2.8375,
+      "max": 0.798
+    },
+    "paired_execution_improvement": {
+      "mean": -0.2762,
+      "p50": 0.43,
+      "p95": 0.8066,
+      "min": -6.9721,
+      "max": 0.9292
+    },
+    "parallel_total_win_rate": 0.5,
+    "parallel_execution_win_rate": 0.725,
+    "success_rate_delta": 0.0
+  },
+  "category_metrics": [
+    {
+      "category": "memory_preference",
+      "sample_count_per_mode": 10,
+      "sequential_execution_seconds": {
+        "mean": 7.5035,
+        "p50": 5.7158,
+        "p95": 14.3349,
+        "min": 4.0696,
+        "max": 15.9167
+      },
+      "parallel_execution_seconds": {
+        "mean": 4.2914,
+        "p50": 2.5454,
+        "p95": 11.7195,
+        "min": 2.4286,
+        "max": 18.4769
+      },
+      "execution_improvement": {
+        "mean": 0.4281,
+        "p50": 0.5547,
+        "p95": 0.1824
+      },
+      "sequential_total_seconds": {
+        "mean": 26.2549,
+        "p50": 19.0795,
+        "p95": 55.2468,
+        "min": 14.0828,
+        "max": 73.6745
+      },
+      "parallel_total_seconds": {
+        "mean": 28.907,
+        "p50": 21.5846,
+        "p95": 61.2136,
+        "min": 11.1019,
+        "max": 67.8905
+      },
+      "total_improvement": {
+        "mean": -0.101,
+        "p50": -0.1313,
+        "p95": -0.108
+      }
+    },
+    {
+      "category": "memory_preference_rag",
+      "sample_count_per_mode": 10,
+      "sequential_execution_seconds": {
+        "mean": 18.4169,
+        "p50": 13.5403,
+        "p95": 42.5291,
+        "min": 8.0155,
+        "max": 48.2254
+      },
+      "parallel_execution_seconds": {
+        "mean": 13.0978,
+        "p50": 9.0259,
+        "p95": 39.5838,
+        "min": 2.5243,
+        "max": 59.8641
+      },
+      "execution_improvement": {
+        "mean": 0.2888,
+        "p50": 0.3334,
+        "p95": 0.0693
+      },
+      "sequential_total_seconds": {
+        "mean": 41.5677,
+        "p50": 32.5033,
+        "p95": 86.3651,
+        "min": 15.1429,
+        "max": 104.4396
+      },
+      "parallel_total_seconds": {
+        "mean": 30.399,
+        "p50": 24.5547,
+        "p95": 60.6431,
+        "min": 17.525,
+        "max": 77.2901
+      },
+      "total_improvement": {
+        "mean": 0.2687,
+        "p50": 0.2445,
+        "p95": 0.2978
+      }
+    },
+    {
+      "category": "memory_rag",
+      "sample_count_per_mode": 10,
+      "sequential_execution_seconds": {
+        "mean": 8.1097,
+        "p50": 5.7457,
+        "p95": 17.9808,
+        "min": 3.8618,
+        "max": 25.3485
+      },
+      "parallel_execution_seconds": {
+        "mean": 10.3999,
+        "p50": 7.8329,
+        "p95": 26.1755,
+        "min": 2.9062,
+        "max": 35.0013
+      },
+      "execution_improvement": {
+        "mean": -0.2824,
+        "p50": -0.3633,
+        "p95": -0.4557
+      },
+      "sequential_total_seconds": {
+        "mean": 31.1214,
+        "p50": 20.0739,
+        "p95": 78.588,
+        "min": 15.2488,
+        "max": 101.2805
+      },
+      "parallel_total_seconds": {
+        "mean": 25.0125,
+        "p50": 25.6438,
+        "p95": 38.8298,
+        "min": 14.7605,
+        "max": 43.3483
+      },
+      "total_improvement": {
+        "mean": 0.1963,
+        "p50": -0.2775,
+        "p95": 0.5059
+      }
+    },
+    {
+      "category": "rag_preference",
+      "sample_count_per_mode": 10,
+      "sequential_execution_seconds": {
+        "mean": 8.1719,
+        "p50": 5.019,
+        "p95": 24.8842,
+        "min": 2.2726,
+        "max": 39.0004
+      },
+      "parallel_execution_seconds": {
+        "mean": 5.4024,
+        "p50": 2.6532,
+        "p95": 16.9621,
+        "min": 1.6031,
+        "max": 18.1173
+      },
+      "execution_improvement": {
+        "mean": 0.3389,
+        "p50": 0.4714,
+        "p95": 0.3184
+      },
+      "sequential_total_seconds": {
+        "mean": 29.0789,
+        "p50": 18.9113,
+        "p95": 73.8376,
+        "min": 16.4529,
+        "max": 93.9909
+      },
+      "parallel_total_seconds": {
+        "mean": 27.1023,
+        "p50": 20.0379,
+        "p95": 56.5497,
+        "min": 14.7611,
+        "max": 77.4967
+      },
+      "total_improvement": {
+        "mean": 0.068,
+        "p50": -0.0596,
+        "p95": 0.2341
+      }
+    }
+  ],
+  "retry_rows": [
+    {
+      "id": "latency_formal_004",
+      "repeat": 2,
+      "mode": "parallel",
+      "intent_retry_count": 0,
+      "agent_retry_count": 3,
+      "total_seconds": 26.4024,
+      "execution_seconds": 11.3967
+    },
+    {
+      "id": "latency_formal_004",
+      "repeat": 3,
+      "mode": "parallel",
+      "intent_retry_count": 0,
+      "agent_retry_count": 2,
+      "total_seconds": 17.7492,
+      "execution_seconds": 5.015
+    },
+    {
+      "id": "latency_formal_004",
+      "repeat": 4,
+      "mode": "parallel",
+      "intent_retry_count": 0,
+      "agent_retry_count": 1,
+      "total_seconds": 22.7069,
+      "execution_seconds": 7.7345
+    },
+    {
+      "id": "latency_formal_002",
+      "repeat": 5,
+      "mode": "parallel",
+      "intent_retry_count": 1,
+      "agent_retry_count": 0,
+      "total_seconds": 77.4967,
+      "execution_seconds": 2.5452
+    },
+    {
+      "id": "latency_formal_004",
+      "repeat": 5,
+      "mode": "sequential",
+      "intent_retry_count": 1,
+      "agent_retry_count": 0,
+      "total_seconds": 104.4396,
+      "execution_seconds": 21.2176
+    },
+    {
+      "id": "latency_formal_004",
+      "repeat": 6,
+      "mode": "parallel",
+      "intent_retry_count": 0,
+      "agent_retry_count": 3,
+      "total_seconds": 77.2901,
+      "execution_seconds": 59.8641
+    },
+    {
+      "id": "latency_formal_002",
+      "repeat": 7,
+      "mode": "sequential",
+      "intent_retry_count": 1,
+      "agent_retry_count": 0,
+      "total_seconds": 93.9909,
+      "execution_seconds": 7.631
+    },
+    {
+      "id": "latency_formal_003",
+      "repeat": 9,
+      "mode": "sequential",
+      "intent_retry_count": 1,
+      "agent_retry_count": 0,
+      "total_seconds": 101.2805,
+      "execution_seconds": 25.3485
+    },
+    {
+      "id": "latency_formal_004",
+      "repeat": 9,
+      "mode": "parallel",
+      "intent_retry_count": 0,
+      "agent_retry_count": 1,
+      "total_seconds": 32.7804,
+      "execution_seconds": 14.7967
+    }
+  ],
+  "slowest_rows": [
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 5,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 83.2219,
+      "intent_retry_count": 1,
+      "intent_attempt_count": 2,
+      "execution_seconds": 21.2176,
+      "total_seconds": 104.4396,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要查看历史偏好数据",
+          "expected_output": "用户之前保存的酒店偏好设置"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确要求修改偏好设置",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业内部报销政策",
+          "expected_output": "公司酒店报销所需的凭证清单或相关规定"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 9,
+      "pair_order": 1,
+      "mode": "sequential",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 75.9312,
+      "intent_retry_count": 1,
+      "intent_attempt_count": 2,
+      "execution_seconds": 25.3485,
+      "total_seconds": 101.2805,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，属于信息收集类，优先级为1。",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅制度，属于信息收集类，优先级为1。",
+          "expected_output": "公司高铁座位等级的相关规定内容"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 7,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 86.3556,
+      "intent_retry_count": 1,
+      "intent_attempt_count": 2,
+      "execution_seconds": 7.631,
+      "total_seconds": 93.9909,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确声明了未来的住宿偏好（优先有健身房），需要持久化保存。",
+          "expected_output": "偏好保存成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业差旅制度（住宿报销标准），需要从知识库检索相关信息。",
+          "expected_output": "一线城市住宿报销的具体标准或政策文档内容。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_002",
+      "category": "rag_preference",
+      "repeat": 5,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。",
+      "expected_schedule": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 74.9515,
+      "intent_retry_count": 1,
+      "intent_attempt_count": 2,
+      "execution_seconds": 2.5452,
+      "total_seconds": 77.4967,
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户明确声明了未来的住宿偏好（优先有健身房），需要调用PreferenceAgent并持久化存储。",
+          "expected_output": "偏好设置成功的确认信息。"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问企业差旅制度（住宿报销标准），需要从知识库检索相关信息。",
+          "expected_output": "一线城市住宿报销的具体标准或政策条款。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 6,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 17.4259,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 59.8641,
+      "total_seconds": 77.2901,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询历史偏好数据",
+          "expected_output": "用户原有的酒店偏好信息"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新酒店品牌偏好",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户请求查询报销政策知识",
+          "expected_output": "公司酒店报销所需的凭证清单"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 3,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 4,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 68.622,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 5.0525,
+      "total_seconds": 73.6745,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询原有的酒店偏好，需要从长期记忆中读取数据。",
+          "expected_output": "用户原有的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新酒店偏好为亚朵，需要持久化保存到长期记忆中。",
+          "expected_output": "偏好设置成功的确认信息。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 2,
+      "pair_order": 1,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 65.3328,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 2.5577,
+      "total_seconds": 67.8905,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户请求查询原有的酒店偏好，需要从长期记忆中读取数据。",
+          "expected_output": "用户原有的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户请求更新酒店偏好为亚朵，需要持久化保存该偏好。",
+          "expected_output": "偏好更新成功的确认信息。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_004",
+      "category": "memory_preference_rag",
+      "repeat": 1,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 16.0486,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 48.2254,
+      "total_seconds": 64.2741,
+      "predicted_intents": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要查看原有的酒店偏好历史",
+          "expected_output": "用户当前保存的酒店偏好信息"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户要求将酒店偏好修改为优先住汉庭",
+          "expected_output": "偏好更新成功的确认信息"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户询问公司酒店报销凭证的相关规定",
+          "expected_output": "关于酒店报销所需凭证的政策内容"
+        }
+      ],
+      "agents_executed": 3,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_001",
+      "category": "memory_preference",
+      "repeat": 3,
+      "pair_order": 2,
+      "mode": "parallel",
+      "query": "先告诉我原来的酒店偏好，再记住我以后优先住亚朵。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 49.5925,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 3.4604,
+      "total_seconds": 53.053,
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户询问'原来的酒店偏好'，需要从长期记忆中检索历史偏好数据。",
+          "expected_output": "用户历史保存的酒店偏好信息。"
+        },
+        {
+          "agent_name": "preference",
+          "priority": 1,
+          "reason": "用户要求'记住我以后优先住亚朵'，需要调用PreferenceAgent保存新的偏好设置。",
+          "expected_output": "偏好保存成功的确认信息。"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    },
+    {
+      "id": "latency_formal_003",
+      "category": "memory_rag",
+      "repeat": 2,
+      "pair_order": 2,
+      "mode": "sequential",
+      "query": "告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。",
+      "expected_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "actual_schedule": {
+        "memory_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_matches_expected": true,
+      "loaded_agents_after_request": [
+        "memory_query",
+        "preference",
+        "rag_knowledge"
+      ],
+      "status": "success",
+      "intent_seconds": 46.9909,
+      "intent_retry_count": 0,
+      "intent_attempt_count": 1,
+      "execution_seconds": 3.8618,
+      "total_seconds": 50.8527,
+      "predicted_intents": [
+        "memory_query",
+        "rag_knowledge"
+      ],
+      "agent_schedule": [
+        {
+          "agent_name": "memory_query",
+          "priority": 1,
+          "reason": "用户需要获取个人历史偏好数据，需调用MemoryQueryAgent。",
+          "expected_output": "用户保存过的座位偏好列表"
+        },
+        {
+          "agent_name": "rag_knowledge",
+          "priority": 1,
+          "reason": "用户需要查询企业差旅制度，需调用RAGKnowledgeAgent检索知识库。",
+          "expected_output": "公司高铁座位等级的相关规定内容"
+        }
+      ],
+      "agents_executed": 2,
+      "agent_retry_count": 0,
+      "agent_error_count": 0,
+      "orchestration_status": "completed",
+      "error": null
+    }
+  ],
+  "supported_claims": {
+    "execution_mean_reduction": 0.2135,
+    "execution_p50_reduction": 0.4579,
+    "execution_p95_reduction": 0.4599,
+    "end_to_end_mean_reduction": 0.1297,
+    "end_to_end_p50_reduction": -0.1385,
+    "end_to_end_p95_reduction": 0.2755,
+    "parallel_execution_win_rate": 0.725,
+    "parallel_total_win_rate": 0.5,
+    "success_rate_no_regression": true,
+    "can_claim_end_to_end_50_percent_reduction": false
+  },
+  "invalid_attempts_retained": [
+    {
+      "attempt": 1,
+      "reason": "RAG timeout was hidden as success before error-propagation fix."
+    },
+    {
+      "attempt": 2,
+      "reason": "Intent timeout had no benchmark-level retry, causing schedule mismatch."
+    },
+    {
+      "attempt": 3,
+      "reason": "0.5-second cooldown turned latency measurement into sustained load and exhausted rate limits."
+    }
+  ],
+  "required_caveats": [
+    "The benchmark uses one provider account and one workstation; absolute latency may vary by time and quota.",
+    "Parallel execution created 10 agent retries across 5 requests, while sequential execution created none; concurrency increased rate-limit pressure even though all requests eventually succeeded.",
+    "Intent recognition is outside the parallelized agent batch and dominates some end-to-end tail latency.",
+    "The paired mean of percentage improvements is outlier-sensitive; use aggregate P50/P95 and raw latency values as primary claims.",
+    "The data does not support a 50% end-to-end response reduction claim."
+  ]
+}

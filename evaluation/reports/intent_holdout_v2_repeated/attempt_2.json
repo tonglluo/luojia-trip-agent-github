@@ -1,0 +1,3927 @@
+{
+  "evaluation_type": "intent",
+  "generated_at": "2026-07-27T07:43:27.517736+00:00",
+  "dataset": "evaluation/datasets/intent_eval.holdout.v2.jsonl",
+  "dataset_sha256": "3c89c80ab5fbd92d28269571b3f4e7adb8699f8c3164561f86c29350cd0ba526",
+  "model": "glm-4.7",
+  "thinking": "disabled",
+  "sample_count": 60,
+  "metrics": {
+    "sample_count": 60,
+    "exact_match": 1.0,
+    "macro_f1": 1.0,
+    "per_label": {
+      "event_collection": {
+        "tp": 18,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "information_query": {
+        "tp": 15,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "itinerary_planning": {
+        "tp": 18,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "memory_query": {
+        "tp": 12,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "preference": {
+        "tp": 13,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      },
+      "rag_knowledge": {
+        "tp": 12,
+        "fp": 0,
+        "fn": 0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0
+      }
+    },
+    "schedule_exact_match": 1.0,
+    "schedule_intent_consistency": 1.0,
+    "entity_field_accuracy": 0.9032,
+    "error_rate": 0.0,
+    "rate_limit_retry_count": 4
+  },
+  "rows": [
+    {
+      "id": "holdout_v2_001",
+      "category": "single_itinerary",
+      "query": "下周从重庆去贵阳拜访供应商，住两晚，把高铁和酒店一起安排好",
+      "expected_intents": [
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "itinerary_planning"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 4,
+      "entity_total": 4,
+      "entity_checks": {
+        "origin": true,
+        "destination": true,
+        "duration": true,
+        "other": true
+      },
+      "latency_seconds": 21.8024,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户的核心诉求是规划一次从重庆到贵阳的出差行程，并明确要求安排高铁和酒店。当前时间为2026年7月27日星期一，用户提到的'下周'指2026年8月3日至8月9日这一周。用户提供了出发地（重庆）、目的地（贵阳）、时长（住两晚）、目的（拜访供应商）以及具体需求（高铁和酒店）。这符合行程规划的特征。根据规则，识别到 itinerary_planning 意图时，必须同时识别并调度 event_collection（优先级1）和 itinerary_planning（优先级2）。用户未提及查询历史、修改偏好或查询实时信息/政策，因此不触发其他智能体。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "收集用户提供的行程细节，包括出发地、目的地、时间范围、住宿时长和交通方式偏好",
+            "reason": "用户明确提供了'从重庆去贵阳'、'下周'、'住两晚'、'高铁'等关键行程信息，需要通过 event_collection 提取结构化数据供后续规划使用"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 1.0,
+            "description": "根据收集的信息规划具体的行程方案，包括高铁票务和酒店预订",
+            "reason": "用户明确要求'把高铁和酒店一起安排好'，这是一个典型的行程规划请求，依赖于 event_collection 收集到的信息"
+          }
+        ],
+        "key_entities": {
+          "origin": "重庆",
+          "destination": "贵阳",
+          "date": "下周（2026年8月3日至8月9日）",
+          "duration": "两晚",
+          "other": "出差目的：拜访供应商；交通方式：高铁；住宿需求：酒店"
+        },
+        "rewritten_query": "计划在下周（2026年8月3日至8月9日）从重庆前往贵阳出差，目的是拜访供应商，行程时长为两晚，请安排高铁票和酒店住宿。",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "优先提取用户Query中的结构化行程信息（时间、地点、偏好等），为后续规划提供数据基础",
+            "expected_output": "包含出发地、目的地、日期、时长、交通偏好、住宿偏好等字段的标准化行程对象"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "基于 event_collection 提取的信息，生成具体的行程方案，包括推荐的高铁班次和酒店选项",
+            "expected_output": "完整的行程规划方案，包含具体的车次建议和酒店预订建议"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_002",
+      "category": "single_itinerary",
+      "query": "5月10日从南京去厦门，13日下午返程，帮我做完整行程",
+      "expected_intents": [
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "itinerary_planning"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 3,
+      "entity_total": 3,
+      "entity_checks": {
+        "origin": true,
+        "destination": true,
+        "duration": true
+      },
+      "latency_seconds": 22.569,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户明确提出了具体的行程需求：5月10日从南京去厦门，13日下午返程，并要求做完整行程。这属于典型的行程规划场景。核心诉求是生成一个包含交通、住宿和游玩安排的完整计划。关键实体包括出发地（南京）、目的地（厦门）、出发日期（2026年5月10日）、返程日期（2026年5月13日）。由于用户提供了具体的日期和地点，且直接要求规划行程，因此主要意图为行程规划。根据系统规则，行程规划依赖于事项收集提取的结构化信息，因此需要先调用event_collection，再调用itinerary_planning。虽然用户没有明确询问偏好或历史，但为了行程的个性化，通常需要结合用户历史，但根据规则'不能为了让行程更个性化而主动查询偏好'，且用户未提及'我的'历史，故不触发memory_query和preference。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "提取用户提供的行程关键信息，包括出发地、目的地、时间等",
+            "reason": "用户提供了具体的出发地（南京）、目的地（厦门）、出发时间（5月10日）和返程时间（13日下午），需要通过event_collection将这些非结构化信息转化为结构化的事件数据，供后续规划使用。"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 1.0,
+            "description": "根据收集到的行程信息规划完整的旅行路线",
+            "reason": "用户明确要求'帮我做完整行程'，这是行程规划的核心意图，需要调用itinerary_planning智能体来生成具体的行程安排。"
+          }
+        ],
+        "key_entities": {
+          "origin": "南京",
+          "destination": "厦门",
+          "date": "2026年5月10日",
+          "duration": "四天",
+          "other": "返程时间：2026年5月13日下午；需求：完整行程规划"
+        },
+        "rewritten_query": "2026年5月10日从南京出发前往厦门，2026年5月13日下午返程，请规划完整的行程安排。",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "优先提取用户提供的行程要素（时间、地点），为规划提供结构化输入",
+            "expected_output": "包含出发地、目的地、出发日期、返程日期的结构化行程数据"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "基于提取的结构化信息进行具体的路线和活动规划",
+            "expected_output": "包含交通、住宿、游玩安排的完整行程单"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_003",
+      "category": "single_itinerary",
+      "query": "安排北京到唐山当天往返，上午去客户工厂，晚上回来",
+      "expected_intents": [
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "itinerary_planning"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 4,
+      "entity_total": 4,
+      "entity_checks": {
+        "origin": true,
+        "destination": true,
+        "duration": true,
+        "other": true
+      },
+      "latency_seconds": 18.8745,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户的核心诉求是规划一次具体的商务行程。Query中包含了明确的出发地（北京）、目的地（唐山）、时间约束（当天往返）、行程目的（去客户工厂）以及具体的时间安排（上午去，晚上回）。这符合行程规划的特征。根据规则，识别到itinerary_planning意图时，必须同时识别并调度event_collection来提取结构化信息。由于用户没有询问历史、偏好、政策或实时信息，因此不触发其他智能体。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "提取用户行程中的关键实体，如出发地、目的地、时间、目的等",
+            "reason": "用户提供了具体的行程细节（北京到唐山、当天往返、上午去客户工厂），需要通过event_collection进行结构化提取，供后续规划使用。"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 1.0,
+            "description": "根据提取的行程信息规划具体的往返路线和日程",
+            "reason": "用户明确表达了“安排...往返”的诉求，属于典型的行程规划意图，需要基于event_collection的结果生成具体的行程方案。"
+          }
+        ],
+        "key_entities": {
+          "origin": "北京",
+          "destination": "唐山",
+          "date": "2026年07月27日",
+          "duration": "一天",
+          "other": "行程目的：去客户工厂；时间约束：上午去，晚上回来；行程类型：当天往返"
+        },
+        "rewritten_query": "安排2026年07月27日从北京到唐山的当天往返行程，上午去客户工厂，晚上回来。",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "优先提取用户Query中的结构化行程信息（出发地、目的地、时间、目的等），为规划提供数据基础。",
+            "expected_output": "包含origin, destination, date, duration, purpose等字段的结构化事件数据。"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "依赖event_collection提取的信息，生成符合用户要求的往返行程安排。",
+            "expected_output": "具体的行程规划方案，包含交通建议、时间轴安排等。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_004",
+      "category": "single_itinerary",
+      "query": "暑假带孩子去昆明玩六天，希望节奏慢一点",
+      "expected_intents": [
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "itinerary_planning"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 3,
+      "entity_total": 3,
+      "entity_checks": {
+        "destination": true,
+        "duration": true,
+        "other": true
+      },
+      "latency_seconds": 31.6112,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query的核心诉求是规划一次暑期亲子旅行。关键实体包括目的地（昆明）、时长（六天）、时间（暑假，推断为7-8月）、同行人员（带孩子）以及行程节奏偏好（慢一点）。虽然没有对话历史，但用户明确表达了出行意愿和具体细节，符合行程规划场景。根据意图区分原则，'我要去XX'或提供行程细节应识别为itinerary_planning。由于行程规划依赖于结构化的信息收集，必须同时触发event_collection来提取实体。用户提到的'节奏慢一点'属于单次行程约束，而非长期偏好，因此不触发preference。用户未询问历史记录、实时天气或企业制度，故不触发memory_query、information_query或rag_knowledge。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "提取用户提供的旅行关键信息，包括目的地、时长、时间范围及特殊需求",
+            "reason": "用户提供了明确的旅行要素（昆明、六天、暑假、带孩子、慢节奏），需要通过event_collection进行结构化提取，供后续规划使用"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 1.0,
+            "description": "基于收集的信息生成具体的六天昆明亲子慢游行程",
+            "reason": "用户表达了明确的出行计划需求（'去昆明玩六天'），属于典型的行程规划意图"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "昆明",
+          "date": "暑假",
+          "duration": "六天",
+          "other": "同行人员：带孩子；行程约束：节奏慢一点"
+        },
+        "rewritten_query": "暑假期间带孩子去昆明旅游六天，希望行程安排节奏慢一点，请规划路线。",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "优先提取用户Query中的结构化旅行信息（目的地、时间、时长、偏好），为行程规划提供数据基础",
+            "expected_output": "包含目的地（昆明）、时长（六天）、时间（暑假）、同行人员（带孩子）、节奏偏好（慢）的结构化事件对象"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "依赖event_collection提取的信息，生成符合'慢节奏'和'亲子'特性的六天昆明行程方案",
+            "expected_output": "详细的六天昆明亲子游行程安排，包含每日景点、活动及节奏控制建议"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_005",
+      "category": "single_itinerary",
+      "query": "从青岛去合肥参加三天培训，机票住宿都帮我规划",
+      "expected_intents": [
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "itinerary_planning"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 4,
+      "entity_total": 4,
+      "entity_checks": {
+        "origin": true,
+        "destination": true,
+        "duration": true,
+        "other": true
+      },
+      "latency_seconds": 22.2597,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query的核心诉求是规划一次从青岛到合肥的差旅行程，并明确要求包含机票和住宿的安排。关键实体包括出发地'青岛'、目的地'合肥'、时长'三天'以及目的'参加培训'。用户使用了'帮我规划'这一强指令性动词，明确触发行程规划意图。由于用户提供了具体的行程要素（出发地、目的地、时长、目的），需要先通过event_collection提取这些结构化信息，随后由itinerary_planning进行具体规划。虽然用户没有明确说明具体日期，但'三天'是明确的时长约束。根据优先级规则，event_collection属于Priority 1，itinerary_planning属于Priority 2且依赖前者，因此需要按顺序调度。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "提取用户提供的行程要素，包括出发地、目的地、时长和目的",
+            "reason": "用户明确提供了'从青岛去合肥'、'三天'、'参加培训'等具体行程细节，符合event_collection的触发条件"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 1.0,
+            "description": "根据提取的行程要素规划机票和住宿",
+            "reason": "用户明确要求'机票住宿都帮我规划'，这是典型的行程规划需求，且依赖于event_collection提取的信息"
+          }
+        ],
+        "key_entities": {
+          "origin": "青岛",
+          "destination": "合肥",
+          "date": "",
+          "duration": "三天",
+          "other": "目的：参加培训；需求：机票、住宿规划"
+        },
+        "rewritten_query": "规划从青岛到合肥的行程，时长三天，目的是参加培训，需要安排机票和住宿。",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "需要先提取用户提供的出发地、目的地、时长和目的等结构化信息",
+            "expected_output": "包含origin=青岛, destination=合肥, duration=三天, purpose=培训的结构化事件数据"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "基于收集到的行程信息，进行机票和住宿的具体规划",
+            "expected_output": "包含青岛到合肥的机票建议和合肥的住宿建议的完整行程方案"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_006",
+      "category": "single_itinerary",
+      "query": "想做一次太原到洛阳的周末文化游",
+      "expected_intents": [
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "itinerary_planning"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 2,
+      "entity_total": 3,
+      "entity_checks": {
+        "origin": true,
+        "destination": true,
+        "other": false
+      },
+      "latency_seconds": 17.8405,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query '想做一次太原到洛阳的周末文化游' 表达了明确的行程规划诉求。核心诉求是规划一次旅行。关键实体包括：出发地（太原）、目的地（洛阳）、时间范围（周末）、主题（文化游）。无对话历史上下文，无需消歧。根据意图区分原则，'我想去XX'或'从XX到XX'属于 itinerary_planning。由于涉及行程规划，根据规则，必须同时调度 event_collection 来提取结构化信息，随后由 itinerary_planning 进行规划。用户未提及查询历史、实时信息或修改偏好，因此不触发其他智能体。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "提取用户行程规划所需的出发地、目的地、时间、主题等结构化信息",
+            "reason": "用户提供了具体的出发地（太原）、目的地（洛阳）和旅行意图，需要通过该智能体进行信息提取和标准化"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 1.0,
+            "description": "根据提取的信息规划具体的旅行路线和安排",
+            "reason": "用户明确表达了'想做一次...游'的规划需求，属于行程规划意图"
+          }
+        ],
+        "key_entities": {
+          "origin": "太原",
+          "destination": "洛阳",
+          "date": "周末",
+          "duration": "两天",
+          "other": "主题：文化游"
+        },
+        "rewritten_query": "规划从太原到洛阳的周末文化游行程",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "优先提取行程要素（出发地、目的地、时间、主题），为后续规划提供结构化数据",
+            "expected_output": "包含origin=太原, destination=洛阳, date=周末, theme=文化游的结构化事件信息"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "依赖event_collection提取的信息进行具体的路线规划和安排",
+            "expected_output": "太原到洛阳的周末文化游详细行程方案"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_007",
+      "category": "single_itinerary",
+      "query": "月底从宁波到长沙参加行业会议，预计住四晚",
+      "expected_intents": [
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "itinerary_planning"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 4,
+      "entity_total": 4,
+      "entity_checks": {
+        "origin": true,
+        "destination": true,
+        "duration": true,
+        "other": true
+      },
+      "latency_seconds": 19.5665,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户表达了明确的出行计划，包含出发地（宁波）、目的地（长沙）、时间（月底，推断为2026年7月31日）、时长（四晚）以及目的（参加行业会议）。这符合行程规划的特征。根据规则，识别到 itinerary_planning 意图时，必须同时识别并调度 event_collection 用于提取结构化信息。event_collection 属于 Priority 1（信息收集），itinerary_planning 属于 Priority 2（依赖前者结果）。用户未提及查询历史、修改偏好或查询实时信息/政策，因此不触发其他智能体。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "提取用户行程中的关键实体（出发地、目的地、时间、时长、目的）",
+            "reason": "用户提供了具体的出行细节（宁波到长沙，月底，住四晚，开会），需要结构化提取以供后续规划使用。"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 1.0,
+            "description": "根据提取的行程信息规划具体的差旅方案",
+            "reason": "用户表达了明确的出行诉求（从宁波到长沙参加会议），属于典型的行程规划场景。"
+          }
+        ],
+        "key_entities": {
+          "origin": "宁波",
+          "destination": "长沙",
+          "date": "2026年07月31日",
+          "duration": "四晚",
+          "other": "目的：参加行业会议"
+        },
+        "rewritten_query": "计划于2026年7月31日从宁波出发前往长沙，预计住宿四晚，目的是参加行业会议。",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "优先提取用户Query中的结构化行程信息（时间、地点、时长、目的）。",
+            "expected_output": "包含出发地、目的地、日期、时长、行程目的的结构化数据。"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "基于event_collection提取的信息，生成具体的行程规划建议。",
+            "expected_output": "针对宁波到长沙的行程规划方案，包含交通和住宿建议。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_008",
+      "category": "single_itinerary",
+      "query": "温州出发去南昌看展，两日行程怎么安排比较合适",
+      "expected_intents": [
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "itinerary_planning"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 4,
+      "entity_total": 4,
+      "entity_checks": {
+        "origin": true,
+        "destination": true,
+        "duration": true,
+        "other": true
+      },
+      "latency_seconds": 21.4226,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户的核心诉求是规划一次从温州到南昌的旅行，目的是看展，时长为两天。分析Query中的关键实体：出发地'温州'，目的地'南昌'，目的'看展'，时长'两日行程'。用户询问'怎么安排比较合适'，明确表达了行程规划的需求。根据意图区分原则，'从XX到XX'、'安排路线'属于行程规划意图。由于涉及行程规划，需要先收集事项信息（event_collection），再进行行程规划（itinerary_planning）。用户未提及历史记录、偏好设置或实时信息查询，因此不触发其他智能体。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "收集用户提供的行程细节，包括出发地、目的地、时长和目的",
+            "reason": "用户提供了明确的出发地（温州）、目的地（南昌）、时长（两日）和目的（看展），需要提取这些结构化信息供后续规划使用"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 1.0,
+            "description": "根据收集的信息规划具体的两日行程安排",
+            "reason": "用户明确询问'两日行程怎么安排比较合适'，这是典型的行程规划请求，依赖于event_collection提取的信息"
+          }
+        ],
+        "key_entities": {
+          "origin": "温州",
+          "destination": "南昌",
+          "date": "",
+          "duration": "两天",
+          "other": "目的：看展"
+        },
+        "rewritten_query": "规划从温州到南昌的两日行程，目的是看展，请提供合适的行程安排。",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "优先提取用户提供的行程要素（出发地、目的地、时长、目的），为规划提供结构化输入",
+            "expected_output": "包含origin='温州', destination='南昌', duration='两天', purpose='看展'的结构化事件信息"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "基于event_collection提取的信息，生成具体的两日行程方案",
+            "expected_output": "详细的南昌两日看展行程安排，包括交通、住宿及游览建议"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_009",
+      "category": "single_preference",
+      "query": "以后住酒店尽量安排安静的高楼层房间",
+      "expected_intents": [
+        "preference"
+      ],
+      "predicted_intents": [
+        "preference"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "preference": 1
+      },
+      "predicted_priorities": {
+        "preference": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 16.0755,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query的核心诉求是表达对未来酒店住宿的偏好设置。关键实体包括'酒店'、'安静'、'高楼层'。意图信号为'以后'、'尽量'，表明这是一个长期偏好的声明，而非针对单次行程的约束或对历史的查询。对话历史为空，无需消歧。根据意图区分原则，用户明确陈述个人喜好，应识别为preference意图。",
+        "intents": [
+          {
+            "type": "preference",
+            "confidence": 0.98,
+            "description": "用户希望设置或更新酒店住宿的长期偏好，具体为安静且位于高楼层的房间。",
+            "reason": "用户使用了'以后'、'尽量'等词汇，明确表达了希望系统记住并应用这一规则，符合PreferenceAgent的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "",
+          "date": "",
+          "duration": "",
+          "other": "偏好类型：酒店；偏好值：安静、高楼层；动作：增加/更新；偏好强度：尽量（优先）"
+        },
+        "rewritten_query": "请将我的酒店偏好设置为：尽量安排安静的高楼层房间。",
+        "agent_schedule": [
+          {
+            "agent_name": "preference",
+            "priority": 1,
+            "reason": "用户明确表达了关于酒店住宿的长期偏好（安静、高楼层），需要调用PreferenceAgent进行持久化存储。",
+            "expected_output": "确认偏好已保存，并反馈当前的酒店偏好设置。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_010",
+      "category": "single_preference",
+      "query": "我不接受需要中转的航班，以后都订直飞",
+      "expected_intents": [
+        "preference"
+      ],
+      "predicted_intents": [
+        "preference"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "preference": 1
+      },
+      "predicted_priorities": {
+        "preference": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 0,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": false
+      },
+      "latency_seconds": 15.315,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户明确表达了'不接受需要中转的航班'，这是一个关于航班类型的偏好设置。用户使用了'以后都订'这样的表述，表明这是一个长期偏好的更新，而非单次行程的约束。根据意图区分原则，当用户声明或更新偏好（如航空公司、座位偏好等）时，应识别为preference意图。该Query不涉及行程规划、历史查询或实时信息查询，因此仅触发preference智能体。",
+        "intents": [
+          {
+            "type": "preference",
+            "confidence": 1.0,
+            "description": "用户设置航班偏好，要求直飞，拒绝中转",
+            "reason": "用户明确陈述了'不接受中转'、'以后都订直飞'，符合preference技能的触发条件（用户states or updates their preferences），且带有长期生效的语义（'以后都'）。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "",
+          "date": "",
+          "duration": "",
+          "other": "偏好类型：航班类型；偏好值：直飞；动作：拒绝中转（否定），要求直飞（肯定）；生效范围：长期（以后都）"
+        },
+        "rewritten_query": "请更新我的航班偏好：以后只预订直飞航班，不接受需要中转的航班。",
+        "agent_schedule": [
+          {
+            "agent_name": "preference",
+            "priority": 1,
+            "reason": "用户明确要求设置关于航班类型的长期偏好（直飞，不中转），需要调用PreferenceAgent并使用MemoryManager持久化该偏好。",
+            "expected_output": "确认偏好已保存，并反馈当前的航班偏好设置。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_011",
+      "category": "single_preference",
+      "query": "住宿费用每晚最高七百元，帮我保存这个标准",
+      "expected_intents": [
+        "preference"
+      ],
+      "predicted_intents": [
+        "preference"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "preference": 1
+      },
+      "predicted_priorities": {
+        "preference": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 0,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": false
+      },
+      "latency_seconds": 7.888,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query的核心诉求是保存一个关于住宿费用的标准。分析关键实体和意图信号：'住宿费用'指代酒店/住宿类别，'每晚最高七百元'是具体的数值限制，'保存'是明确的动作指令。根据意图区分原则，用户明确要求记录个人偏好（价格上限），符合preference智能体的触发条件（用户更新偏好）。不涉及行程规划、历史查询、实时信息或制度咨询。因此，识别为单一意图：preference。",
+        "intents": [
+          {
+            "type": "preference",
+            "confidence": 1.0,
+            "description": "用户希望保存住宿费用的最高标准",
+            "reason": "用户使用了'保存'这一动作，并给出了具体的偏好值（每晚最高七百元），符合PreferenceAgent的触发场景。"
+          }
+        ],
+        "key_entities": {
+          "origin": null,
+          "destination": null,
+          "date": null,
+          "duration": null,
+          "other": "住宿费用每晚最高七百元（保存/设置偏好）"
+        },
+        "rewritten_query": "保存我的住宿偏好：每晚最高七百元。",
+        "agent_schedule": [
+          {
+            "agent_name": "preference",
+            "priority": 1,
+            "reason": "用户明确要求保存住宿费用标准，需要调用PreferenceAgent进行持久化存储。",
+            "expected_output": "确认偏好已保存，并更新用户的长期记忆。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_012",
+      "category": "single_preference",
+      "query": "把我的常用航空公司更新成国航",
+      "expected_intents": [
+        "preference"
+      ],
+      "predicted_intents": [
+        "preference"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "preference": 1
+      },
+      "predicted_priorities": {
+        "preference": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 15.3359,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query的核心诉求是更新个人偏好设置。关键实体包括'常用航空公司'（偏好类型）和'国航'（偏好值）。意图信号为'更新'和'常用'，表明用户希望修改长期存储的个人配置。无需结合对话历史，因为用户明确指定了偏好类型和值。根据意图区分原则，这属于明确声明或更新偏好，应触发preference智能体。",
+        "intents": [
+          {
+            "type": "preference",
+            "confidence": 1.0,
+            "description": "用户希望更新其常用航空公司偏好为国航",
+            "reason": "用户使用了'更新'、'常用'等词汇，并明确指定了偏好类型（航空公司）和具体值（国航），符合preference智能体的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "",
+          "date": "",
+          "duration": "",
+          "other": "偏好类型：常用航空公司；偏好值：国航；动作：更新"
+        },
+        "rewritten_query": "将我的常用航空公司偏好设置为国航",
+        "agent_schedule": [
+          {
+            "agent_name": "preference",
+            "priority": 1,
+            "reason": "用户明确要求更新个人偏好（航空公司），需要调用PreferenceAgent并使用MemoryManager持久化该设置。",
+            "expected_output": "确认偏好已更新，并返回更新后的偏好状态。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_013",
+      "category": "single_preference",
+      "query": "删除之前保存的靠窗座位偏好",
+      "expected_intents": [
+        "preference"
+      ],
+      "predicted_intents": [
+        "preference"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "preference": 1
+      },
+      "predicted_priorities": {
+        "preference": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 10.7242,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户的核心诉求是删除之前保存的座位偏好。分析Query中的关键实体：'删除'（动作）、'之前保存的'（指代历史记录）、'靠窗座位偏好'（偏好对象）。根据意图区分原则，用户明确要求修改/删除个人偏好，属于偏好管理范畴。虽然涉及'之前保存的'，但用户不是在询问'我之前的偏好是什么'（memory_query），而是直接执行删除操作，因此应识别为preference意图。无需结合对话历史，语义明确。",
+        "intents": [
+          {
+            "type": "preference",
+            "confidence": 0.98,
+            "description": "删除用户的历史座位偏好设置",
+            "reason": "用户明确使用了'删除'指令，并指定了操作对象为'靠窗座位偏好'，符合preference智能体的触发条件（用户更新或删除偏好）。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "",
+          "date": "",
+          "duration": "",
+          "other": "删除靠窗座位偏好"
+        },
+        "rewritten_query": "删除我的靠窗座位偏好",
+        "agent_schedule": [
+          {
+            "agent_name": "preference",
+            "priority": 1,
+            "reason": "用户请求删除特定的座位偏好，需要调用PreferenceAgent处理偏好数据的移除操作。",
+            "expected_output": "确认偏好已删除或操作结果反馈"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_014",
+      "category": "single_preference",
+      "query": "餐食长期按清真餐处理，请记下来",
+      "expected_intents": [
+        "preference"
+      ],
+      "predicted_intents": [
+        "preference"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "preference": 1
+      },
+      "predicted_priorities": {
+        "preference": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 44.015,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户的核心诉求是记录一个长期的餐食偏好。分析Query中的关键信号：'长期'表明这是一个持久化的设置，而非单次行程约束；'按清真餐处理'明确了偏好的类型和具体值；'请记下来'是典型的存储指令。根据意图区分原则，这属于用户明确声明或更新个人偏好，应触发preference智能体。该请求不涉及行程规划、历史查询或实时信息检索，因此无需调度其他智能体。",
+        "intents": [
+          {
+            "type": "preference",
+            "confidence": 1.0,
+            "description": "用户希望将餐食偏好设置为清真餐，并指定为长期有效。",
+            "reason": "用户使用了'长期'、'请记下来'等词汇，明确表达了保存持久化偏好的意图，且内容为具体的餐食要求（清真餐）。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "",
+          "date": "",
+          "duration": "",
+          "other": "餐食偏好：清真餐；时效：长期；动作：记录/保存"
+        },
+        "rewritten_query": "请将我的餐食偏好长期设置为清真餐。",
+        "agent_schedule": [
+          {
+            "agent_name": "preference",
+            "priority": 1,
+            "reason": "用户明确要求记录长期的餐食偏好，需要调用PreferenceAgent进行持久化存储。",
+            "expected_output": "确认偏好已保存，并反馈当前的餐食设置状态。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_015",
+      "category": "single_preference",
+      "query": "以后坐高铁优先靠过道，别安排中间位置",
+      "expected_intents": [
+        "preference"
+      ],
+      "predicted_intents": [
+        "preference"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "preference": 1
+      },
+      "predicted_priorities": {
+        "preference": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 0,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": false
+      },
+      "latency_seconds": 12.6215,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query的核心诉求是设置未来的高铁座位偏好。分析关键实体：'高铁'（交通工具）、'优先靠过道'（偏好值及优先级）、'别安排中间位置'（否定偏好）。意图信号包括'以后'（表明长期偏好）、'优先'、'别安排'。无需结合对话历史，无歧义。根据规则，'以后优先'属于长期偏好，应触发preference智能体进行存储。",
+        "intents": [
+          {
+            "type": "preference",
+            "confidence": 1.0,
+            "description": "用户希望设置高铁座位的长期偏好，优先选择过道，避免中间位置。",
+            "reason": "用户使用了'以后'、'优先'、'别安排'等词汇，明确表达了长期的行为偏好，符合preference智能体的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "",
+          "date": "",
+          "duration": "",
+          "other": "交通工具：高铁；偏好：靠过道（优先）；偏好：中间位置（否定/排除）"
+        },
+        "rewritten_query": "请将我的高铁座位偏好设置为优先靠过道，不要安排中间位置。",
+        "agent_schedule": [
+          {
+            "agent_name": "preference",
+            "priority": 1,
+            "reason": "用户明确表达了关于高铁座位的长期偏好，需要调用PreferenceAgent并使用MemoryManager保存该偏好。",
+            "expected_output": "确认偏好已保存，或返回保存后的用户偏好状态。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_016",
+      "category": "single_memory",
+      "query": "我今年上半年去过哪些城市出差？",
+      "expected_intents": [
+        "memory_query"
+      ],
+      "predicted_intents": [
+        "memory_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "memory_query": 1
+      },
+      "predicted_priorities": {
+        "memory_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 0,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": false
+      },
+      "latency_seconds": 15.6839,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问“我今年上半年去过哪些城市出差”，核心诉求是查询个人的历史出差记录。关键实体包括时间范围“今年上半年”和活动类型“出差”。根据当前时间2026年07月27日，“今年上半年”指2026年01月01日至2026年06月30日。用户使用了“我...去过...”的句式，明确指向个人历史数据，符合memory_query的触发条件（询问自己的历史、过去的行程）。该查询不涉及行程规划、偏好设置、实时信息查询或知识库检索，因此仅识别为memory_query意图。",
+        "intents": [
+          {
+            "type": "memory_query",
+            "confidence": 1.0,
+            "description": "查询用户在2026年上半年的出差城市记录",
+            "reason": "用户明确询问“我”过去的时间段（今年上半年）去过哪些城市，属于查询个人历史记录，符合memory_query的定义和优先级规则。"
+          }
+        ],
+        "key_entities": {
+          "origin": null,
+          "destination": null,
+          "date": "2026年上半年",
+          "duration": null,
+          "other": "查询对象：出差城市；时间范围：2026年01月01日至2026年06月30日"
+        },
+        "rewritten_query": "查询我在2026年上半年（1月1日至6月30日）去过的所有出差城市。",
+        "agent_schedule": [
+          {
+            "agent_name": "memory_query",
+            "priority": 1,
+            "reason": "用户请求查询个人历史出差记录，需要使用MemoryQueryAgent访问长期记忆。",
+            "expected_output": "2026年上半年用户出差过的城市列表及相关行程详情。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_017",
+      "category": "single_memory",
+      "query": "查一下我最近一次在成都住的酒店品牌",
+      "expected_intents": [
+        "memory_query"
+      ],
+      "predicted_intents": [
+        "memory_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "memory_query": 1
+      },
+      "predicted_priorities": {
+        "memory_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 2,
+      "entity_total": 2,
+      "entity_checks": {
+        "destination": true,
+        "other": true
+      },
+      "latency_seconds": 14.768,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'最近一次在成都住的酒店品牌'，核心诉求是查询个人的历史行为记录。关键词包括'最近一次'（时间限定）、'成都'（地点）、'住'（行为）、'酒店品牌'（查询对象）。根据意图区分原则，涉及用户自己的历史记录（'我'、'最近一次'），应优先识别为 memory_query，而非 information_query（查询客观信息）或 preference（设置偏好）。无对话历史，无需消歧。",
+        "intents": [
+          {
+            "type": "memory_query",
+            "confidence": 0.98,
+            "description": "查询用户过去在成都的酒店住宿记录，特别是最近一次的品牌信息",
+            "reason": "用户明确询问'我'的历史行为（'最近一次'），符合 memory_query 的触发条件（询问自己的历史、旅行记录）"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "成都",
+          "date": "",
+          "duration": "",
+          "other": "查询对象：酒店品牌；时间范围：最近一次；行为：住宿记录"
+        },
+        "rewritten_query": "查询我最近一次在成都住宿的酒店品牌是什么",
+        "agent_schedule": [
+          {
+            "agent_name": "memory_query",
+            "priority": 1,
+            "reason": "用户请求查询个人历史旅行记录中的酒店信息，需要调用 MemoryQueryAgent 访问长期记忆",
+            "expected_output": "用户最近一次在成都入住的酒店品牌及相关住宿详情"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_018",
+      "category": "single_memory",
+      "query": "我之前保存的餐食偏好是什么？",
+      "expected_intents": [
+        "memory_query"
+      ],
+      "predicted_intents": [
+        "memory_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "memory_query": 1
+      },
+      "predicted_priorities": {
+        "memory_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 11.46,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'我之前保存的餐食偏好是什么？'，核心诉求是查询个人历史数据。关键词'之前'、'保存'、'偏好'以及'我的'（隐含主语）表明用户希望从长期记忆中检索已存储的信息。根据意图区分原则，询问'我过去的'或'我之前的'偏好属于 memory_query 意图，而非 preference（后者用于声明或更新偏好）。用户并未要求修改或新增偏好，因此不触发 preference 智能体。无对话历史上下文，无需消歧。",
+        "intents": [
+          {
+            "type": "memory_query",
+            "confidence": 0.98,
+            "description": "查询用户保存的餐食偏好",
+            "reason": "用户明确询问'之前保存的'偏好，属于查询个人历史记录，符合 memory_query 的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": null,
+          "destination": null,
+          "date": null,
+          "duration": null,
+          "other": "查询对象：餐食偏好；查询类型：历史记录/已保存偏好"
+        },
+        "rewritten_query": "查询我之前保存的餐食偏好是什么",
+        "agent_schedule": [
+          {
+            "agent_name": "memory_query",
+            "priority": 1,
+            "reason": "用户询问个人历史偏好，需要调用 MemoryQueryAgent 访问长期记忆。",
+            "expected_output": "用户之前保存的餐食偏好信息"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_019",
+      "category": "single_memory",
+      "query": "上一次坐飞机出差用的是哪家航空公司？",
+      "expected_intents": [
+        "memory_query"
+      ],
+      "predicted_intents": [
+        "memory_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "memory_query": 1
+      },
+      "predicted_priorities": {
+        "memory_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 15.9347,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'上一次坐飞机出差用的是哪家航空公司'，核心诉求是查询个人过去的差旅记录。关键实体包括'上一次'（时间限定）、'坐飞机'（交通方式）、'出差'（行程目的）以及'哪家航空公司'（查询对象）。根据意图区分原则，涉及用户自己的历史记录（'上一次'、'我'的隐含主语），应优先识别为 memory_query。该查询不涉及规划未来行程、更新偏好或查询实时信息，因此不需要调用其他智能体。由于无对话历史，无需进行上下文消歧。",
+        "intents": [
+          {
+            "type": "memory_query",
+            "confidence": 0.98,
+            "description": "查询用户上一次出差乘坐的航空公司信息",
+            "reason": "用户明确询问'上一次'的个人历史行为，符合 memory_query 的触发条件（询问自己的历史、过去的行程）。"
+          }
+        ],
+        "key_entities": {
+          "origin": null,
+          "destination": null,
+          "date": null,
+          "duration": null,
+          "other": "查询对象：上一次坐飞机出差用的航空公司；行程目的：出差；交通方式：飞机"
+        },
+        "rewritten_query": "查询我上一次坐飞机出差使用的航空公司是哪家。",
+        "agent_schedule": [
+          {
+            "agent_name": "memory_query",
+            "priority": 1,
+            "reason": "用户询问个人历史差旅记录，需要使用 MemoryQueryAgent 访问长期记忆以获取上一次出差的航空公司信息。",
+            "expected_output": "用户上一次出差乘坐的航空公司名称及相关行程详情。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_020",
+      "category": "single_memory",
+      "query": "我过去两年去天津出差过几次？",
+      "expected_intents": [
+        "memory_query"
+      ],
+      "predicted_intents": [
+        "memory_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "memory_query": 1
+      },
+      "predicted_priorities": {
+        "memory_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 2,
+      "entity_checks": {
+        "destination": true,
+        "other": false
+      },
+      "latency_seconds": 12.6724,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'我过去两年去天津出差过几次？'，核心诉求是查询个人的历史出差记录。关键实体包括时间范围'过去两年'和地点'天津'。根据意图区分原则，当用户明确询问'我过去的'、'我的'历史时，必须识别为 memory_query。该查询不涉及行程规划、偏好设置或实时信息检索，因此仅触发记忆查询智能体。",
+        "intents": [
+          {
+            "type": "memory_query",
+            "confidence": 1.0,
+            "description": "查询用户过去两年去天津的出差记录",
+            "reason": "用户明确询问'我过去'的历史记录，符合 memory_query 的触发条件"
+          }
+        ],
+        "key_entities": {
+          "origin": null,
+          "destination": "天津",
+          "date": "过去两年",
+          "duration": null,
+          "other": "查询对象：出差次数"
+        },
+        "rewritten_query": "查询我过去两年去天津的出差记录",
+        "agent_schedule": [
+          {
+            "agent_name": "memory_query",
+            "priority": 1,
+            "reason": "用户询问个人历史出差记录，需要从长期记忆中检索数据",
+            "expected_output": "用户过去两年去天津的出差次数及相关记录详情"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_021",
+      "category": "single_memory",
+      "query": "找出我报销金额最高的那次酒店记录",
+      "expected_intents": [
+        "memory_query"
+      ],
+      "predicted_intents": [
+        "memory_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "memory_query": 1
+      },
+      "predicted_priorities": {
+        "memory_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 14.0211,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query的核心诉求是查询个人历史数据，具体是找出报销金额最高的酒店记录。关键实体包括'报销金额'、'最高'、'酒店记录'。意图信号'找出'、'我'、'记录'表明这是对用户自身过往数据的检索。根据意图区分原则，涉及'我的'、'我过去的'历史记录查询，必须识别为memory_query。无需结合对话历史，无歧义。该请求不涉及行程规划、偏好设置、实时信息查询或知识库检索。",
+        "intents": [
+          {
+            "type": "memory_query",
+            "confidence": 0.98,
+            "description": "查询用户历史报销记录，筛选出酒店类别中金额最高的条目",
+            "reason": "用户明确询问'我'的'记录'，且涉及'报销金额'等历史数据，符合memory_query的触发条件（询问自己的历史、过去的记录）"
+          }
+        ],
+        "key_entities": {
+          "origin": null,
+          "destination": null,
+          "date": null,
+          "duration": null,
+          "other": "查询对象：酒店记录；筛选条件：报销金额最高"
+        },
+        "rewritten_query": "查询我的历史报销记录，找出报销金额最高的那次酒店记录",
+        "agent_schedule": [
+          {
+            "agent_name": "memory_query",
+            "priority": 1,
+            "reason": "用户请求查询个人历史数据（报销记录），需要使用MemoryQueryAgent访问长期记忆",
+            "expected_output": "用户报销金额最高的酒店记录详情"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_022",
+      "category": "single_memory",
+      "query": "我上次去西安主要坐的什么交通工具？",
+      "expected_intents": [
+        "memory_query"
+      ],
+      "predicted_intents": [
+        "memory_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "memory_query": 1
+      },
+      "predicted_priorities": {
+        "memory_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 2,
+      "entity_total": 2,
+      "entity_checks": {
+        "destination": true,
+        "other": true
+      },
+      "latency_seconds": 12.334,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问“我上次去西安主要坐的什么交通工具？”，核心诉求是查询用户自己的历史行程记录。关键实体包括“西安”（目的地）和“上次”（时间指示词，指代过去某次行程）。根据意图区分原则，当用户询问“我过去的”、“我上次”等涉及个人历史的信息时，必须识别为 memory_query。虽然问题涉及“交通工具”，但这是针对用户个人历史的查询，而非查询通用的交通信息（information_query）或规划新行程（itinerary_planning）。因此，唯一匹配的意图是 memory_query。",
+        "intents": [
+          {
+            "type": "memory_query",
+            "confidence": 1.0,
+            "description": "查询用户上次去西安的行程记录，重点关注交通工具信息",
+            "reason": "用户明确询问“我上次”的行程细节，属于个人历史回忆查询，符合 memory_query 的触发条件"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "西安",
+          "date": "",
+          "duration": "",
+          "other": "查询对象：上次去西安的行程；查询重点：交通工具"
+        },
+        "rewritten_query": "查询我上次去西安的行程记录，特别是使用的交通工具。",
+        "agent_schedule": [
+          {
+            "agent_name": "memory_query",
+            "priority": 1,
+            "reason": "用户询问个人历史行程，需要从长期记忆中检索上次去西安的交通方式",
+            "expected_output": "用户上次去西安的行程详情，包含交通工具信息"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_023",
+      "category": "single_rag",
+      "query": "公司对二线城市住宿费用上限怎么规定？",
+      "expected_intents": [
+        "rag_knowledge"
+      ],
+      "predicted_intents": [
+        "rag_knowledge"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "rag_knowledge": 1
+      },
+      "predicted_priorities": {
+        "rag_knowledge": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 0,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": false
+      },
+      "latency_seconds": 10.9333,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'公司对二线城市住宿费用上限怎么规定'，核心诉求是查询企业内部的差旅政策标准。Query中包含关键实体'二线城市'和'住宿费用上限'，意图信号明确指向制度查询。根据技能定义，'XX标准是多少'类问题应触发rag_knowledge。该请求不涉及用户个人历史、行程规划、偏好设置或实时信息查询，因此无需调度其他智能体。",
+        "intents": [
+          {
+            "type": "rag_knowledge",
+            "confidence": 0.98,
+            "description": "查询企业差旅制度中关于二线城市住宿费用的上限规定",
+            "reason": "用户明确询问'规定'和'上限'，属于典型的知识库检索场景，符合rag_knowledge的触发条件"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "二线城市",
+          "date": "",
+          "duration": "",
+          "other": "住宿费用上限、规定"
+        },
+        "rewritten_query": "查询公司差旅制度中二线城市的住宿费用上限标准是多少",
+        "agent_schedule": [
+          {
+            "agent_name": "rag_knowledge",
+            "priority": 1,
+            "reason": "用户询问具体的差旅政策标准，需要从知识库中检索相关信息",
+            "expected_output": "二线城市住宿费用的具体上限金额或相关规定"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_024",
+      "category": "single_rag",
+      "query": "出差航班的额外行李费可以报销吗？",
+      "expected_intents": [
+        "rag_knowledge"
+      ],
+      "predicted_intents": [
+        "rag_knowledge"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "rag_knowledge": 1
+      },
+      "predicted_priorities": {
+        "rag_knowledge": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 222.3165,
+      "attempt_count": 5,
+      "rate_limit_retry_count": 4,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'出差航班的额外行李费可以报销吗？'，核心诉求是查询企业差旅政策中关于费用报销的规定。Query中包含关键实体'出差'、'航班'、'额外行李费'和'报销'，这属于典型的企业内部制度咨询。根据技能定义，rag_knowledge专门用于处理travel policies（差旅政策）和reimbursement（报销）相关问题。该查询不涉及用户个人历史记录、实时天气查询、行程规划或偏好设置，因此只需调用RAG知识库智能体。",
+        "intents": [
+          {
+            "type": "rag_knowledge",
+            "confidence": 0.98,
+            "description": "查询差旅报销政策",
+            "reason": "用户明确询问'额外行李费'是否'可以报销'，属于企业差旅制度和报销标准咨询，符合rag_knowledge的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "",
+          "date": "",
+          "duration": "",
+          "other": "查询对象：出差航班额外行李费；查询目的：报销可行性"
+        },
+        "rewritten_query": "出差航班的额外行李费是否在报销范围内？",
+        "agent_schedule": [
+          {
+            "agent_name": "rag_knowledge",
+            "priority": 1,
+            "reason": "用户询问具体的差旅报销政策，需要从知识库中检索相关制度条款。",
+            "expected_output": "关于出差航班额外行李费报销规定的具体条款或说明。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_025",
+      "category": "single_rag",
+      "query": "从机场到酒店打车，公司对费用有什么限制？",
+      "expected_intents": [
+        "rag_knowledge"
+      ],
+      "predicted_intents": [
+        "rag_knowledge"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "rag_knowledge": 1
+      },
+      "predicted_priorities": {
+        "rag_knowledge": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 14.8529,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'从机场到酒店打车，公司对费用有什么限制？'，核心诉求是查询企业内部关于特定交通场景的费用报销或限制政策。虽然提到了'机场'和'酒店'这两个地点，但用户并非在规划具体的行程（未提及日期、具体城市等），而是针对'打车费用限制'这一制度性提问。根据技能定义，'rag_knowledge'适用于询问差旅政策、报销标准等问题。因此，应识别为 rag_knowledge 意图。关键实体包括交通方式（打车）、场景（机场到酒店）和查询主题（费用限制）。",
+        "intents": [
+          {
+            "type": "rag_knowledge",
+            "confidence": 0.98,
+            "description": "查询企业差旅政策中关于机场到酒店打车费用的限制标准",
+            "reason": "用户明确询问'公司对费用有什么限制'，属于典型的差旅制度/报销标准咨询，符合 rag_knowledge 的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": null,
+          "destination": null,
+          "date": null,
+          "duration": null,
+          "other": "交通方式：打车；场景：机场到酒店；查询主题：费用限制"
+        },
+        "rewritten_query": "查询公司差旅政策：从机场到酒店打车的费用限制标准是什么？",
+        "agent_schedule": [
+          {
+            "agent_name": "rag_knowledge",
+            "priority": 1,
+            "reason": "用户询问企业内部差旅费用政策，需要从知识库中检索相关标准",
+            "expected_output": "关于机场到酒店打车费用的具体限制金额或报销标准"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_026",
+      "category": "single_rag",
+      "query": "什么级别的员工能申请公务舱？",
+      "expected_intents": [
+        "rag_knowledge"
+      ],
+      "predicted_intents": [
+        "rag_knowledge"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "rag_knowledge": 1
+      },
+      "predicted_priorities": {
+        "rag_knowledge": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 14.3693,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'什么级别的员工能申请公务舱'，核心诉求是查询企业差旅制度中关于机票舱位等级的规定。这属于典型的政策咨询类问题。Query中包含关键实体'公务舱'和'员工级别'，意图信号明确指向差旅标准查询。无对话历史上下文，无需消歧。根据技能定义，此类关于差旅政策、标准的问题应由rag_knowledge智能体处理，而非实时信息查询或行程规划。",
+        "intents": [
+          {
+            "type": "rag_knowledge",
+            "confidence": 0.98,
+            "description": "查询企业差旅制度中关于公务舱申请资格的规定",
+            "reason": "用户明确询问差旅政策标准（'什么级别...能申请...'），符合rag_knowledge技能的触发条件（'XX标准是多少'），需要从知识库检索相关制度条款。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "",
+          "date": "",
+          "duration": "",
+          "other": "查询对象：公务舱申请资格/员工级别标准"
+        },
+        "rewritten_query": "查询差旅制度：什么级别的员工可以申请公务舱机票？",
+        "agent_schedule": [
+          {
+            "agent_name": "rag_knowledge",
+            "priority": 1,
+            "reason": "用户询问差旅政策标准，需要调用RAGKnowledgeAgent从企业知识库中检索关于公务舱申请资格的相关规定。",
+            "expected_output": "关于不同职级员工对应机票舱位标准的具体政策内容，特别是公务舱的申请条件。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_027",
+      "category": "single_rag",
+      "query": "因航班延误产生的酒店费用按制度能报吗？",
+      "expected_intents": [
+        "rag_knowledge"
+      ],
+      "predicted_intents": [
+        "rag_knowledge"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "rag_knowledge": 1
+      },
+      "predicted_priorities": {
+        "rag_knowledge": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 13.0495,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'因航班延误产生的酒店费用按制度能报吗？'，核心诉求是查询企业差旅报销制度中关于非自愿航班延误导致住宿费用的规定。该查询不涉及用户个人历史记录、行程规划、偏好设置或实时信息（如天气），而是典型的企业内部知识库查询需求。根据意图区分原则，此类关于'XX标准'、'XX怎么办'、'能否XX'的制度咨询问题，应映射为 rag_knowledge 意图。无需结合对话历史，无歧义。",
+        "intents": [
+          {
+            "type": "rag_knowledge",
+            "confidence": 0.98,
+            "description": "查询企业差旅制度中关于航班延误导致酒店费用的报销政策",
+            "reason": "用户明确询问'按制度能报吗'，属于典型的企业差旅政策咨询，需要从知识库中检索相关报销标准和规定。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "",
+          "date": "",
+          "duration": "",
+          "other": "查询对象：航班延误产生的酒店费用；查询目的：报销制度/政策"
+        },
+        "rewritten_query": "根据差旅制度，因航班延误产生的酒店费用是否可以报销？",
+        "agent_schedule": [
+          {
+            "agent_name": "rag_knowledge",
+            "priority": 1,
+            "reason": "用户询问具体的差旅报销政策，需要调用RAG知识库智能体检索相关制度条款。",
+            "expected_output": "关于航班延误导致酒店费用报销的具体政策规定、标准及限制条件。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_028",
+      "category": "single_rag",
+      "query": "电子发票能不能作为差旅报销凭证？",
+      "expected_intents": [
+        "rag_knowledge"
+      ],
+      "predicted_intents": [
+        "rag_knowledge"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "rag_knowledge": 1
+      },
+      "predicted_priorities": {
+        "rag_knowledge": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 11.7698,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'电子发票能不能作为差旅报销凭证'，核心诉求是查询企业差旅报销制度中关于电子发票的规定。该问题不涉及用户个人历史记录（memory_query），不涉及行程规划（itinerary_planning），不涉及实时天气或网络搜索（information_query），也不涉及偏好设置（preference）。根据技能定义，'rag_knowledge'适用于询问差旅政策、报销指南等问题。因此，识别为rag_knowledge意图。",
+        "intents": [
+          {
+            "type": "rag_knowledge",
+            "confidence": 0.98,
+            "description": "查询差旅报销政策中关于电子发票的规定",
+            "reason": "用户明确询问差旅报销凭证的相关规定，属于企业内部知识库查询范畴，符合rag_knowledge技能的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "",
+          "date": "",
+          "duration": "",
+          "other": "查询对象：电子发票；业务主题：差旅报销凭证"
+        },
+        "rewritten_query": "电子发票是否可以作为差旅报销凭证？",
+        "agent_schedule": [
+          {
+            "agent_name": "rag_knowledge",
+            "priority": 1,
+            "reason": "用户询问差旅报销政策，需要从知识库检索相关制度规定。",
+            "expected_output": "关于电子发票能否作为差旅报销凭证的具体政策说明。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_029",
+      "category": "single_rag",
+      "query": "国际出差的手机漫游费有没有报销标准？",
+      "expected_intents": [
+        "rag_knowledge"
+      ],
+      "predicted_intents": [
+        "rag_knowledge"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "rag_knowledge": 1
+      },
+      "predicted_priorities": {
+        "rag_knowledge": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 12.4159,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'国际出差的手机漫游费有没有报销标准'，核心诉求是查询企业内部关于国际出差通信费用的报销政策。该查询不涉及用户个人历史记录、行程规划、偏好设置或实时信息（如天气），而是典型的制度/标准咨询。根据技能定义，rag_knowledge 专门用于处理差旅政策、报销标准等问题。因此，识别意图为 rag_knowledge。",
+        "intents": [
+          {
+            "type": "rag_knowledge",
+            "confidence": 0.98,
+            "description": "查询国际出差手机漫游费的报销标准",
+            "reason": "用户明确询问'报销标准'，属于企业差旅制度/政策咨询范畴，符合 rag_knowledge 的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": null,
+          "destination": null,
+          "date": null,
+          "duration": null,
+          "other": "查询对象：国际出差手机漫游费报销标准"
+        },
+        "rewritten_query": "国际出差手机漫游费的报销标准是什么？",
+        "agent_schedule": [
+          {
+            "agent_name": "rag_knowledge",
+            "priority": 1,
+            "reason": "用户询问具体的报销标准，需要从知识库中检索相关制度文档。",
+            "expected_output": "关于国际出差手机漫游费报销标准的具体规定或说明。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_030",
+      "category": "single_information",
+      "query": "查一下深圳机场明早大雾会不会影响航班",
+      "expected_intents": [
+        "information_query"
+      ],
+      "predicted_intents": [
+        "information_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "information_query": 1
+      },
+      "predicted_priorities": {
+        "information_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 2,
+      "entity_total": 2,
+      "entity_checks": {
+        "destination": true,
+        "other": true
+      },
+      "latency_seconds": 15.565,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问深圳机场明早大雾对航班的影响。核心诉求是获取特定地点（深圳机场）和特定时间（明早）的天气状况及其对交通（航班）的客观影响。这属于查询实时外部信息的范畴。当前时间为2026年07月27日15:33，'明早'指2026年07月28日早晨。用户未提及个人历史、行程规划或偏好设置，因此排除memory_query、itinerary_planning和preference。虽然涉及航班，但用户并非在预订或规划行程，而是查询现状，因此排除event_collection。该请求符合information_query的定义（查询实时信息如天气或搜索），需要调用InformationQueryAgent来获取天气和航班动态信息。",
+        "intents": [
+          {
+            "type": "information_query",
+            "confidence": 0.98,
+            "description": "查询深圳机场明早的天气情况及对航班的影响",
+            "reason": "用户使用了'查一下'、'会不会影响'等询问客观事实和实时状态的表述，且涉及天气和航班运行信息，符合information_query的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": null,
+          "destination": "深圳机场",
+          "date": "2026年07月28日",
+          "duration": null,
+          "other": "查询主题：大雾天气对航班的影响"
+        },
+        "rewritten_query": "查询深圳机场2026年07月28日早晨的大雾天气情况，以及是否会影响航班起降。",
+        "agent_schedule": [
+          {
+            "agent_name": "information_query",
+            "priority": 1,
+            "reason": "用户需要查询深圳机场明早的天气及航班影响，属于实时信息查询，需调用InformationQueryAgent进行联网搜索或天气查询。",
+            "expected_output": "深圳机场明早的天气预报（特别是大雾情况）及航班延误或取消的相关信息。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_031",
+      "category": "single_information",
+      "query": "武汉地铁去天河机场的末班车是几点？",
+      "expected_intents": [
+        "information_query"
+      ],
+      "predicted_intents": [
+        "information_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "information_query": 1
+      },
+      "predicted_priorities": {
+        "information_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 2,
+      "entity_total": 2,
+      "entity_checks": {
+        "destination": true,
+        "other": true
+      },
+      "latency_seconds": 6.9759,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'武汉地铁去天河机场的末班车是几点？'，核心诉求是获取特定的交通时刻表信息。分析关键实体：'武汉地铁'（交通方式）、'天河机场'（目的地）、'末班车'（查询的具体信息点）。该查询不涉及用户个人历史（非memory_query），不涉及行程规划（非itinerary_planning），不涉及偏好设置（非preference），也不涉及企业内部制度（非rag_knowledge）。这是一个典型的实时信息查询需求，属于公开的交通运营信息，符合information_query的触发条件（查询实时信息或通用网络搜索）。无需结合对话历史，无上下文消歧需求。",
+        "intents": [
+          {
+            "type": "information_query",
+            "confidence": 0.98,
+            "description": "查询武汉地铁至天河机场的末班车时间",
+            "reason": "用户询问具体的交通运营时间信息，属于实时/公开信息查询范畴，符合information_query技能的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "天河机场",
+          "date": "",
+          "duration": "",
+          "other": "查询对象：武汉地铁末班车时间"
+        },
+        "rewritten_query": "查询武汉地铁前往天河机场的末班车发车时间",
+        "agent_schedule": [
+          {
+            "agent_name": "information_query",
+            "priority": 1,
+            "reason": "用户需要获取武汉地铁到天河机场的末班车时间，属于实时信息查询，需调用InformationQueryAgent进行搜索。",
+            "expected_output": "武汉地铁到达天河机场的末班车具体时间信息"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_032",
+      "category": "single_information",
+      "query": "大连未来五天温度和降雨情况怎么样？",
+      "expected_intents": [
+        "information_query"
+      ],
+      "predicted_intents": [
+        "information_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "information_query": 1
+      },
+      "predicted_priorities": {
+        "information_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 2,
+      "entity_total": 3,
+      "entity_checks": {
+        "destination": true,
+        "duration": false,
+        "other": true
+      },
+      "latency_seconds": 73.4719,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'大连未来五天温度和降雨情况'，核心诉求是获取特定地点（大连）在未来特定时间段（未来五天）的实时气象信息。根据当前时间2026年07月27日，'未来五天'指代的是从7月27日到7月31日的时间段。该查询不涉及用户个人历史、行程规划、偏好设置或企业制度，而是典型的实时信息查询。根据意图区分原则，'XX天气'类查询应映射为information_query。关键实体包括目的地'大连'和时间'未来五天'（对应2026年7月27日至7月31日）。无对话历史上下文，无需消歧。",
+        "intents": [
+          {
+            "type": "information_query",
+            "confidence": 1.0,
+            "description": "查询大连未来五天的天气情况，包括温度和降雨",
+            "reason": "用户明确询问特定地点的天气状况（温度和降雨），符合information_query的触发条件（'XX天气'），且不涉及个人历史或行程规划。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "大连",
+          "date": "2026年07月27日至2026年07月31日",
+          "duration": "",
+          "other": "查询对象：温度、降雨情况"
+        },
+        "rewritten_query": "查询大连2026年7月27日至7月31日未来五天的温度和降雨情况。",
+        "agent_schedule": [
+          {
+            "agent_name": "information_query",
+            "priority": 1,
+            "reason": "用户需要获取大连未来五天的实时天气信息，InformationQueryAgent支持天气查询功能。",
+            "expected_output": "大连未来五天（2026年7月27日至7月31日）的温度数据和降雨预报。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_033",
+      "category": "single_information",
+      "query": "广州国际会展中心周六几点闭馆？",
+      "expected_intents": [
+        "information_query"
+      ],
+      "predicted_intents": [
+        "information_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "information_query": 1
+      },
+      "predicted_priorities": {
+        "information_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 2,
+      "entity_total": 2,
+      "entity_checks": {
+        "destination": true,
+        "other": true
+      },
+      "latency_seconds": 13.1907,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'广州国际会展中心周六几点闭馆？'，核心诉求是获取特定地点（广州国际会展中心）在特定时间（周六）的营业时间信息。当前时间为2026年07月27日星期一，因此'周六'指的是2026年08月01日。该查询不涉及用户个人历史、行程规划、偏好设置或企业内部制度，而是询问客观的实时/公开信息。根据意图区分原则，'XX怎么样'、'XX有什么'、'XX几点'等询问客观信息的场景应识别为 information_query。因此，判定意图为 information_query。",
+        "intents": [
+          {
+            "type": "information_query",
+            "confidence": 0.98,
+            "description": "查询广州国际会展中心在周六的闭馆时间",
+            "reason": "用户询问特定地点的实时运营信息（闭馆时间），属于联网搜索或实时信息查询范畴，符合 information_query 的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": null,
+          "destination": "广州国际会展中心",
+          "date": "2026年08月01日",
+          "duration": null,
+          "other": "查询对象：闭馆时间；时间限定：周六"
+        },
+        "rewritten_query": "查询广州国际会展中心在2026年8月1日（周六）的闭馆时间",
+        "agent_schedule": [
+          {
+            "agent_name": "information_query",
+            "priority": 1,
+            "reason": "用户需要获取广州国际会展中心的实时营业时间信息，InformationQueryAgent 可以通过联网搜索获取该数据。",
+            "expected_output": "广州国际会展中心周六的具体闭馆时间。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_034",
+      "category": "single_information",
+      "query": "西安高新区附近有哪些适合商务接待的餐厅？",
+      "expected_intents": [
+        "information_query"
+      ],
+      "predicted_intents": [
+        "information_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "information_query": 1
+      },
+      "predicted_priorities": {
+        "information_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 2,
+      "entity_total": 2,
+      "entity_checks": {
+        "destination": true,
+        "other": true
+      },
+      "latency_seconds": 18.0547,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'西安高新区附近有哪些适合商务接待的餐厅'，核心诉求是获取特定地点（西安高新区）和特定场景（商务接待）下的餐厅推荐信息。这属于查询客观的、实时的或公开的地点信息，符合information_query的定义（查询实时信息或通用网络搜索）。虽然涉及'商务接待'，但用户并非在查询公司的差旅报销标准或接待政策（如'商务接待标准是多少'），因此不触发rag_knowledge。用户也没有表达行程规划意图（如'我要去西安'）、历史记录查询（'我去过哪些地方'）或偏好设置（'我喜欢住汉庭'）。因此，唯一匹配的意图是information_query。",
+        "intents": [
+          {
+            "type": "information_query",
+            "confidence": 0.98,
+            "description": "查询西安高新区适合商务接待的餐厅信息",
+            "reason": "用户询问特定地点（西安高新区）的特定类型（商务接待）实体（餐厅）信息，属于客观信息查询，需要联网搜索获取实时推荐。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "西安高新区",
+          "date": "",
+          "duration": "",
+          "other": "查询对象：餐厅；场景/约束：适合商务接待"
+        },
+        "rewritten_query": "搜索西安高新区附近适合商务接待的餐厅推荐",
+        "agent_schedule": [
+          {
+            "agent_name": "information_query",
+            "priority": 1,
+            "reason": "用户需要查询特定地点的餐厅信息，属于联网搜索范畴。",
+            "expected_output": "西安高新区适合商务接待的餐厅列表及详细信息。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_035",
+      "category": "single_information",
+      "query": "虹桥机场现在网约车排队要多久？",
+      "expected_intents": [
+        "information_query"
+      ],
+      "predicted_intents": [
+        "information_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "information_query": 1
+      },
+      "predicted_priorities": {
+        "information_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 2,
+      "entity_checks": {
+        "destination": true,
+        "other": false
+      },
+      "latency_seconds": 12.6025,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'虹桥机场现在网约车排队要多久'，核心诉求是获取特定地点（虹桥机场）的实时交通状况（网约车排队时长）。这属于客观事实的实时查询，不涉及用户个人历史、行程规划或偏好设置。根据意图区分原则，'XX怎么样'、'查一下XX'等询问客观信息的场景应识别为 information_query。关键实体为'虹桥机场'和'网约车排队时间'。无需结合对话历史，无上下文消歧需求。",
+        "intents": [
+          {
+            "type": "information_query",
+            "confidence": 0.98,
+            "description": "查询虹桥机场当前的网约车排队等待时长",
+            "reason": "用户明确询问特定地点的实时状态信息，符合 information_query 的触发条件（查询实时信息或通用网络搜索）。"
+          }
+        ],
+        "key_entities": {
+          "origin": null,
+          "destination": "虹桥机场",
+          "date": null,
+          "duration": null,
+          "other": "查询对象：网约车排队时长"
+        },
+        "rewritten_query": "查询虹桥机场现在的网约车排队等待时间",
+        "agent_schedule": [
+          {
+            "agent_name": "information_query",
+            "priority": 1,
+            "reason": "用户需要获取实时的交通排队信息，InformationQueryAgent 可以通过联网搜索获取该数据。",
+            "expected_output": "虹桥机场当前网约车排队的大致等待时间"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_036",
+      "category": "single_information",
+      "query": "杭州这周有没有台风预警？",
+      "expected_intents": [
+        "information_query"
+      ],
+      "predicted_intents": [
+        "information_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "information_query": 1
+      },
+      "predicted_priorities": {
+        "information_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 2,
+      "entity_total": 2,
+      "entity_checks": {
+        "destination": true,
+        "other": true
+      },
+      "latency_seconds": 6.402,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'杭州这周有没有台风预警'，核心诉求是获取特定地点（杭州）在特定时间段（这周）的实时天气预警信息。根据当前时间（2026年07月27日 星期一），'这周'指的是2026年07月26日至2026年08月01日。该查询不涉及用户个人历史、行程规划或偏好设置，而是典型的实时信息查询。根据技能定义，information_query 适用于查询实时信息如天气，且触发条件包含'XX天气'、'查一下XX'等。因此，识别为 information_query 意图。",
+        "intents": [
+          {
+            "type": "information_query",
+            "confidence": 0.98,
+            "description": "查询杭州本周的台风预警情况",
+            "reason": "用户明确询问特定地点（杭州）和时间段（这周）的天气预警信息，符合 information_query 的触发条件（查询实时信息、天气）。"
+          }
+        ],
+        "key_entities": {
+          "origin": null,
+          "destination": "杭州",
+          "date": "2026年07月26日至2026年08月01日",
+          "duration": null,
+          "other": "查询主题：台风预警"
+        },
+        "rewritten_query": "查询杭州2026年07月26日至2026年08月01日这一周是否有台风预警。",
+        "agent_schedule": [
+          {
+            "agent_name": "information_query",
+            "priority": 1,
+            "reason": "用户需要查询杭州本周的台风预警实时信息，InformationQueryAgent 支持天气及实时信息查询。",
+            "expected_output": "杭州本周（2026年07月26日至2026年08月01日）的台风预警状态或相关天气信息。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_037",
+      "category": "multi_preference_itinerary",
+      "query": "以后优先订可免费取消的酒店，这次安排从济南去苏州住三晚",
+      "expected_intents": [
+        "preference",
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "itinerary_planning",
+        "preference"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "preference": 1,
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "preference": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 3,
+      "entity_total": 4,
+      "entity_checks": {
+        "origin": true,
+        "destination": true,
+        "duration": true,
+        "other": false
+      },
+      "latency_seconds": 22.6592,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query包含两个核心诉求：一是设定未来的酒店预订偏好（'以后优先订可免费取消的酒店'），二是规划具体的行程（'这次安排从济南去苏州住三晚'）。根据意图区分原则，'以后优先'表明这是一个长期偏好的设定，触发preference意图；'从济南去苏州住三晚'提供了明确的出发地、目的地和时长，触发itinerary_planning意图。由于itinerary_planning依赖于event_collection收集的结构化信息，因此需要同时调度event_collection。preference与event_collection属于信息收集类，可并行执行（Priority 1），itinerary_planning属于规划类，需依赖前者结果（Priority 2）。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "提取行程规划所需的结构化事项",
+            "reason": "行程规划的固定前置步骤"
+          },
+          {
+            "type": "preference",
+            "confidence": 1.0,
+            "description": "用户设定了未来的酒店预订偏好，要求优先选择可免费取消的酒店。",
+            "reason": "用户使用了'以后优先'这一明确设定长期偏好的措辞，符合preference智能体的触发条件。"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 1.0,
+            "description": "用户要求安排一次从济南到苏州的行程，时长为三晚。",
+            "reason": "用户提供了具体的出发地（济南）、目的地（苏州）和时长（三晚），并使用了'安排'一词，符合行程规划的特征。"
+          }
+        ],
+        "key_entities": {
+          "origin": "济南",
+          "destination": "苏州",
+          "date": "",
+          "duration": "三晚",
+          "other": "偏好：酒店可免费取消（动作：优先/增加）；行程约束：本次行程"
+        },
+        "rewritten_query": "记录偏好：以后优先预订可免费取消的酒店。规划行程：从济南出发去苏州，住宿三晚。",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "用户提供了行程的出发地、目的地和时长，需要调用EventCollectionAgent提取结构化的事件信息供后续规划使用。",
+            "expected_output": "包含出发地、目的地、时长等信息的结构化事件数据。"
+          },
+          {
+            "agent_name": "preference",
+            "priority": 1,
+            "reason": "用户明确表达了'以后优先订可免费取消的酒店'的长期偏好，需要调用PreferenceAgent进行持久化存储。",
+            "expected_output": "偏好设置成功的确认信息。"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "基于event_collection收集到的信息，调用ItineraryPlanningAgent生成具体的行程方案。",
+            "expected_output": "从济南到苏州的三晚行程规划方案。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_038",
+      "category": "multi_preference_itinerary",
+      "query": "记住我不坐红眼航班，并规划下月从福州去天津两天",
+      "expected_intents": [
+        "preference",
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "itinerary_planning",
+        "preference"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "preference": 1,
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "preference": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 3,
+      "entity_total": 4,
+      "entity_checks": {
+        "origin": true,
+        "destination": true,
+        "duration": true,
+        "other": false
+      },
+      "latency_seconds": 26.8628,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query包含两个核心诉求：一是明确表达了一个长期偏好（不坐红眼航班），二是提出了一个新的行程规划需求（下月从福州去天津两天）。首先，'记住我不坐红眼航班'属于用户主动声明并要求保存的个人偏好，符合preference意图的触发条件。其次，'规划下月从福州去天津两天'包含了明确的出发地（福州）、目的地（天津）、相对时间（下月）和时长（两天），符合itinerary_planning意图。根据系统规则，规划行程需要先收集事项信息，因此必须同时触发event_collection。由于preference和event_collection属于信息收集类，互不依赖，可设为Priority 1并行执行；itinerary_planning依赖event_collection的结果，设为Priority 2。时间推断方面，当前时间为2026年7月27日，'下月'指2026年8月，具体日期需在后续规划中确定，此处仅保留相对时间语义。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "提取行程规划所需的实体信息",
+            "reason": "用户提供了行程的出发地、目的地、时间和时长，需要通过event_collection进行结构化提取，供后续规划使用。"
+          },
+          {
+            "type": "preference",
+            "confidence": 1.0,
+            "description": "用户明确要求记录关于航班的个人偏好",
+            "reason": "用户使用了'记住'一词，并明确指出了偏好内容'不坐红眼航班'，符合preference技能的触发条件。"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 1.0,
+            "description": "规划从福州到天津的两天行程",
+            "reason": "用户明确使用了'规划'一词，并给出了具体的行程要素，符合itinerary_planning技能的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": "福州",
+          "destination": "天津",
+          "date": "2026年8月",
+          "duration": "两天",
+          "other": "偏好：不坐红眼航班（动作：记录/否定）"
+        },
+        "rewritten_query": "请记录我的偏好：不坐红眼航班。并帮我规划2026年8月从福州去天津的行程，时长为两天。",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "用户提供了行程的出发地、目的地、时间和时长，需调用EventCollectionAgent提取结构化信息。",
+            "expected_output": "包含出发地、目的地、时间、时长等字段的标准化行程事件对象。"
+          },
+          {
+            "agent_name": "preference",
+            "priority": 1,
+            "reason": "用户明确要求记录'不坐红眼航班'的偏好，需调用PreferenceAgent持久化该信息。",
+            "expected_output": "偏好保存成功的确认信息。"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "基于event_collection提取的信息，调用ItineraryPlanningAgent生成具体的行程方案。",
+            "expected_output": "符合用户偏好（避开红眼航班）的福州至天津两天行程规划方案。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_039",
+      "category": "multi_information_itinerary",
+      "query": "先确认乌鲁木齐明天有没有沙尘，再安排四天室内为主的行程",
+      "expected_intents": [
+        "information_query",
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "information_query",
+        "itinerary_planning"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "information_query": 1,
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "information_query": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 3,
+      "entity_total": 3,
+      "entity_checks": {
+        "destination": true,
+        "duration": true,
+        "other": true
+      },
+      "latency_seconds": 22.4255,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query包含两个明确的动作请求：一是查询乌鲁木齐明天的天气（特别是沙尘情况），二是基于天气结果安排四天室内为主的行程。根据当前时间（2026年07月27日），'明天'指代2026年07月28日。第一个请求属于实时信息查询，应触发information_query；第二个请求涉及行程规划，应触发itinerary_planning。根据规则，itinerary_planning必须依赖event_collection收集的事项信息，因此需要同时调度event_collection。由于天气查询结果可能影响行程规划的决策逻辑（虽然技术上并行，但逻辑上存在依赖），且系统规定Priority 1并行执行信息收集，Priority 2执行规划，因此将information_query和event_collection置于Priority 1，itinerary_planning置于Priority 2。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "收集行程规划所需的结构化信息，包括目的地、日期、时长及特殊约束",
+            "reason": "用户提供了'乌鲁木齐'、'明天'、'四天'、'室内为主'等关键行程要素，需要提取为结构化事件供规划使用"
+          },
+          {
+            "type": "information_query",
+            "confidence": 1.0,
+            "description": "查询乌鲁木齐明天（2026年07月28日）的天气情况，重点关注是否有沙尘",
+            "reason": "用户明确说'先确认...有没有沙尘'，属于对实时天气信息的查询需求"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 1.0,
+            "description": "基于天气确认和收集到的事件信息，规划四天以室内活动为主的行程",
+            "reason": "用户明确表达了'安排四天室内为主的行程'的规划意图"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "乌鲁木齐",
+          "date": "2026年07月28日",
+          "duration": "四天",
+          "other": "查询主题：明天沙尘天气；行程约束：室内为主"
+        },
+        "rewritten_query": "查询乌鲁木齐2026年07月28日是否有沙尘天气，并基于此安排从2026年07月28日开始为期四天、以室内活动为主的行程。",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "提取用户提供的行程要素（地点、时间、时长、偏好），为规划做准备",
+            "expected_output": "包含目的地、出发日期、时长、室内偏好约束的结构化事件信息"
+          },
+          {
+            "agent_name": "information_query",
+            "priority": 1,
+            "reason": "用户明确要求先确认天气情况，需要实时信息支持",
+            "expected_output": "乌鲁木齐2026年07月28日的天气状况，特别是沙尘信息"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "基于收集到的天气信息和事件信息，生成具体的行程方案",
+            "expected_output": "四天乌鲁木齐室内为主的详细行程规划"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_040",
+      "category": "multi_information_itinerary",
+      "query": "查桂林下周天气，并做一个适合老人的三日游",
+      "expected_intents": [
+        "information_query",
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "information_query",
+        "itinerary_planning"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "information_query": 1,
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "information_query": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 3,
+      "entity_total": 3,
+      "entity_checks": {
+        "destination": true,
+        "duration": true,
+        "other": true
+      },
+      "latency_seconds": 18.1548,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query包含两个核心诉求：一是查询桂林下周天气，二是规划适合老人的三日游。首先，'查桂林下周天气'属于实时信息查询，触发information_query意图。其次，'做一个适合老人的三日游'涉及目的地（桂林）、时长（三日）及特定人群偏好（适合老人），属于行程规划需求，触发itinerary_planning意图。根据规则，itinerary_planning必须依赖event_collection收集事项，因此需同时调度event_collection。两者无依赖关系，可并行执行。时间推断：当前为2026年7月27日星期一，'下周'指2026年8月3日至8月9日。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "提取行程规划所需的实体信息（目的地、日期、偏好）",
+            "reason": "根据规则，识别到itinerary_planning意图时，必须同时识别并调度event_collection以收集结构化信息。"
+          },
+          {
+            "type": "information_query",
+            "confidence": 1.0,
+            "description": "查询桂林下周的天气情况",
+            "reason": "用户明确说'查桂林下周天气'，属于实时信息查询，符合information_query触发条件。"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 1.0,
+            "description": "规划桂林三日游行程，需考虑老人需求",
+            "reason": "用户说'做一个适合老人的三日游'，明确了目的地、时长和特定约束，属于行程规划需求，符合itinerary_planning触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "桂林",
+          "date": "2026年8月3日至2026年8月5日",
+          "duration": "三天",
+          "other": "查询对象：下周天气；单次行程约束：适合老人"
+        },
+        "rewritten_query": "查询桂林2026年8月3日至8月9日的天气，并规划一个2026年8月3日至8月5日适合老人的桂林三日游行程。",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "为行程规划提取结构化信息（目的地、日期、人群偏好）。",
+            "expected_output": "包含目的地（桂林）、日期（下周）、时长（三天）、约束（适合老人）的结构化事件数据。"
+          },
+          {
+            "agent_name": "information_query",
+            "priority": 1,
+            "reason": "用户明确要求查询天气，需实时联网获取信息。",
+            "expected_output": "桂林下周（2026年8月3日-8月9日）的天气预报数据。"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "基于event_collection收集的信息和information_query提供的天气数据，生成具体的行程方案。",
+            "expected_output": "一份详细的桂林三日游行程安排，符合老人需求。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_041",
+      "category": "multi_rag_itinerary",
+      "query": "按公司的成都住宿标准，安排从重庆去成都住两晚",
+      "expected_intents": [
+        "rag_knowledge",
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "itinerary_planning",
+        "rag_knowledge"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "rag_knowledge": 1,
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "rag_knowledge": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 4,
+      "entity_total": 4,
+      "entity_checks": {
+        "origin": true,
+        "destination": true,
+        "duration": true,
+        "other": true
+      },
+      "latency_seconds": 26.0826,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户的核心诉求是安排一次从重庆到成都的行程，并指定了住宿标准和时长。首先，用户提到'按公司的成都住宿标准'，这表明需要查询企业内部的差旅政策，属于知识库查询（rag_knowledge）的范畴。其次，用户提供了明确的行程要素：出发地（重庆）、目的地（成都）、时长（两晚），并使用了'安排'这一动词，明确表达了规划行程的意图（itinerary_planning）。根据规则，规划行程需要先收集事件信息（event_collection），因此需要同时调度这两个智能体。由于没有涉及用户历史记录查询、实时信息查询或偏好设置，其他智能体无需调用。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "提取行程的出发地、目的地和时长信息",
+            "reason": "用户提供了'从重庆去成都'、'住两晚'等具体行程细节，需要结构化提取以供后续规划使用。"
+          },
+          {
+            "type": "rag_knowledge",
+            "confidence": 0.95,
+            "description": "查询公司关于成都的住宿标准政策",
+            "reason": "用户明确提到'按公司的成都住宿标准'，需要从企业知识库中检索具体的差旅住宿规定。"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 0.9,
+            "description": "基于提取的信息和查询到的标准规划行程",
+            "reason": "用户使用了'安排'一词，结合提供的地点和时长，表明需要生成具体的行程方案。"
+          }
+        ],
+        "key_entities": {
+          "origin": "重庆",
+          "destination": "成都",
+          "date": "",
+          "duration": "两晚",
+          "other": "住宿标准：公司成都标准"
+        },
+        "rewritten_query": "根据公司的成都住宿标准，规划从重庆到成都的行程，住宿两晚。",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "用户提供了行程的具体要素，需提取结构化数据。",
+            "expected_output": "包含出发地（重庆）、目的地（成都）、时长（两晚）的结构化事件信息。"
+          },
+          {
+            "agent_name": "rag_knowledge",
+            "priority": 1,
+            "reason": "用户询问公司住宿标准，需优先查询知识库以获取政策依据。",
+            "expected_output": "公司关于成都住宿的具体标准（如价格上限、酒店星级等）。"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "基于收集到的政策标准和行程要素，生成最终的行程安排。",
+            "expected_output": "符合公司标准的成都两晚住宿及交通行程方案。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_042",
+      "category": "multi_rag_itinerary",
+      "query": "先查高铁一等座审批要求，再安排上海到杭州当天往返",
+      "expected_intents": [
+        "rag_knowledge",
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "itinerary_planning",
+        "rag_knowledge"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "rag_knowledge": 1,
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "rag_knowledge": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 4,
+      "entity_total": 4,
+      "entity_checks": {
+        "origin": true,
+        "destination": true,
+        "duration": true,
+        "other": true
+      },
+      "latency_seconds": 27.0532,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query包含两个明确的指令：一是'查高铁一等座审批要求'，这是关于企业差旅制度的具体咨询，属于知识库查询范畴；二是'安排上海到杭州当天往返'，这是具体的行程规划请求，包含出发地、目的地和时长信息。根据意图区分原则，前者对应rag_knowledge，后者对应itinerary_planning。由于itinerary_planning依赖于event_collection提取的结构化信息，因此需要同时调度event_collection。根据优先级规则，rag_knowledge和event_collection属于信息收集类，应并行执行（Priority 1），itinerary_planning属于规划类，应依赖前者的结果执行（Priority 2）。时间方面，用户提到'当天'，结合当前时间2026年07月27日，推断为2026年07月27日。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "提取上海到杭州当天往返的行程要素",
+            "reason": "用户提供了具体的出发地（上海）、目的地（杭州）和时长（当天往返），这是行程规划的基础数据，需要event_collection进行结构化提取。"
+          },
+          {
+            "type": "rag_knowledge",
+            "confidence": 1.0,
+            "description": "查询高铁一等座的审批政策要求",
+            "reason": "用户明确询问'高铁一等座审批要求'，涉及企业内部差旅制度，符合rag_knowledge的触发条件。"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 1.0,
+            "description": "规划上海到杭州的当天往返行程",
+            "reason": "用户明确要求'安排'行程，触发行程规划意图。根据规则，识别到itinerary_planning必须同时调度event_collection。"
+          }
+        ],
+        "key_entities": {
+          "origin": "上海",
+          "destination": "杭州",
+          "date": "2026年07月27日",
+          "duration": "一天",
+          "other": "查询对象：高铁一等座审批要求；行程约束：当天往返"
+        },
+        "rewritten_query": "查询高铁一等座的审批要求，并安排2026年07月27日从上海到杭州的当天往返行程。",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "用户提供了行程细节，需要提取结构化数据供规划使用。",
+            "expected_output": "包含出发地、目的地、日期、时长等信息的结构化行程数据。"
+          },
+          {
+            "agent_name": "rag_knowledge",
+            "priority": 1,
+            "reason": "用户询问差旅政策，需要从知识库检索高铁一等座审批标准。",
+            "expected_output": "高铁一等座的具体审批要求或政策规定。"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "用户要求安排行程，需要基于收集到的信息和政策进行规划。",
+            "expected_output": "上海到杭州当天往返的具体行程安排方案。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_043",
+      "category": "multi_memory_itinerary",
+      "query": "参考我上次去南京住的酒店，规划这次从无锡去南京三天",
+      "expected_intents": [
+        "memory_query",
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "itinerary_planning",
+        "memory_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "memory_query": 1,
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "memory_query": 1,
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 4,
+      "entity_total": 4,
+      "entity_checks": {
+        "origin": true,
+        "destination": true,
+        "duration": true,
+        "other": true
+      },
+      "latency_seconds": 16.8148,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户的核心诉求是规划一次从无锡到南京的三天行程。Query中包含明确的行程规划信号（'规划'、'从无锡去南京'、'三天'），因此主要意图为itinerary_planning。同时，用户提到'参考我上次去南京住的酒店'，这涉及查询用户的历史行为记录，属于memory_query意图。由于行程规划依赖于事项收集（event_collection）来提取结构化信息，且需要查询历史记忆作为参考，因此需要调度这三个智能体。根据优先级规则，memory_query和event_collection属于信息收集类，应并行执行（Priority 1），itinerary_planning依赖前两者的结果，顺序执行（Priority 2）。",
+        "intents": [
+          {
+            "type": "memory_query",
+            "confidence": 0.95,
+            "description": "查询用户上次去南京时入住的酒店记录",
+            "reason": "用户明确提到'参考我上次去南京住的酒店'，涉及个人历史数据的检索"
+          },
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "提取本次行程的出发地、目的地、时长等关键信息",
+            "reason": "用户提供了具体的行程要素（无锡、南京、三天），需要进行结构化提取以供规划使用"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 1.0,
+            "description": "基于提取的信息和历史偏好规划三天行程",
+            "reason": "用户明确要求'规划这次...三天'行程，这是核心业务意图"
+          }
+        ],
+        "key_entities": {
+          "origin": "无锡",
+          "destination": "南京",
+          "date": "",
+          "duration": "三天",
+          "other": "参考上次去南京住的酒店"
+        },
+        "rewritten_query": "参考我上次去南京住的酒店，规划从无锡到南京的三天行程",
+        "agent_schedule": [
+          {
+            "agent_name": "memory_query",
+            "priority": 1,
+            "reason": "需要查询用户上次去南京的酒店记录，作为本次规划的参考依据",
+            "expected_output": "用户上次去南京时入住的酒店名称及相关偏好信息"
+          },
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "需要提取行程的出发地（无锡）、目的地（南京）和时长（三天）等结构化信息",
+            "expected_output": "包含origin、destination、duration等字段的标准化行程事件对象"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "基于收集到的行程信息和历史酒店偏好，生成具体的三天行程规划",
+            "expected_output": "详细的南京三天行程安排，包含住宿建议"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_044",
+      "category": "multi_memory_preference",
+      "query": "先告诉我原来的餐食偏好，再改成清真餐",
+      "expected_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "predicted_intents": [
+        "memory_query",
+        "preference"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "predicted_priorities": {
+        "memory_query": 1,
+        "preference": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 13.4922,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query包含两个明确的动作请求：1. '先告诉我原来的餐食偏好'，这是对用户自身历史数据的查询，属于memory_query意图；2. '再改成清真餐'，这是对个人偏好的更新操作，属于preference意图。用户使用了'先...再...'的连接词，表明了操作的顺序，但在系统调度层面，查询和更新可以并行处理（或者更新依赖查询结果，但根据规则，两者均为Priority 1的信息收集类操作，可并行）。关键实体为'餐食偏好'和'清真餐'。无对话历史，无需消歧。",
+        "intents": [
+          {
+            "type": "memory_query",
+            "confidence": 0.98,
+            "description": "查询用户历史餐食偏好",
+            "reason": "用户明确询问'原来的餐食偏好'，涉及用户自己的历史数据，符合memory_query触发条件。"
+          },
+          {
+            "type": "preference",
+            "confidence": 0.98,
+            "description": "更新用户餐食偏好为清真餐",
+            "reason": "用户明确要求'改成清真餐'，属于更新个人偏好，符合preference触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "",
+          "date": "",
+          "duration": "",
+          "other": "查询对象：原来的餐食偏好；更新动作：改成；偏好值：清真餐"
+        },
+        "rewritten_query": "查询我原来的餐食偏好，并将我的餐食偏好更新为清真餐。",
+        "agent_schedule": [
+          {
+            "agent_name": "memory_query",
+            "priority": 1,
+            "reason": "用户请求查询历史餐食偏好，需要从长期记忆中读取数据。",
+            "expected_output": "用户当前的餐食偏好设置"
+          },
+          {
+            "agent_name": "preference",
+            "priority": 1,
+            "reason": "用户请求将餐食偏好修改为清真餐，需要持久化该偏好设置。",
+            "expected_output": "偏好更新成功的确认信息"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_045",
+      "category": "multi_rag_information",
+      "query": "公司机场接送能报销吗？另外查一下首都机场出租车排队情况",
+      "expected_intents": [
+        "rag_knowledge",
+        "information_query"
+      ],
+      "predicted_intents": [
+        "information_query",
+        "rag_knowledge"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "rag_knowledge": 1,
+        "information_query": 1
+      },
+      "predicted_priorities": {
+        "information_query": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 2,
+      "entity_total": 2,
+      "entity_checks": {
+        "destination": true,
+        "other": true
+      },
+      "latency_seconds": 10.3022,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query包含两个明确的问题：1. '公司机场接送能报销吗？' 询问的是企业差旅政策中的报销规定，属于知识库查询范畴，应触发rag_knowledge；2. '查一下首都机场出租车排队情况' 询问的是实时交通状况，属于外部实时信息查询，应触发information_query。这两个意图相互独立，无依赖关系，且均不涉及行程规划、历史记录查询或偏好设置。因此，应并行调度这两个智能体。",
+        "intents": [
+          {
+            "type": "information_query",
+            "confidence": 0.95,
+            "description": "查询首都机场出租车实时排队情况",
+            "reason": "用户明确要求'查一下'具体的实时状况（排队情况），符合information_query的触发条件。"
+          },
+          {
+            "type": "rag_knowledge",
+            "confidence": 0.98,
+            "description": "查询公司关于机场接送费用的报销政策",
+            "reason": "用户明确询问'能报销吗'，涉及企业内部差旅制度，符合rag_knowledge的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "首都机场",
+          "date": "",
+          "duration": "",
+          "other": "报销主题：机场接送；实时信息主题：出租车排队情况"
+        },
+        "rewritten_query": "查询公司机场接送报销政策，以及首都机场出租车实时排队情况。",
+        "agent_schedule": [
+          {
+            "agent_name": "information_query",
+            "priority": 1,
+            "reason": "用户查询实时交通信息，需要联网获取当前排队数据。",
+            "expected_output": "首都机场当前的出租车排队等待时间或状况。"
+          },
+          {
+            "agent_name": "rag_knowledge",
+            "priority": 1,
+            "reason": "用户询问企业内部报销政策，需要从知识库检索相关制度。",
+            "expected_output": "关于机场接送是否可报销的具体政策规定。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_046",
+      "category": "multi_memory_information",
+      "query": "我上次去哈尔滨是什么时候？再看看哈尔滨本周气温",
+      "expected_intents": [
+        "memory_query",
+        "information_query"
+      ],
+      "predicted_intents": [
+        "information_query",
+        "memory_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "memory_query": 1,
+        "information_query": 1
+      },
+      "predicted_priorities": {
+        "memory_query": 1,
+        "information_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 2,
+      "entity_total": 2,
+      "entity_checks": {
+        "destination": true,
+        "other": true
+      },
+      "latency_seconds": 16.8966,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query包含两个明确的请求：1. '我上次去哈尔滨是什么时候？'：询问用户自己的历史行程记录，属于个人记忆查询，符合memory_query意图；2. '再看看哈尔滨本周气温'：询问特定地点的实时天气信息，符合information_query意图。这两个意图相互独立，互不依赖，且分别对应不同的智能体。根据优先级规则，memory_query和information_query均属于Priority 1的信息收集类，可以并行执行。关键实体提取中，'哈尔滨'作为地点需填入destination，'本周'作为时间范围需记录在other中。",
+        "intents": [
+          {
+            "type": "memory_query",
+            "confidence": 0.98,
+            "description": "查询用户过去去哈尔滨的行程时间",
+            "reason": "用户明确询问'我上次去哈尔滨是什么时候'，涉及个人历史记录，符合memory_query触发条件"
+          },
+          {
+            "type": "information_query",
+            "confidence": 0.98,
+            "description": "查询哈尔滨本周的天气情况",
+            "reason": "用户明确询问'哈尔滨本周气温'，属于实时信息查询，符合information_query触发条件"
+          }
+        ],
+        "key_entities": {
+          "origin": null,
+          "destination": "哈尔滨",
+          "date": null,
+          "duration": null,
+          "other": "查询对象：上次去哈尔滨的时间；查询对象：哈尔滨本周气温"
+        },
+        "rewritten_query": "查询我上次去哈尔滨的时间，以及哈尔滨本周的气温。",
+        "agent_schedule": [
+          {
+            "agent_name": "memory_query",
+            "priority": 1,
+            "reason": "用户询问个人历史行程，需要从记忆库中检索",
+            "expected_output": "用户上次去哈尔滨的具体日期或时间范围"
+          },
+          {
+            "agent_name": "information_query",
+            "priority": 1,
+            "reason": "用户询问实时天气信息，需要联网查询",
+            "expected_output": "哈尔滨本周的天气预报或气温数据"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_047",
+      "category": "multi_rag_preference",
+      "query": "公司允许报销哪些酒店？另外记住我优先住希尔顿",
+      "expected_intents": [
+        "rag_knowledge",
+        "preference"
+      ],
+      "predicted_intents": [
+        "preference",
+        "rag_knowledge"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "rag_knowledge": 1,
+        "preference": 1
+      },
+      "predicted_priorities": {
+        "preference": 1,
+        "rag_knowledge": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 13.928,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query包含两个核心诉求：一是询问公司允许报销的酒店标准，这属于企业差旅制度/政策咨询，应使用rag_knowledge从知识库检索；二是明确表达'优先住希尔顿'的个人偏好，属于偏好设置，应使用preference进行持久化存储。两者之间无依赖关系，可并行处理。无对话历史，无需消歧。",
+        "intents": [
+          {
+            "type": "preference",
+            "confidence": 0.95,
+            "description": "记录用户关于酒店品牌的偏好设置",
+            "reason": "用户明确说'记住我优先住希尔顿'，属于声明个人偏好，符合preference的触发条件"
+          },
+          {
+            "type": "rag_knowledge",
+            "confidence": 0.98,
+            "description": "查询公司差旅政策中关于酒店报销的标准和规定",
+            "reason": "用户询问'公司允许报销哪些酒店'，涉及企业内部差旅制度，符合rag_knowledge的触发条件"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "",
+          "date": "",
+          "duration": "",
+          "other": "查询对象：酒店报销标准；偏好类型：酒店品牌；偏好值：希尔顿；动作：设置/记住；优先级：优先"
+        },
+        "rewritten_query": "查询公司差旅政策中允许报销的酒店标准有哪些。同时记录我的偏好：优先入住希尔顿酒店。",
+        "agent_schedule": [
+          {
+            "agent_name": "preference",
+            "priority": 1,
+            "reason": "用户明确要求记住'优先住希尔顿'的偏好，需要持久化存储",
+            "expected_output": "偏好设置成功的确认信息"
+          },
+          {
+            "agent_name": "rag_knowledge",
+            "priority": 1,
+            "reason": "用户询问公司报销政策，需要从知识库检索相关信息",
+            "expected_output": "公司关于酒店报销标准、品牌限制或价格上限的具体规定"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_048",
+      "category": "multi_preference_itinerary",
+      "query": "以后酒店必须有洗衣房，这次从东莞去珠海出差两天",
+      "expected_intents": [
+        "preference",
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "itinerary_planning",
+        "preference"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "preference": 1,
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "preference": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 3,
+      "entity_total": 4,
+      "entity_checks": {
+        "origin": true,
+        "destination": true,
+        "duration": true,
+        "other": false
+      },
+      "latency_seconds": 21.0531,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query包含两个核心部分：一是表达对酒店设施的长期偏好（'以后酒店必须有洗衣房'），二是陈述具体的出差行程信息（'从东莞去珠海出差两天'）。根据意图区分原则，'以后'表明这是一个长期偏好的设定，触发preference意图；'从东莞去珠海出差两天'提供了明确的出发地、目的地和时长，属于行程规划的信息收集，触发event_collection意图。由于用户提供了具体的行程细节，系统需要进一步规划行程，因此触发itinerary_planning意图。根据优先级规则，preference和event_collection属于Priority 1（信息收集类），可并行执行；itinerary_planning属于Priority 2（依赖Priority 1的结果），需在收集完信息和偏好后执行。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 0.95,
+            "description": "用户提供了具体的出差行程信息，包括出发地、目的地和时长。",
+            "reason": "用户明确陈述了'从东莞去珠海'（出发地和目的地）以及'出差两天'（时长），符合事项收集的触发条件。"
+          },
+          {
+            "type": "preference",
+            "confidence": 0.98,
+            "description": "用户设定了关于酒店设施的长期偏好，要求酒店必须配备洗衣房。",
+            "reason": "用户使用了'以后'、'必须'等词汇，明确表达了对未来所有行程中酒店选择的硬性要求，符合长期偏好的定义。"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 0.9,
+            "description": "基于提供的行程信息和偏好，规划具体的出差行程。",
+            "reason": "用户提供了完整的行程要素（出发地、目的地、时长），且结合了偏好设置，隐含了规划行程的需求。根据规则，识别到itinerary_planning时必须同时调度event_collection。"
+          }
+        ],
+        "key_entities": {
+          "origin": "东莞",
+          "destination": "珠海",
+          "date": "",
+          "duration": "两天",
+          "other": "偏好：酒店必须有洗衣房（肯定/强制）；目的：出差"
+        },
+        "rewritten_query": "设定长期偏好：以后预订的酒店必须配备洗衣房。规划行程：从东莞出发前往珠海出差，行程时长为两天。",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "用户提供了'从东莞去珠海出差两天'的具体行程信息，需要调用EventCollectionAgent提取结构化数据。",
+            "expected_output": "包含出发地、目的地、时长、目的等信息的结构化行程数据。"
+          },
+          {
+            "agent_name": "preference",
+            "priority": 1,
+            "reason": "用户明确表达了'以后酒店必须有洗衣房'的长期偏好，需要调用PreferenceAgent进行持久化存储。",
+            "expected_output": "偏好设置成功的确认信息。"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "基于收集到的行程信息和用户偏好，调用ItineraryPlanningAgent生成具体的出差行程方案。",
+            "expected_output": "符合用户偏好和行程要求的详细出差计划。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_049",
+      "category": "context_itinerary",
+      "query": "住三晚，下周二出发",
+      "expected_intents": [
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "itinerary_planning"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 4,
+      "entity_total": 4,
+      "entity_checks": {
+        "origin": true,
+        "destination": true,
+        "duration": true,
+        "other": true
+      },
+      "latency_seconds": 19.7322,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query为'住三晚，下周二出发'。结合对话历史上下文，用户之前已明确'要从绍兴去合肥参加客户交流会'，助手询问了出发时间和住宿时长。当前Query直接补充了这两个缺失的关键信息。核心诉求是完善行程细节以便进行行程规划。关键实体包括：出发时间'下周二'（根据当前时间2026年07月27日星期一推断为2026年08月04日），住宿时长'三晚'。意图信号为提供具体的行程参数。需要融合上下文中的出发地（绍兴）、目的地（合肥）和出差目的（参加客户交流会）。因此，主要意图为事项收集（event_collection），用于提取结构化信息；同时由于信息已基本齐全，触发行程规划（itinerary_planning）意图。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "收集用户提供的出发时间和住宿时长，结合上下文提取完整行程信息",
+            "reason": "用户明确补充了'下周二出发'和'住三晚'的具体参数，符合event_collection的触发条件，用于提取结构化事件信息。"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 0.95,
+            "description": "基于收集到的完整信息规划从绍兴到合肥的行程",
+            "reason": "结合历史上下文，用户已提供出发地、目的地、目的、出发时间和时长，具备了规划行程的基本要素，符合itinerary_planning的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": "绍兴",
+          "destination": "合肥",
+          "date": "2026年08月04日",
+          "duration": "三晚",
+          "other": "出差目的：参加客户交流会"
+        },
+        "rewritten_query": "我要从绍兴去合肥参加客户交流会，2026年08月04日出发，住三晚。",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "优先提取用户补充的时间（2026年08月04日）和时长（三晚）信息，并与历史上下文（绍兴、合肥、客户交流会）整合。",
+            "expected_output": "包含出发地、目的地、时间、时长、目的的标准化行程事件对象。"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "依赖event_collection收集到的完整信息，生成具体的行程方案。",
+            "expected_output": "详细的行程规划建议，包括交通和住宿安排。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_050",
+      "category": "context_itinerary",
+      "query": "从佛山走，当天回来",
+      "expected_intents": [
+        "itinerary_planning",
+        "event_collection"
+      ],
+      "predicted_intents": [
+        "event_collection",
+        "itinerary_planning"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "predicted_priorities": {
+        "event_collection": 1,
+        "itinerary_planning": 2
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 4,
+      "entity_total": 4,
+      "entity_checks": {
+        "origin": true,
+        "destination": true,
+        "duration": true,
+        "other": true
+      },
+      "latency_seconds": 20.0062,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query为'从佛山走，当天回来'。结合对话历史上下文，用户上一轮提到'周五去广州参加项目评审'，助手询问了出发地和停留时长。用户当前回答补充了出发地为'佛山'，并明确了时长约束为'当天回来'（即一日往返）。核心诉求是完善行程规划所需的细节信息。关键实体包括：出发地（佛山）、目的地（继承上下文为广州）、日期（继承上下文为周五，即2026年07月31日）、时长（一天）、目的（项目评审）。这属于典型的行程规划场景，需要收集事件信息并进行规划。",
+        "intents": [
+          {
+            "type": "event_collection",
+            "confidence": 1.0,
+            "description": "收集用户提供的行程细节，包括出发地、时长等，用于完善行程信息。",
+            "reason": "用户明确回答了助手关于出发地（佛山）和停留时长（当天回来）的询问，提供了结构化的行程要素。"
+          },
+          {
+            "type": "itinerary_planning",
+            "confidence": 0.95,
+            "description": "基于收集到的信息（周五、广州、佛山、当天往返、项目评审）进行行程规划。",
+            "reason": "用户正在逐步提供行程规划所需的必要信息（出发地、时长），结合上下文的目的地和日期，具备了规划行程的条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": "佛山",
+          "destination": "广州",
+          "date": "2026年07月31日",
+          "duration": "一天",
+          "other": "目的：项目评审；行程约束：当天往返"
+        },
+        "rewritten_query": "周五（2026年07月31日）从佛山出发去广州参加项目评审，当天往返。",
+        "agent_schedule": [
+          {
+            "agent_name": "event_collection",
+            "priority": 1,
+            "reason": "优先收集用户补充的出发地和时长信息，将其与上下文中的目的地、日期和目的整合为结构化事件。",
+            "expected_output": "包含出发地（佛山）、目的地（广州）、日期（2026-07-31）、时长（一天）、目的（项目评审）的结构化事件数据。"
+          },
+          {
+            "agent_name": "itinerary_planning",
+            "priority": 2,
+            "reason": "依赖event_collection收集到的完整信息，生成符合当天往返要求的行程安排。",
+            "expected_output": "针对周五广州一日往返的行程规划方案。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_051",
+      "category": "context_information",
+      "query": "好，查那里明天会不会降温",
+      "expected_intents": [
+        "information_query"
+      ],
+      "predicted_intents": [
+        "information_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "information_query": 1
+      },
+      "predicted_priorities": {
+        "information_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 2,
+      "entity_total": 2,
+      "entity_checks": {
+        "destination": true,
+        "other": true
+      },
+      "latency_seconds": 20.9838,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query为'好，查那里明天会不会降温'。首先分析核心诉求：用户明确要求查询'明天'的天气变化（降温），属于实时信息查询。其次分析上下文：对话历史中用户提到'后天要去呼和浩特出差'，助手询问是否查询天气，用户回复'那里'，指代历史中的'呼和浩特'。因此，目的地实体需从上下文补全为'呼和浩特'。时间'明天'根据当前时间2026年07月27日推断为2026年07月28日。意图识别为information_query，因为用户询问的是客观的天气情况，而非规划行程或查询个人历史。不需要调用itinerary_planning，因为用户只是确认天气信息，并未要求安排具体行程。",
+        "intents": [
+          {
+            "type": "information_query",
+            "confidence": 1.0,
+            "description": "查询特定地点（呼和浩特）特定时间（明天）的天气变化情况（降温）",
+            "reason": "用户使用了'查'、'会不会降温'等明确的信息查询动词，且结合上下文指代了具体地点，符合information_query的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "呼和浩特",
+          "date": "2026年07月28日",
+          "duration": "",
+          "other": "查询主题：降温（天气变化）"
+        },
+        "rewritten_query": "查询呼和浩特2026年07月28日是否会降温",
+        "agent_schedule": [
+          {
+            "agent_name": "information_query",
+            "priority": 1,
+            "reason": "用户明确要求查询'那里'（呼和浩特）'明天'的天气情况，需要调用信息查询智能体获取实时天气数据。",
+            "expected_output": "呼和浩特2026年07月28日的天气预报，特别是关于降温的信息。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_052",
+      "category": "context_preference",
+      "query": "以后都要远离电梯的房间",
+      "expected_intents": [
+        "preference"
+      ],
+      "predicted_intents": [
+        "preference"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "preference": 1
+      },
+      "predicted_priorities": {
+        "preference": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 10.9996,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户在对话历史中明确表示'我想补充一个长期住宿偏好'，并在当前轮次中陈述'以后都要远离电梯的房间'。核心诉求是设置一个长期的住宿规则。关键实体为'远离电梯的房间'，意图信号包括'以后都要'（表示长期性）和具体的房间位置要求。结合上下文，这是对上一轮助手询问的具体回应，属于典型的偏好设置场景。因此，应识别为preference意图，并调用PreferenceAgent进行持久化存储。",
+        "intents": [
+          {
+            "type": "preference",
+            "confidence": 0.98,
+            "description": "用户希望设置长期的住宿偏好，明确要求房间远离电梯。",
+            "reason": "用户使用了'以后都要'这一强限定词，表明这是一个长期规则而非单次需求，且内容涉及具体的住宿房间属性（远离电梯），符合preference智能体的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": null,
+          "destination": null,
+          "date": null,
+          "duration": null,
+          "other": "长期住宿偏好：房间位置远离电梯；动作：添加/更新偏好；强度：必须（都要）"
+        },
+        "rewritten_query": "请将我的长期住宿偏好设置为：以后预订酒店时，都要选择远离电梯的房间。",
+        "agent_schedule": [
+          {
+            "agent_name": "preference",
+            "priority": 1,
+            "reason": "用户明确表达了要补充长期住宿偏好，需要使用PreferenceAgent将该偏好持久化保存到记忆中。",
+            "expected_output": "确认偏好已保存，并反馈具体的偏好内容（远离电梯的房间）。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_053",
+      "category": "context_memory",
+      "query": "看看我住过哪些五星级酒店",
+      "expected_intents": [
+        "memory_query"
+      ],
+      "predicted_intents": [
+        "memory_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "memory_query": 1
+      },
+      "predicted_priorities": {
+        "memory_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 1,
+      "entity_total": 1,
+      "entity_checks": {
+        "other": true
+      },
+      "latency_seconds": 11.9596,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问“看看我住过哪些五星级酒店”，核心诉求是查询个人的历史住宿记录，并带有特定的筛选条件（五星级）。根据对话历史，用户之前要求回顾“过去一年”的住宿记录，助手询问了查看维度。用户当前的回答是对筛选条件的明确指定（酒店等级：五星级）。这属于查询用户自身历史数据的范畴，符合memory_query的触发条件（询问“我住过哪些”）。虽然涉及“五星级”这一标准，但用户并非询问“五星级酒店的报销标准是多少”（这属于rag_knowledge），而是基于此标准筛选自己的历史记录。因此，意图识别为memory_query。",
+        "intents": [
+          {
+            "type": "memory_query",
+            "confidence": 0.98,
+            "description": "查询用户过去住过的五星级酒店记录",
+            "reason": "用户明确询问“我住过哪些”，属于查询个人历史记录；结合上下文，时间范围是“过去一年”，筛选条件是“五星级酒店”。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "",
+          "date": "过去一年",
+          "duration": "",
+          "other": "查询对象：住宿记录；筛选条件：五星级酒店"
+        },
+        "rewritten_query": "查询过去一年我住过的所有五星级酒店记录",
+        "agent_schedule": [
+          {
+            "agent_name": "memory_query",
+            "priority": 1,
+            "reason": "用户需要从长期记忆中检索符合特定条件（五星级、过去一年）的住宿历史数据。",
+            "expected_output": "用户在过去一年内住过的五星级酒店列表及相关详情。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_054",
+      "category": "context_rag",
+      "query": "那上海适用多少？",
+      "expected_intents": [
+        "rag_knowledge"
+      ],
+      "predicted_intents": [
+        "rag_knowledge"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "rag_knowledge": 1
+      },
+      "predicted_priorities": {
+        "rag_knowledge": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 2,
+      "entity_total": 2,
+      "entity_checks": {
+        "destination": true,
+        "other": true
+      },
+      "latency_seconds": 15.102,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问“那上海适用多少？”，结合上下文“公司不同城市的餐费标准一样吗？不一样，需要根据出差城市查询”，可以推断用户是在继续询问关于上海地区的餐费标准（或差旅标准）。这是一个典型的企业内部政策咨询问题，属于知识库查询范畴。用户使用了省略句，“适用多少”指代的是“餐费标准是多少”或“差旅标准是多少”。根据意图识别原则，此类关于政策、标准、规定的询问应触发 rag_knowledge 智能体。不涉及行程规划、个人历史查询、偏好设置或实时信息查询。",
+        "intents": [
+          {
+            "type": "rag_knowledge",
+            "confidence": 0.98,
+            "description": "查询上海地区的餐费或差旅标准",
+            "reason": "用户在上下文讨论城市间标准差异后，明确询问特定城市（上海）的适用标准，符合 RAG 知识库查询场景。"
+          }
+        ],
+        "key_entities": {
+          "origin": null,
+          "destination": "上海",
+          "date": null,
+          "duration": null,
+          "other": "查询主题：餐费标准/差旅标准"
+        },
+        "rewritten_query": "上海的餐费标准是多少？",
+        "agent_schedule": [
+          {
+            "agent_name": "rag_knowledge",
+            "priority": 1,
+            "reason": "用户询问特定城市的差旅/餐费标准，需要从企业知识库中检索相关政策信息。",
+            "expected_output": "上海地区的餐费标准或相关差旅政策规定。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_055",
+      "category": "semantic_boundary",
+      "query": "只想了解成都有哪些科技馆，暂时不要规划路线",
+      "expected_intents": [
+        "information_query"
+      ],
+      "predicted_intents": [
+        "information_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "information_query": 1
+      },
+      "predicted_priorities": {
+        "information_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 2,
+      "entity_total": 2,
+      "entity_checks": {
+        "destination": true,
+        "other": true
+      },
+      "latency_seconds": 13.2342,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户的核心诉求是查询成都的科技馆信息，属于对特定地点客观信息的查询。用户明确表示'暂时不要规划路线'，排除了行程规划意图。Query中包含关键实体'成都'和'科技馆'，意图信号为'了解...有哪些'，符合information_query的定义（查询客观信息）。无对话历史，无需消歧。根据意图区分原则，'北京有什么好玩的'类问题属于information_query，此处同理。",
+        "intents": [
+          {
+            "type": "information_query",
+            "confidence": 0.98,
+            "description": "查询成都科技馆的相关信息",
+            "reason": "用户询问'成都有哪些科技馆'，属于查询客观的地点/设施信息，且明确排除了行程规划，符合information_query的触发条件。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "成都",
+          "date": "",
+          "duration": "",
+          "other": "查询对象：科技馆；约束：暂时不要规划路线"
+        },
+        "rewritten_query": "查询成都有哪些科技馆",
+        "agent_schedule": [
+          {
+            "agent_name": "information_query",
+            "priority": 1,
+            "reason": "用户需要查询成都科技馆的客观信息，该智能体用于处理实时信息或通用网络搜索。",
+            "expected_output": "成都科技馆的列表及相关介绍信息"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_056",
+      "category": "semantic_boundary",
+      "query": "查查我常住的酒店品牌在苏州有没有门店",
+      "expected_intents": [
+        "memory_query",
+        "information_query"
+      ],
+      "predicted_intents": [
+        "information_query",
+        "memory_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "memory_query": 1,
+        "information_query": 1
+      },
+      "predicted_priorities": {
+        "memory_query": 1,
+        "information_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 2,
+      "entity_total": 2,
+      "entity_checks": {
+        "destination": true,
+        "other": true
+      },
+      "latency_seconds": 14.8225,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query的核心诉求是查询特定酒店品牌在特定城市的门店情况。关键实体包括'常住的酒店品牌'（需要从用户历史记忆中获取）和'苏州'（目标地点）。由于用户没有直接说出品牌名称，而是引用了'常住的'这一个人属性，因此必须先查询用户的长期记忆以获取该品牌信息。获取品牌后，需要查询该品牌在苏州的门店信息，这属于客观信息的查询。因此，主要意图为memory_query（获取偏好）和information_query（查询门店信息）。两者存在依赖关系：information_query需要memory_query返回的品牌名称作为参数，因此需要分步执行。",
+        "intents": [
+          {
+            "type": "memory_query",
+            "confidence": 1.0,
+            "description": "查询用户常住的酒店品牌偏好",
+            "reason": "用户使用了'常住的酒店品牌'这一表述，表明需要从用户的历史记录或偏好设置中检索具体的品牌名称，这是回答问题的前提条件。"
+          },
+          {
+            "type": "information_query",
+            "confidence": 0.95,
+            "description": "查询指定品牌在苏州的门店信息",
+            "reason": "在获取到品牌名称后，用户明确要求'查...在苏州有没有门店'，这属于对客观事实（门店分布）的查询，符合information_query的定义。"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "苏州",
+          "date": "",
+          "duration": "",
+          "other": "查询对象：常住的酒店品牌；查询目标：门店分布情况"
+        },
+        "rewritten_query": "查询我常住的酒店品牌是什么，并查询该品牌在苏州是否有门店。",
+        "agent_schedule": [
+          {
+            "agent_name": "memory_query",
+            "priority": 1,
+            "reason": "优先执行，从长期记忆中提取用户'常住的酒店品牌'，为后续查询提供关键参数。",
+            "expected_output": "用户常住的酒店品牌名称（如：希尔顿、汉庭等）。"
+          },
+          {
+            "agent_name": "information_query",
+            "priority": 1,
+            "reason": "依赖memory_query的结果，使用获取到的品牌名称查询其在苏州的门店分布情况。",
+            "expected_output": "该品牌在苏州的门店列表或有无门店的确认信息。"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_057",
+      "category": "semantic_boundary",
+      "query": "我可能去武汉，现在只查机票价格，不需要做行程",
+      "expected_intents": [
+        "information_query"
+      ],
+      "predicted_intents": [
+        "information_query"
+      ],
+      "intent_exact": true,
+      "expected_priorities": {
+        "information_query": 1
+      },
+      "predicted_priorities": {
+        "information_query": 1
+      },
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 2,
+      "entity_total": 2,
+      "entity_checks": {
+        "destination": true,
+        "other": true
+      },
+      "latency_seconds": 12.599,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户的核心诉求是查询机票价格，并明确表示不需要做行程规划。虽然用户提到了目的地'武汉'，但这是一个潜在的行程要素，而非确定的行程规划请求。用户明确否定了行程规划（'不需要做行程'），因此不应触发itinerary_planning。查询机票价格属于实时信息的查询范畴，符合information_query的定义（查询实时信息）。同时，用户提供了目的地'武汉'这一关键实体，虽然未提供出发地和具体日期，但这不影响识别为信息查询意图。由于用户没有询问历史、偏好或政策，也不涉及行程规划，因此只触发information_query。",
+        "intents": [
+          {
+            "type": "information_query",
+            "confidence": 0.95,
+            "description": "用户查询武汉的机票价格信息",
+            "reason": "用户明确表达了'查机票价格'的需求，属于实时信息查询，且排除了行程规划意图"
+          }
+        ],
+        "key_entities": {
+          "origin": "",
+          "destination": "武汉",
+          "date": "",
+          "duration": "",
+          "other": "查询对象：机票价格；约束：不需要做行程"
+        },
+        "rewritten_query": "查询武汉的机票价格，不需要做行程规划",
+        "agent_schedule": [
+          {
+            "agent_name": "information_query",
+            "priority": 1,
+            "reason": "用户需要查询机票价格这一实时信息",
+            "expected_output": "武汉的机票价格信息"
+          }
+        ]
+      }
+    },
+    {
+      "id": "holdout_v2_058",
+      "category": "unsupported",
+      "query": "帮我写一封生日祝福邮件",
+      "expected_intents": [],
+      "predicted_intents": [],
+      "intent_exact": true,
+      "expected_priorities": {},
+      "predicted_priorities": {},
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 0,
+      "entity_total": 0,
+      "entity_checks": {},
+      "latency_seconds": 8.3372,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户请求'帮我写一封生日祝福邮件'，这是一个内容生成类的请求。分析系统提供的可调度子智能体（rag_knowledge, event_collection, memory_query, itinerary_planning, preference, information_query），它们分别对应差旅政策、行程收集、历史记录、行程规划、偏好管理和实时信息查询。用户的请求与差旅、行程、天气、政策查询等均无关联，属于系统定义范围之外的闲聊或通用写作辅助请求。根据规则'闲聊、数学等非差旅请求返回空 intents 和空 agent_schedule'，因此不调度任何智能体。",
+        "intents": [],
+        "key_entities": {
+          "origin": null,
+          "destination": null,
+          "date": null,
+          "duration": null,
+          "other": "生日祝福邮件"
+        },
+        "rewritten_query": "帮我写一封生日祝福邮件",
+        "agent_schedule": []
+      }
+    },
+    {
+      "id": "holdout_v2_059",
+      "category": "unsupported",
+      "query": "解释一下量子纠缠是什么",
+      "expected_intents": [],
+      "predicted_intents": [],
+      "intent_exact": true,
+      "expected_priorities": {},
+      "predicted_priorities": {},
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 0,
+      "entity_total": 0,
+      "entity_checks": {},
+      "latency_seconds": 12.3234,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户询问'解释一下量子纠缠是什么'，这是一个关于物理科学概念的通用知识问题。分析用户的核心诉求是获取'量子纠缠'的定义和解释。检查可调度的子智能体：rag_knowledge针对差旅政策、预订指南等企业内部知识；event_collection针对行程规划；memory_query针对用户个人历史；itinerary_planning针对行程安排；preference针对个人偏好设置；information_query针对实时信息（天气）或通用网络搜索。'量子纠缠'不属于差旅制度、个人历史、行程规划或实时天气，属于通用百科知识。虽然information_query具备联网搜索能力，但根据系统指令'闲聊、数学等非差旅请求返回空 intents 和空 agent_schedule'，该请求属于非差旅领域的通用知识查询（类似闲聊/百科），因此不匹配任何预设的差旅相关智能体。",
+        "intents": [],
+        "key_entities": {
+          "origin": null,
+          "destination": null,
+          "date": null,
+          "duration": null,
+          "other": "查询对象：量子纠缠"
+        },
+        "rewritten_query": "解释量子纠缠的定义和原理",
+        "agent_schedule": []
+      }
+    },
+    {
+      "id": "holdout_v2_060",
+      "category": "unsupported",
+      "query": "收到，今天先到这里",
+      "expected_intents": [],
+      "predicted_intents": [],
+      "intent_exact": true,
+      "expected_priorities": {},
+      "predicted_priorities": {},
+      "schedule_exact": true,
+      "schedule_intent_consistent": true,
+      "entity_correct": 0,
+      "entity_total": 0,
+      "entity_checks": {},
+      "latency_seconds": 7.442,
+      "attempt_count": 1,
+      "rate_limit_retry_count": 0,
+      "error": null,
+      "raw_prediction": {
+        "reasoning": "用户Query为'收到，今天先到这里'，这是一个典型的对话结束或暂停的确认语。核心诉求是结束当前对话或表示暂时不需要进一步服务。分析关键实体和意图信号：'收到'表示确认，'今天先到这里'表示终止当前交互。该Query不涉及任何差旅政策查询、行程规划、历史记录查询、偏好设置或实时信息检索。根据指令，闲聊、对话管理等非差旅请求应返回空intents和空agent_schedule。",
+        "intents": [],
+        "key_entities": {
+          "origin": "",
+          "destination": "",
+          "date": "",
+          "duration": "",
+          "other": "对话结束确认"
+        },
+        "rewritten_query": "结束当前对话",
+        "agent_schedule": []
+      }
+    }
+  ],
+  "caveats": [
+    "Sample datasets are for pipeline validation, not resume claims.",
+    "Relative dates can change with evaluation date.",
+    "Run the final curated dataset at least three times to assess variance."
+  ]
+}

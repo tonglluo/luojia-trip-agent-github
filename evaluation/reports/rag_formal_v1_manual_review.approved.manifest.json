@@ -1,0 +1,15 @@
+{
+  "review_file": "evaluation/reports/rag_formal_v1_manual_review.approved.jsonl",
+  "review_sha256": "264ac693c20e54e55fe55526cbfb62e7a5dfb7aa4343316ccc4b9b44ec5bcb9a",
+  "source_answer_report": "evaluation/reports/rag_formal_v1_answers_attempt3.json",
+  "source_answer_report_sha256": "b5252331a350fbf4fb297b90a0678a43b00f3b7fabf5c03732d283dcb85deea1",
+  "pre_review": "evaluation/reports/rag_formal_v1_grounded_pre_review.json",
+  "pre_review_sha256": "56cb06958a44aeab74ad9fb405077fb80dfb8c5a1e80cb0e35a4b53b0884fee9",
+  "dataset_sha256": "248e590044d1643fdad54b884db54eaa6e8d5404579fc3abd9bd74647e4e7fe9",
+  "sample_count": 60,
+  "reviewer": "项目负责人（用户明确确认）",
+  "approved_at": "2026-07-27T14:56:42.251814+00:00",
+  "approval_phrase": "I_APPROVE_RAG_V1_SCORES",
+  "status": "human_approved",
+  "note": "The reviewer explicitly approved the AI-assisted suggestions after reviewing the worksheet and may not be inferred from automatic metrics alone."
+}

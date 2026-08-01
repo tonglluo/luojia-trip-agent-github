@@ -1,0 +1,50 @@
+{
+  "generated_at": "2026-07-30T03:38:03.773478+00:00",
+  "audience": "technical",
+  "delivery_mode": "html",
+  "required_structure_mapping": {
+    "title": "title",
+    "technical_summary": "technical_summary",
+    "key_findings": [
+      "intent_text",
+      "rag_text",
+      "latency_text"
+    ],
+    "scope_data_definitions": "source metadata and finding sections",
+    "methodology": "methodology",
+    "limitations_uncertainty_robustness": "robustness",
+    "recommended_next_steps": "next_steps",
+    "further_questions": "questions"
+  },
+  "visual_omission_reason": "Intent and RAG use exact tables because their metrics have different denominators and semantics. Only the within-experiment latency comparison is charted because all six values share seconds as the unit.",
+  "chart_map": [
+    {
+      "section": "latency_text",
+      "analytical_question": "How do sequential and parallel modes compare at the execution and end-to-end stages?",
+      "takeaway": "Parallel mode improves execution-stage P50/P95, while end-to-end P50 does not improve.",
+      "family": "comparison",
+      "chart_type": "grouped bar",
+      "fields": [
+        "stage_metric",
+        "mode",
+        "seconds"
+      ],
+      "data_rows": 12,
+      "palette_policy": "hard two-root cap; mode is also identified by grouped position and legend",
+      "delivery_artifact": "evaluation/reports/final_technical_evaluation_artifact.json",
+      "source": "evaluation/reports/latency_orchestration_paired_v1_analysis.json"
+    }
+  ],
+  "source_hashes": {
+    "evaluation/reports/intent_holdout_v2_repeated/summary.json": "578a28521f8e693ee903c39ae6adb355bbe3264ab8ef565033668876e9d69316",
+    "evaluation/reports/rag_formal_v1_analysis.json": "f4bc7e88e43d31d019738d9bed69f5ea24f13d9c8b293f57645653789946aeb2",
+    "evaluation/reports/latency_orchestration_paired_v1_analysis.json": "d8061a2a196e611093686e3506c48e3ece8e33ecfd6312c4148cb5cedbced4bf",
+    "evaluation/reports/final_latency_chart.sql": "0c8170f85e5fcdd68d1622340042c30416b86cc114b8114b904a0f3b2e21fac1"
+  },
+  "offline_test_receipt": {
+    "command": ".venv/Scripts/python.exe -m pytest tests/test_core_offline.py tests/test_intention_rules.py evaluation/test_metrics.py tests/test_rag_reply_serialization_offline.py tests/test_rag_eval_retry.py tests/test_orchestration_error_propagation.py -q",
+    "result": "14 passed in 7.10s",
+    "executed_on": "2026-07-30",
+    "warning": "pytest-asyncio emitted a deprecation warning because asyncio_default_fixture_loop_scope is unset."
+  }
+}

@@ -1,0 +1,2912 @@
+{
+  "generated_at": "2026-07-27T08:18:52.355011+00:00",
+  "dataset": "evaluation\\datasets\\rag_eval.formal.candidate.jsonl",
+  "dataset_sha256": "248e590044d1643fdad54b884db54eaa6e8d5404579fc3abd9bd74647e4e7fe9",
+  "sample_count": 60,
+  "answerable_count": 50,
+  "unanswerable_count": 10,
+  "answer_key_point_count": 200,
+  "located_key_point_count": 200,
+  "line_level_evidence_coverage": 1.0,
+  "missing_evidence_count": 0,
+  "missing_evidence": [],
+  "weak_evidence_count": 0,
+  "weak_evidence": [],
+  "rows": [
+    {
+      "id": "rag_formal_001",
+      "category": "travel_standards",
+      "question": "提交差旅申请时必须填写哪些核心信息？",
+      "answerable": true,
+      "expected_sources": [
+        "01_travel_standards.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "出差事由",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 6,
+            "line_end": 8,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 8,
+            "snippet": "- 员工需要出差时，必须提前在阿里商旅系统中提交差旅申请\n- 申请应在出发前至少3个工作日提交，紧急出差需特别说明\n- 申请需包含完整信息：出差事由、目的地、出发时间、返程时间、预算明细"
+          }
+        },
+        {
+          "key_point": "目的地",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 6,
+            "line_end": 8,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 8,
+            "snippet": "- 员工需要出差时，必须提前在阿里商旅系统中提交差旅申请\n- 申请应在出发前至少3个工作日提交，紧急出差需特别说明\n- 申请需包含完整信息：出差事由、目的地、出发时间、返程时间、预算明细"
+          }
+        },
+        {
+          "key_point": "出发时间",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 6,
+            "line_end": 8,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 8,
+            "snippet": "- 员工需要出差时，必须提前在阿里商旅系统中提交差旅申请\n- 申请应在出发前至少3个工作日提交，紧急出差需特别说明\n- 申请需包含完整信息：出差事由、目的地、出发时间、返程时间、预算明细"
+          }
+        },
+        {
+          "key_point": "返程时间",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 6,
+            "line_end": 8,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 8,
+            "snippet": "- 员工需要出差时，必须提前在阿里商旅系统中提交差旅申请\n- 申请应在出发前至少3个工作日提交，紧急出差需特别说明\n- 申请需包含完整信息：出差事由、目的地、出发时间、返程时间、预算明细"
+          }
+        },
+        {
+          "key_point": "预算明细",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 6,
+            "line_end": 8,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 8,
+            "snippet": "- 员工需要出差时，必须提前在阿里商旅系统中提交差旅申请\n- 申请应在出发前至少3个工作日提交，紧急出差需特别说明\n- 申请需包含完整信息：出差事由、目的地、出发时间、返程时间、预算明细"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_002",
+      "category": "travel_standards",
+      "question": "跨国出差和超过十天的长期出差分别需要什么审批？",
+      "answerable": true,
+      "expected_sources": [
+        "01_travel_standards.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "跨国出差",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 12,
+            "line_end": 13,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 8,
+            "snippet": "- 跨国出差：需要部门总监审批\n- 长期出差（超过10天）：需要更高级别审批"
+          }
+        },
+        {
+          "key_point": "部门总监审批",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 12,
+            "line_end": 13,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 8,
+            "snippet": "- 跨国出差：需要部门总监审批\n- 长期出差（超过10天）：需要更高级别审批"
+          }
+        },
+        {
+          "key_point": "超过10天",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 12,
+            "line_end": 13,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 8,
+            "snippet": "- 跨国出差：需要部门总监审批\n- 长期出差（超过10天）：需要更高级别审批"
+          }
+        },
+        {
+          "key_point": "更高级别审批",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 12,
+            "line_end": 13,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 8,
+            "snippet": "- 跨国出差：需要部门总监审批\n- 长期出差（超过10天）：需要更高级别审批"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_003",
+      "category": "travel_standards",
+      "question": "夜间乘高铁出差在什么时间段可以选择卧铺？",
+      "answerable": true,
+      "expected_sources": [
+        "01_travel_standards.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "22:00-6:00",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 26,
+            "line_end": 26,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 4,
+            "snippet": "- 夜间出行（22:00-6:00）：可选择卧铺"
+          }
+        },
+        {
+          "key_point": "卧铺",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 26,
+            "line_end": 26,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 4,
+            "snippet": "- 夜间出行（22:00-6:00）：可选择卧铺"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_004",
+      "category": "travel_standards",
+      "question": "四小时以上的国际长途航线允许预订什么舱位？",
+      "answerable": true,
+      "expected_sources": [
+        "01_travel_standards.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "4小时以上",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 31,
+            "line_end": 32,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 10,
+            "snippet": "- 国际长途航线（4小时以上）：可预订高端经济舱\n- 特殊情况：身高超过1.85米或孕妇可申请更高舱位，需提供证明"
+          }
+        },
+        {
+          "key_point": "高端经济舱",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 31,
+            "line_end": 32,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 10,
+            "snippet": "- 国际长途航线（4小时以上）：可预订高端经济舱\n- 特殊情况：身高超过1.85米或孕妇可申请更高舱位，需提供证明"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_005",
+      "category": "travel_standards",
+      "question": "西藏、新疆和青海等特殊地区的住宿标准可以上浮多少？",
+      "answerable": true,
+      "expected_sources": [
+        "01_travel_standards.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "20%",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 62,
+            "line_end": 64,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 12,
+            "snippet": "- 特殊地区：西藏、新疆、青海等高原地区\n- 标准：可上浮20%\n- 原因：当地住宿成本较高，需保障员工基本舒适和安全"
+          }
+        },
+        {
+          "key_point": "住宿成本较高",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 62,
+            "line_end": 64,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 12,
+            "snippet": "- 特殊地区：西藏、新疆、青海等高原地区\n- 标准：可上浮20%\n- 原因：当地住宿成本较高，需保障员工基本舒适和安全"
+          }
+        },
+        {
+          "key_point": "舒适和安全",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 62,
+            "line_end": 64,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 12,
+            "snippet": "- 特殊地区：西藏、新疆、青海等高原地区\n- 标准：可上浮20%\n- 原因：当地住宿成本较高，需保障员工基本舒适和安全"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_006",
+      "category": "travel_standards",
+      "question": "业务招待超过多少钱需要部门主管审批，还要提供什么材料？",
+      "answerable": true,
+      "expected_sources": [
+        "01_travel_standards.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "超过500元",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 84,
+            "line_end": 86,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 11,
+            "snippet": "- 如需招待客户或合作伙伴，可按实际产生费用报销\n- 要求：需提供业务说明、参与人员名单、消费明细\n- 审批：超过500元需要部门主管审批"
+          }
+        },
+        {
+          "key_point": "部门主管审批",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 84,
+            "line_end": 86,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 11,
+            "snippet": "- 如需招待客户或合作伙伴，可按实际产生费用报销\n- 要求：需提供业务说明、参与人员名单、消费明细\n- 审批：超过500元需要部门主管审批"
+          }
+        },
+        {
+          "key_point": "业务说明",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 84,
+            "line_end": 86,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 11,
+            "snippet": "- 如需招待客户或合作伙伴，可按实际产生费用报销\n- 要求：需提供业务说明、参与人员名单、消费明细\n- 审批：超过500元需要部门主管审批"
+          }
+        },
+        {
+          "key_point": "参与人员名单",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 84,
+            "line_end": 86,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 11,
+            "snippet": "- 如需招待客户或合作伙伴，可按实际产生费用报销\n- 要求：需提供业务说明、参与人员名单、消费明细\n- 审批：超过500元需要部门主管审批"
+          }
+        },
+        {
+          "key_point": "消费明细",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 84,
+            "line_end": 86,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 11,
+            "snippet": "- 如需招待客户或合作伙伴，可按实际产生费用报销\n- 要求：需提供业务说明、参与人员名单、消费明细\n- 审批：超过500元需要部门主管审批"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_007",
+      "category": "travel_standards",
+      "question": "机场停车费和业务拜访停车费的报销规则有什么区别？",
+      "answerable": true,
+      "expected_sources": [
+        "01_travel_standards.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "机场停车费",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 111,
+            "line_end": 112,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 9,
+            "snippet": "- 机场停车费：不予报销（应使用公共交通或出租车）\n- 业务拜访停车费：可报销，需提供停车票据"
+          }
+        },
+        {
+          "key_point": "不予报销",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 111,
+            "line_end": 112,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 9,
+            "snippet": "- 机场停车费：不予报销（应使用公共交通或出租车）\n- 业务拜访停车费：可报销，需提供停车票据"
+          }
+        },
+        {
+          "key_point": "业务拜访停车费",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 111,
+            "line_end": 112,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 9,
+            "snippet": "- 机场停车费：不予报销（应使用公共交通或出租车）\n- 业务拜访停车费：可报销，需提供停车票据"
+          }
+        },
+        {
+          "key_point": "可报销",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 111,
+            "line_end": 112,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 9,
+            "snippet": "- 机场停车费：不予报销（应使用公共交通或出租车）\n- 业务拜访停车费：可报销，需提供停车票据"
+          }
+        },
+        {
+          "key_point": "停车票据",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 111,
+            "line_end": 112,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 9,
+            "snippet": "- 机场停车费：不予报销（应使用公共交通或出租车）\n- 业务拜访停车费：可报销，需提供停车票据"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_008",
+      "category": "travel_standards",
+      "question": "差旅消费超标30%以内和超过30%分别由谁审批？",
+      "answerable": true,
+      "expected_sources": [
+        "01_travel_standards.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "超标30%以内",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 128,
+            "line_end": 128,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 6,
+            "snippet": "- 审批权限：超标30%以内由主管审批，超标30%以上需总监审批"
+          }
+        },
+        {
+          "key_point": "主管审批",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 128,
+            "line_end": 128,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 6,
+            "snippet": "- 审批权限：超标30%以内由主管审批，超标30%以上需总监审批"
+          }
+        },
+        {
+          "key_point": "超标30%以上",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 128,
+            "line_end": 128,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 6,
+            "snippet": "- 审批权限：超标30%以内由主管审批，超标30%以上需总监审批"
+          }
+        },
+        {
+          "key_point": "总监审批",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 128,
+            "line_end": 128,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 6,
+            "snippet": "- 审批权限：超标30%以内由主管审批，超标30%以上需总监审批"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_009",
+      "category": "reimbursement",
+      "question": "12月份结束的出差最迟可以在什么时候报销？",
+      "answerable": true,
+      "expected_sources": [
+        "02_reimbursement_policy.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "次年1月15日前",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 12,
+            "line_end": 12,
+            "co_located_point_count": 1,
+            "question_bigram_overlap": 5,
+            "snippet": "- 12月份出差：可在次年1月15日前报销"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_010",
+      "category": "reimbursement",
+      "question": "交通费用报销时，火车票、机票和打车费分别需要什么凭证？",
+      "answerable": true,
+      "expected_sources": [
+        "02_reimbursement_policy.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "车票原件或电子票打印件",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 25,
+            "line_end": 27,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 6,
+            "snippet": "- 火车票：车票原件或电子票打印件\n- 机票：行程单原件（必须是航空公司或代理出具的正式行程单）\n- 打车费用：发票或电子发票"
+          }
+        },
+        {
+          "key_point": "正式行程单",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 25,
+            "line_end": 27,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 6,
+            "snippet": "- 火车票：车票原件或电子票打印件\n- 机票：行程单原件（必须是航空公司或代理出具的正式行程单）\n- 打车费用：发票或电子发票"
+          }
+        },
+        {
+          "key_point": "发票或电子发票",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 25,
+            "line_end": 27,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 6,
+            "snippet": "- 火车票：车票原件或电子票打印件\n- 机票：行程单原件（必须是航空公司或代理出具的正式行程单）\n- 打车费用：发票或电子发票"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_011",
+      "category": "reimbursement",
+      "question": "差旅发票的抬头和税号有什么要求？",
+      "answerable": true,
+      "expected_sources": [
+        "02_reimbursement_policy.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "公司全称",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 43,
+            "line_end": 45,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 4,
+            "snippet": "2. 发票基本要求\n- 抬头：必须为公司全称\"阿里巴巴（中国）有限公司\"或所属分公司全称\n- 税号：必须填写公司统一社会信用代码"
+          }
+        },
+        {
+          "key_point": "所属分公司全称",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 43,
+            "line_end": 45,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 4,
+            "snippet": "2. 发票基本要求\n- 抬头：必须为公司全称\"阿里巴巴（中国）有限公司\"或所属分公司全称\n- 税号：必须填写公司统一社会信用代码"
+          }
+        },
+        {
+          "key_point": "统一社会信用代码",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 43,
+            "line_end": 45,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 4,
+            "snippet": "2. 发票基本要求\n- 抬头：必须为公司全称\"阿里巴巴（中国）有限公司\"或所属分公司全称\n- 税号：必须填写公司统一社会信用代码"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_012",
+      "category": "reimbursement",
+      "question": "电子发票打印和保存有哪些要求，系统如何防止重复报销？",
+      "answerable": true,
+      "expected_sources": [
+        "02_reimbursement_policy.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "A4纸打印",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 52,
+            "line_end": 54,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 12,
+            "snippet": "- 打印要求：使用A4纸打印，不得缩放，保证清晰可辨\n- 不得重复报销：系统会自动识别电子发票号码，防止重复\n- 保存备份：建议保存电子发票PDF文件，以备查验"
+          }
+        },
+        {
+          "key_point": "不得缩放",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 52,
+            "line_end": 54,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 12,
+            "snippet": "- 打印要求：使用A4纸打印，不得缩放，保证清晰可辨\n- 不得重复报销：系统会自动识别电子发票号码，防止重复\n- 保存备份：建议保存电子发票PDF文件，以备查验"
+          }
+        },
+        {
+          "key_point": "清晰可辨",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 52,
+            "line_end": 54,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 12,
+            "snippet": "- 打印要求：使用A4纸打印，不得缩放，保证清晰可辨\n- 不得重复报销：系统会自动识别电子发票号码，防止重复\n- 保存备份：建议保存电子发票PDF文件，以备查验"
+          }
+        },
+        {
+          "key_point": "识别电子发票号码",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 52,
+            "line_end": 54,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 12,
+            "snippet": "- 打印要求：使用A4纸打印，不得缩放，保证清晰可辨\n- 不得重复报销：系统会自动识别电子发票号码，防止重复\n- 保存备份：建议保存电子发票PDF文件，以备查验"
+          }
+        },
+        {
+          "key_point": "保存电子发票PDF文件",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 52,
+            "line_end": 54,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 12,
+            "snippet": "- 打印要求：使用A4纸打印，不得缩放，保证清晰可辨\n- 不得重复报销：系统会自动识别电子发票号码，防止重复\n- 保存备份：建议保存电子发票PDF文件，以备查验"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_013",
+      "category": "reimbursement",
+      "question": "报销审批通过后，财务通常多久付款，款项进入哪里？",
+      "answerable": true,
+      "expected_sources": [
+        "02_reimbursement_policy.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "3-5个工作日",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 82,
+            "line_end": 83,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 9,
+            "snippet": "- 审批通过后，财务部在3-5个工作日内完成付款\n- 款项直接转入员工工资卡账户"
+          }
+        },
+        {
+          "key_point": "工资卡账户",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 82,
+            "line_end": 83,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 9,
+            "snippet": "- 审批通过后，财务部在3-5个工作日内完成付款\n- 款项直接转入员工工资卡账户"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_014",
+      "category": "reimbursement",
+      "question": "酒店里的哪些个人消费明确不能报销？",
+      "answerable": true,
+      "expected_sources": [
+        "02_reimbursement_policy.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "minibar",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 99,
+            "line_end": 100,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 6,
+            "snippet": "以下费用明确为个人消费，不予报销：\n- 酒店内个人消费：如minibar、付费电影、洗衣、SPA等"
+          }
+        },
+        {
+          "key_point": "付费电影",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 99,
+            "line_end": 100,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 6,
+            "snippet": "以下费用明确为个人消费，不予报销：\n- 酒店内个人消费：如minibar、付费电影、洗衣、SPA等"
+          }
+        },
+        {
+          "key_point": "洗衣",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 99,
+            "line_end": 100,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 6,
+            "snippet": "以下费用明确为个人消费，不予报销：\n- 酒店内个人消费：如minibar、付费电影、洗衣、SPA等"
+          }
+        },
+        {
+          "key_point": "SPA",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 99,
+            "line_end": 100,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 6,
+            "snippet": "以下费用明确为个人消费，不予报销：\n- 酒店内个人消费：如minibar、付费电影、洗衣、SPA等"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_015",
+      "category": "reimbursement",
+      "question": "发票遗失且无法补开时需要准备哪些证明？",
+      "answerable": true,
+      "expected_sources": [
+        "02_reimbursement_policy.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "书面说明",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 175,
+            "line_end": 177,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 4,
+            "snippet": "- 遗失发票：需出具书面说明，经主管签字确认\n- 需提供辅助证明：如订单截图、支付记录、银行流水等\n- 金额较大的发票遗失：需提供更详细的证明材料"
+          }
+        },
+        {
+          "key_point": "主管签字确认",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 175,
+            "line_end": 177,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 4,
+            "snippet": "- 遗失发票：需出具书面说明，经主管签字确认\n- 需提供辅助证明：如订单截图、支付记录、银行流水等\n- 金额较大的发票遗失：需提供更详细的证明材料"
+          }
+        },
+        {
+          "key_point": "订单截图",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 175,
+            "line_end": 177,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 4,
+            "snippet": "- 遗失发票：需出具书面说明，经主管签字确认\n- 需提供辅助证明：如订单截图、支付记录、银行流水等\n- 金额较大的发票遗失：需提供更详细的证明材料"
+          }
+        },
+        {
+          "key_point": "支付记录",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 175,
+            "line_end": 177,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 4,
+            "snippet": "- 遗失发票：需出具书面说明，经主管签字确认\n- 需提供辅助证明：如订单截图、支付记录、银行流水等\n- 金额较大的发票遗失：需提供更详细的证明材料"
+          }
+        },
+        {
+          "key_point": "银行流水",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 175,
+            "line_end": 177,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 4,
+            "snippet": "- 遗失发票：需出具书面说明，经主管签字确认\n- 需提供辅助证明：如订单截图、支付记录、银行流水等\n- 金额较大的发票遗失：需提供更详细的证明材料"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_016",
+      "category": "booking",
+      "question": "国际机票和春节旺季机票分别建议提前多久预订？",
+      "answerable": true,
+      "expected_sources": [
+        "03_booking_guide.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "国际机票",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 7,
+            "line_end": 9,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 9,
+            "snippet": "- 国际机票：建议提前21-30天预订\n- 热门航线（如北京-上海）：建议提前3-5天即可\n- 旺季出行（如春节、国庆）：建议提前1-2个月预订"
+          }
+        },
+        {
+          "key_point": "21-30天",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 7,
+            "line_end": 9,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 9,
+            "snippet": "- 国际机票：建议提前21-30天预订\n- 热门航线（如北京-上海）：建议提前3-5天即可\n- 旺季出行（如春节、国庆）：建议提前1-2个月预订"
+          }
+        },
+        {
+          "key_point": "旺季",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 7,
+            "line_end": 9,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 9,
+            "snippet": "- 国际机票：建议提前21-30天预订\n- 热门航线（如北京-上海）：建议提前3-5天即可\n- 旺季出行（如春节、国庆）：建议提前1-2个月预订"
+          }
+        },
+        {
+          "key_point": "1-2个月",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 7,
+            "line_end": 9,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 9,
+            "snippet": "- 国际机票：建议提前21-30天预订\n- 热门航线（如北京-上海）：建议提前3-5天即可\n- 旺季出行（如春节、国庆）：建议提前1-2个月预订"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_017",
+      "category": "booking",
+      "question": "航班转机或中转至少应预留多长时间？",
+      "answerable": true,
+      "expected_sources": [
+        "03_booking_guide.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "至少2小时",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 19,
+            "line_end": 20,
+            "co_located_point_count": 1,
+            "question_bigram_overlap": 7,
+            "snippet": "- 考虑航班时间与行程安排的匹配度\n- 留出足够的转机或中转时间（建议至少2小时）"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_018",
+      "category": "booking",
+      "question": "火车开车前24到48小时退票会收取多少退票费？",
+      "answerable": true,
+      "expected_sources": [
+        "03_booking_guide.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "10%退票费",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 66,
+            "line_end": 66,
+            "co_located_point_count": 1,
+            "question_bigram_overlap": 10,
+            "snippet": "- 开车前24-48小时：收取10%退票费"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_019",
+      "category": "booking",
+      "question": "酒店当天取消和特价房取消可能产生什么后果？",
+      "answerable": true,
+      "expected_sources": [
+        "03_booking_guide.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "一晚房费",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 125,
+            "line_end": 126,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 7,
+            "snippet": "- 当天取消：可能收取一晚房费作为取消费用\n- 特价房：可能不可取消或取消费用较高"
+          }
+        },
+        {
+          "key_point": "特价房",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 125,
+            "line_end": 126,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 7,
+            "snippet": "- 当天取消：可能收取一晚房费作为取消费用\n- 特价房：可能不可取消或取消费用较高"
+          }
+        },
+        {
+          "key_point": "不可取消",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 125,
+            "line_end": 126,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 7,
+            "snippet": "- 当天取消：可能收取一晚房费作为取消费用\n- 特价房：可能不可取消或取消费用较高"
+          }
+        },
+        {
+          "key_point": "取消费用较高",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 125,
+            "line_end": 126,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 7,
+            "snippet": "- 当天取消：可能收取一晚房费作为取消费用\n- 特价房：可能不可取消或取消费用较高"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_020",
+      "category": "booking",
+      "question": "租车费用包含和不包含哪些项目？",
+      "answerable": true,
+      "expected_sources": [
+        "03_booking_guide.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "租车费",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 143,
+            "line_end": 145,
+            "co_located_point_count": 6,
+            "question_bigram_overlap": 6,
+            "snippet": "4. 租车费用\n- 包含：租车费、保险费、基本服务费\n- 不包含：油费、停车费、过路费（据实报销）"
+          }
+        },
+        {
+          "key_point": "保险费",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 143,
+            "line_end": 145,
+            "co_located_point_count": 6,
+            "question_bigram_overlap": 6,
+            "snippet": "4. 租车费用\n- 包含：租车费、保险费、基本服务费\n- 不包含：油费、停车费、过路费（据实报销）"
+          }
+        },
+        {
+          "key_point": "基本服务费",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 143,
+            "line_end": 145,
+            "co_located_point_count": 6,
+            "question_bigram_overlap": 6,
+            "snippet": "4. 租车费用\n- 包含：租车费、保险费、基本服务费\n- 不包含：油费、停车费、过路费（据实报销）"
+          }
+        },
+        {
+          "key_point": "油费",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 143,
+            "line_end": 145,
+            "co_located_point_count": 6,
+            "question_bigram_overlap": 6,
+            "snippet": "4. 租车费用\n- 包含：租车费、保险费、基本服务费\n- 不包含：油费、停车费、过路费（据实报销）"
+          }
+        },
+        {
+          "key_point": "停车费",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 143,
+            "line_end": 145,
+            "co_located_point_count": 6,
+            "question_bigram_overlap": 6,
+            "snippet": "4. 租车费用\n- 包含：租车费、保险费、基本服务费\n- 不包含：油费、停车费、过路费（据实报销）"
+          }
+        },
+        {
+          "key_point": "过路费",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 143,
+            "line_end": 145,
+            "co_located_point_count": 6,
+            "question_bigram_overlap": 6,
+            "snippet": "4. 租车费用\n- 包含：租车费、保险费、基本服务费\n- 不包含：油费、停车费、过路费（据实报销）"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_021",
+      "category": "booking",
+      "question": "特殊情况下自行预订差旅产品，需要满足什么条件，超出平台价格怎么报？",
+      "answerable": true,
+      "expected_sources": [
+        "03_booking_guide.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "提前申请",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 217,
+            "line_end": 218,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 11,
+            "snippet": "- 特殊情况下自行预订需提前申请并说明理由\n- 自行预订的价格超过平台价格时，按平台价格报销"
+          }
+        },
+        {
+          "key_point": "说明理由",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 217,
+            "line_end": 218,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 11,
+            "snippet": "- 特殊情况下自行预订需提前申请并说明理由\n- 自行预订的价格超过平台价格时，按平台价格报销"
+          }
+        },
+        {
+          "key_point": "按平台价格报销",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 217,
+            "line_end": 218,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 11,
+            "snippet": "- 特殊情况下自行预订需提前申请并说明理由\n- 自行预订的价格超过平台价格时，按平台价格报销"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_022",
+      "category": "faq",
+      "question": "使用私家车出差前要做什么，哪些费用可以报销，哪些车辆费用不报？",
+      "answerable": true,
+      "expected_sources": [
+        "04_faq.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "申请中注明",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 35,
+            "line_end": 37,
+            "co_located_point_count": 7,
+            "question_bigram_overlap": 9,
+            "snippet": "- 需在申请中注明使用私家车及原因（如携带大量物品、多地出差等）\n- 油费、过路费、停车费可按实际发生报销（需提供发票）\n- 不报销车辆折旧、保养、保险等费用"
+          }
+        },
+        {
+          "key_point": "油费",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 35,
+            "line_end": 37,
+            "co_located_point_count": 7,
+            "question_bigram_overlap": 9,
+            "snippet": "- 需在申请中注明使用私家车及原因（如携带大量物品、多地出差等）\n- 油费、过路费、停车费可按实际发生报销（需提供发票）\n- 不报销车辆折旧、保养、保险等费用"
+          }
+        },
+        {
+          "key_point": "过路费",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 35,
+            "line_end": 37,
+            "co_located_point_count": 7,
+            "question_bigram_overlap": 9,
+            "snippet": "- 需在申请中注明使用私家车及原因（如携带大量物品、多地出差等）\n- 油费、过路费、停车费可按实际发生报销（需提供发票）\n- 不报销车辆折旧、保养、保险等费用"
+          }
+        },
+        {
+          "key_point": "停车费",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 35,
+            "line_end": 37,
+            "co_located_point_count": 7,
+            "question_bigram_overlap": 9,
+            "snippet": "- 需在申请中注明使用私家车及原因（如携带大量物品、多地出差等）\n- 油费、过路费、停车费可按实际发生报销（需提供发票）\n- 不报销车辆折旧、保养、保险等费用"
+          }
+        },
+        {
+          "key_point": "车辆折旧",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 35,
+            "line_end": 37,
+            "co_located_point_count": 7,
+            "question_bigram_overlap": 9,
+            "snippet": "- 需在申请中注明使用私家车及原因（如携带大量物品、多地出差等）\n- 油费、过路费、停车费可按实际发生报销（需提供发票）\n- 不报销车辆折旧、保养、保险等费用"
+          }
+        },
+        {
+          "key_point": "保养",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 35,
+            "line_end": 37,
+            "co_located_point_count": 7,
+            "question_bigram_overlap": 9,
+            "snippet": "- 需在申请中注明使用私家车及原因（如携带大量物品、多地出差等）\n- 油费、过路费、停车费可按实际发生报销（需提供发票）\n- 不报销车辆折旧、保养、保险等费用"
+          }
+        },
+        {
+          "key_point": "保险",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 35,
+            "line_end": 37,
+            "co_located_point_count": 7,
+            "question_bigram_overlap": 9,
+            "snippet": "- 需在申请中注明使用私家车及原因（如携带大量物品、多地出差等）\n- 油费、过路费、停车费可按实际发生报销（需提供发票）\n- 不报销车辆折旧、保养、保险等费用"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_023",
+      "category": "faq",
+      "question": "哪些特殊情况可以申请更高飞机舱位？",
+      "answerable": true,
+      "expected_sources": [
+        "04_faq.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "身高超过1.85米",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 43,
+            "line_end": 45,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 0,
+            "snippet": "- 身高超过1.85米，经济舱座位确实不适\n- 孕妇（需提供怀孕证明）\n- 健康原因（需提供医生证明）"
+          }
+        },
+        {
+          "key_point": "孕妇",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 43,
+            "line_end": 45,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 0,
+            "snippet": "- 身高超过1.85米，经济舱座位确实不适\n- 孕妇（需提供怀孕证明）\n- 健康原因（需提供医生证明）"
+          }
+        },
+        {
+          "key_point": "健康原因",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 45,
+            "line_end": 47,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 1,
+            "snippet": "- 健康原因（需提供医生证明）\n- 紧急公务需要在飞行途中处理重要工作\n- 需要提前申请并获得审批，未经审批自行升舱的差额部分不予报销"
+          }
+        },
+        {
+          "key_point": "紧急公务",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 45,
+            "line_end": 47,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 1,
+            "snippet": "- 健康原因（需提供医生证明）\n- 紧急公务需要在飞行途中处理重要工作\n- 需要提前申请并获得审批，未经审批自行升舱的差额部分不予报销"
+          }
+        },
+        {
+          "key_point": "提前申请",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 45,
+            "line_end": 47,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 1,
+            "snippet": "- 健康原因（需提供医生证明）\n- 紧急公务需要在飞行途中处理重要工作\n- 需要提前申请并获得审批，未经审批自行升舱的差额部分不予报销"
+          }
+        },
+        {
+          "key_point": "审批",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 45,
+            "line_end": 47,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 1,
+            "snippet": "- 健康原因（需提供医生证明）\n- 紧急公务需要在飞行途中处理重要工作\n- 需要提前申请并获得审批，未经审批自行升舱的差额部分不予报销"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_024",
+      "category": "faq",
+      "question": "出差时家属能否随行，相关费用由谁承担？",
+      "answerable": true,
+      "expected_sources": [
+        "04_faq.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "家属随行",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 132,
+            "line_end": 133,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 4,
+            "snippet": "- 家属随行产生的所有费用（交通、住宿、餐饮等）需个人承担\n- 如家属随行，预订时需注明，避免影响差旅报销"
+          }
+        },
+        {
+          "key_point": "需个人承担",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 132,
+            "line_end": 133,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 4,
+            "snippet": "- 家属随行产生的所有费用（交通、住宿、餐饮等）需个人承担\n- 如家属随行，预订时需注明，避免影响差旅报销"
+          }
+        },
+        {
+          "key_point": "预订时需注明",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 132,
+            "line_end": 133,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 4,
+            "snippet": "- 家属随行产生的所有费用（交通、住宿、餐饮等）需个人承担\n- 如家属随行，预订时需注明，避免影响差旅报销"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_025",
+      "category": "faq",
+      "question": "使用个人里程或积分订机票酒店时，公司报销哪一部分？",
+      "answerable": true,
+      "expected_sources": [
+        "04_faq.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "公司不予报销",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 187,
+            "line_end": 189,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 11,
+            "snippet": "- 使用个人里程或积分预订的部分，公司不予报销\n- 只报销实际支付的现金部分\n- 需要提供支付凭证和发票"
+          }
+        },
+        {
+          "key_point": "实际支付的现金部分",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 187,
+            "line_end": 189,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 11,
+            "snippet": "- 使用个人里程或积分预订的部分，公司不予报销\n- 只报销实际支付的现金部分\n- 需要提供支付凭证和发票"
+          }
+        },
+        {
+          "key_point": "支付凭证和发票",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 187,
+            "line_end": 189,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 11,
+            "snippet": "- 使用个人里程或积分预订的部分，公司不予报销\n- 只报销实际支付的现金部分\n- 需要提供支付凭证和发票"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_026",
+      "category": "faq",
+      "question": "周末或节假日出差如何补偿，差旅报销标准是否变化？",
+      "answerable": true,
+      "expected_sources": [
+        "04_faq.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "申请调休",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 173,
+            "line_end": 174,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 7,
+            "snippet": "- 周末或节假日出差属于加班，可以申请调休\n- 调休天数等于实际出差的周末/节假日天数"
+          }
+        },
+        {
+          "key_point": "实际出差的周末/节假日天数",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 174,
+            "line_end": 176,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 9,
+            "snippet": "- 调休天数等于实际出差的周末/节假日天数\n- 具体调休政策请咨询人力资源部\n- 差旅费用报销标准与工作日出差相同"
+          }
+        },
+        {
+          "key_point": "差旅费用报销标准与工作日出差相同",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 174,
+            "line_end": 176,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 9,
+            "snippet": "- 调休天数等于实际出差的周末/节假日天数\n- 具体调休政策请咨询人力资源部\n- 差旅费用报销标准与工作日出差相同"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_027",
+      "category": "emergency",
+      "question": "航班延误超过四小时后可以采取什么措施，需要保留哪些凭证？",
+      "answerable": true,
+      "expected_sources": [
+        "05_emergency_procedures.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "改签其他航班",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 14,
+            "line_end": 16,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 5,
+            "snippet": "c) 如延误时间较长（超过4小时），可考虑改签其他航班\nd) 通过阿里商旅平台申请改签，系统会自动处理\ne) 如需要临时住宿，选择机场附近的经济型酒店（符合差旅标准）"
+          }
+        },
+        {
+          "key_point": "经济型酒店",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 14,
+            "line_end": 16,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 5,
+            "snippet": "c) 如延误时间较长（超过4小时），可考虑改签其他航班\nd) 通过阿里商旅平台申请改签，系统会自动处理\ne) 如需要临时住宿，选择机场附近的经济型酒店（符合差旅标准）"
+          }
+        },
+        {
+          "key_point": "延误证明",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 18,
+            "line_end": 20,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 2,
+            "snippet": "- 延误证明（向航空公司或机场索取）\n- 改签凭证\n- 住宿发票"
+          }
+        },
+        {
+          "key_point": "改签凭证",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 18,
+            "line_end": 20,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 2,
+            "snippet": "- 延误证明（向航空公司或机场索取）\n- 改签凭证\n- 住宿发票"
+          }
+        },
+        {
+          "key_point": "住宿发票",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 18,
+            "line_end": 20,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 2,
+            "snippet": "- 延误证明（向航空公司或机场索取）\n- 改签凭证\n- 住宿发票"
+          }
+        },
+        {
+          "key_point": "餐饮发票",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 19,
+            "line_end": 21,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 1,
+            "snippet": "- 改签凭证\n- 住宿发票\n- 餐饮发票（合理范围内）"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_028",
+      "category": "emergency",
+      "question": "托运行李延误后应先去哪里报告，临时购买必需品怎样报销？",
+      "answerable": true,
+      "expected_sources": [
+        "05_emergency_procedures.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "机场行李查询处",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 66,
+            "line_end": 67,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 3,
+            "snippet": "a) 立即前往机场行李查询处报告情况\nb) 填写行李丢失/延误报告，获取报告编号"
+          }
+        },
+        {
+          "key_point": "行李丢失/延误报告",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 66,
+            "line_end": 67,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 3,
+            "snippet": "a) 立即前往机场行李查询处报告情况\nb) 填写行李丢失/延误报告，获取报告编号"
+          }
+        },
+        {
+          "key_point": "报告编号",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 66,
+            "line_end": 67,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 3,
+            "snippet": "a) 立即前往机场行李查询处报告情况\nb) 填写行李丢失/延误报告，获取报告编号"
+          }
+        },
+        {
+          "key_point": "购物发票",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 71,
+            "line_end": 73,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 10,
+            "snippet": "f) 如行李延误影响工作，可先购买必需品（如换洗衣物、洗漱用品）：\n- 保留购物发票\n- 合理范围内的临时购置费用可以报销（需提供行李延误证明）"
+          }
+        },
+        {
+          "key_point": "行李延误证明",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 71,
+            "line_end": 73,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 10,
+            "snippet": "f) 如行李延误影响工作，可先购买必需品（如换洗衣物、洗漱用品）：\n- 保留购物发票\n- 合理范围内的临时购置费用可以报销（需提供行李延误证明）"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_029",
+      "category": "emergency",
+      "question": "酒店到店无房时，酒店和商旅平台应如何处理？",
+      "answerable": true,
+      "expected_sources": [
+        "05_emergency_procedures.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "免费升级",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 92,
+            "line_end": 94,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 2,
+            "snippet": "- 免费升级房型\n- 安排到同等级别的其他酒店\nb) 如酒店不能妥善解决，立即联系阿里商旅客服：400-800-8888"
+          }
+        },
+        {
+          "key_point": "同等级别的其他酒店",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 92,
+            "line_end": 94,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 2,
+            "snippet": "- 免费升级房型\n- 安排到同等级别的其他酒店\nb) 如酒店不能妥善解决，立即联系阿里商旅客服：400-800-8888"
+          }
+        },
+        {
+          "key_point": "联系阿里商旅客服",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 94,
+            "line_end": 96,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 3,
+            "snippet": "b) 如酒店不能妥善解决，立即联系阿里商旅客服：400-800-8888\nc) 平台会协助找到附近同等级别的酒店\nd) 因酒店原因导致的换酒店费用差额，由原酒店或平台承担"
+          }
+        },
+        {
+          "key_point": "费用差额",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 94,
+            "line_end": 96,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 3,
+            "snippet": "b) 如酒店不能妥善解决，立即联系阿里商旅客服：400-800-8888\nc) 平台会协助找到附近同等级别的酒店\nd) 因酒店原因导致的换酒店费用差额，由原酒店或平台承担"
+          }
+        },
+        {
+          "key_point": "原酒店或平台承担",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 94,
+            "line_end": 96,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 3,
+            "snippet": "b) 如酒店不能妥善解决，立即联系阿里商旅客服：400-800-8888\nc) 平台会协助找到附近同等级别的酒店\nd) 因酒店原因导致的换酒店费用差额，由原酒店或平台承担"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_030",
+      "category": "emergency",
+      "question": "酒店发生火灾疏散时为什么不能乘电梯，还应采取哪些动作？",
+      "answerable": true,
+      "expected_sources": [
+        "05_emergency_procedures.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "消防通道",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 122,
+            "line_end": 124,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 1,
+            "snippet": "c) 不要乘坐电梯，使用消防通道\nd) 如有浓烟，用湿毛巾捂住口鼻，低姿态前进\ne) 到达安全区域后，清点随身物品（特别是护照、钱包、手机）"
+          }
+        },
+        {
+          "key_point": "湿毛巾捂住口鼻",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 122,
+            "line_end": 124,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 1,
+            "snippet": "c) 不要乘坐电梯，使用消防通道\nd) 如有浓烟，用湿毛巾捂住口鼻，低姿态前进\ne) 到达安全区域后，清点随身物品（特别是护照、钱包、手机）"
+          }
+        },
+        {
+          "key_point": "低姿态前进",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 122,
+            "line_end": 124,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 1,
+            "snippet": "c) 不要乘坐电梯，使用消防通道\nd) 如有浓烟，用湿毛巾捂住口鼻，低姿态前进\ne) 到达安全区域后，清点随身物品（特别是护照、钱包、手机）"
+          }
+        },
+        {
+          "key_point": "安全区域",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 122,
+            "line_end": 124,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 1,
+            "snippet": "c) 不要乘坐电梯，使用消防通道\nd) 如有浓烟，用湿毛巾捂住口鼻，低姿态前进\ne) 到达安全区域后，清点随身物品（特别是护照、钱包、手机）"
+          }
+        },
+        {
+          "key_point": "向主管和公司报告情况",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 123,
+            "line_end": 125,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 0,
+            "snippet": "d) 如有浓烟，用湿毛巾捂住口鼻，低姿态前进\ne) 到达安全区域后，清点随身物品（特别是护照、钱包、手机）\nf) 及时向主管和公司报告情况"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_031",
+      "category": "emergency",
+      "question": "国外出差护照遗失后需要联系哪些机构并准备哪些材料？",
+      "answerable": true,
+      "expected_sources": [
+        "05_emergency_procedures.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "当地警察局",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 218,
+            "line_end": 220,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 2,
+            "snippet": "a) 立即向当地警察局报案，获取报案证明\nb) 联系中国驻当地使领馆：\n- 大使馆/领事馆会协助补办旅行证或临时护照"
+          }
+        },
+        {
+          "key_point": "报案证明",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 219,
+            "line_end": 221,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 3,
+            "snippet": "b) 联系中国驻当地使领馆：\n- 大使馆/领事馆会协助补办旅行证或临时护照\n- 需要提供：报案证明、护照复印件（如有）、照片等"
+          }
+        },
+        {
+          "key_point": "中国使领馆",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 347,
+            "line_end": 348,
+            "co_located_point_count": 1,
+            "question_bigram_overlap": 1,
+            "snippet": "或+86-10-59913991（国外拨打）\n- 保存目的地国家中国使领馆电话"
+          }
+        },
+        {
+          "key_point": "护照复印件",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 219,
+            "line_end": 221,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 3,
+            "snippet": "b) 联系中国驻当地使领馆：\n- 大使馆/领事馆会协助补办旅行证或临时护照\n- 需要提供：报案证明、护照复印件（如有）、照片等"
+          }
+        },
+        {
+          "key_point": "照片",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 219,
+            "line_end": 221,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 3,
+            "snippet": "b) 联系中国驻当地使领馆：\n- 大使馆/领事馆会协助补办旅行证或临时护照\n- 需要提供：报案证明、护照复印件（如有）、照片等"
+          }
+        },
+        {
+          "key_point": "旅行证或临时护照",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 219,
+            "line_end": 221,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 3,
+            "snippet": "b) 联系中国驻当地使领馆：\n- 大使馆/领事馆会协助补办旅行证或临时护照\n- 需要提供：报案证明、护照复印件（如有）、照片等"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_032",
+      "category": "emergency",
+      "question": "出差地遇到台风暴雨导致滞留时应该如何处理，费用报销需要什么？",
+      "answerable": true,
+      "expected_sources": [
+        "05_emergency_procedures.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "待在酒店或室内",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 310,
+            "line_end": 311,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 0,
+            "snippet": "- 尽量待在酒店或室内\n- 关注当地天气预警和通知"
+          }
+        },
+        {
+          "key_point": "当地天气预警和通知",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 310,
+            "line_end": 311,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 0,
+            "snippet": "- 尽量待在酒店或室内\n- 关注当地天气预警和通知"
+          }
+        },
+        {
+          "key_point": "改签或调整行程",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 314,
+            "line_end": 316,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 5,
+            "snippet": "- 及时改签或调整行程\n- 通知主管和业务相关方\n- 因极端天气导致的滞留费用可报销（需提供天气证明）"
+          }
+        },
+        {
+          "key_point": "通知主管",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 314,
+            "line_end": 316,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 5,
+            "snippet": "- 及时改签或调整行程\n- 通知主管和业务相关方\n- 因极端天气导致的滞留费用可报销（需提供天气证明）"
+          }
+        },
+        {
+          "key_point": "滞留费用可报销",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 314,
+            "line_end": 316,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 5,
+            "snippet": "- 及时改签或调整行程\n- 通知主管和业务相关方\n- 因极端天气导致的滞留费用可报销（需提供天气证明）"
+          }
+        },
+        {
+          "key_point": "天气证明",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 314,
+            "line_end": 316,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 5,
+            "snippet": "- 及时改签或调整行程\n- 通知主管和业务相关方\n- 因极端天气导致的滞留费用可报销（需提供天气证明）"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_033",
+      "category": "platform",
+      "question": "阿里商旅的一站式差旅服务包括哪些主要环节？",
+      "answerable": true,
+      "expected_sources": [
+        "06_platform_guide.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "差旅申请",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 5,
+            "line_end": 5,
+            "co_located_point_count": 7,
+            "question_bigram_overlap": 10,
+            "snippet": "阿里商旅是公司统一的差旅管理平台，为员工提供一站式的差旅服务，包括差旅申请、机票预订、火车票预订、酒店预订、租车服务、行程管理、费用报销等功能。"
+          }
+        },
+        {
+          "key_point": "机票预订",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 5,
+            "line_end": 5,
+            "co_located_point_count": 7,
+            "question_bigram_overlap": 10,
+            "snippet": "阿里商旅是公司统一的差旅管理平台，为员工提供一站式的差旅服务，包括差旅申请、机票预订、火车票预订、酒店预订、租车服务、行程管理、费用报销等功能。"
+          }
+        },
+        {
+          "key_point": "火车票预订",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 5,
+            "line_end": 5,
+            "co_located_point_count": 7,
+            "question_bigram_overlap": 10,
+            "snippet": "阿里商旅是公司统一的差旅管理平台，为员工提供一站式的差旅服务，包括差旅申请、机票预订、火车票预订、酒店预订、租车服务、行程管理、费用报销等功能。"
+          }
+        },
+        {
+          "key_point": "酒店预订",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 5,
+            "line_end": 5,
+            "co_located_point_count": 7,
+            "question_bigram_overlap": 10,
+            "snippet": "阿里商旅是公司统一的差旅管理平台，为员工提供一站式的差旅服务，包括差旅申请、机票预订、火车票预订、酒店预订、租车服务、行程管理、费用报销等功能。"
+          }
+        },
+        {
+          "key_point": "租车服务",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 5,
+            "line_end": 5,
+            "co_located_point_count": 7,
+            "question_bigram_overlap": 10,
+            "snippet": "阿里商旅是公司统一的差旅管理平台，为员工提供一站式的差旅服务，包括差旅申请、机票预订、火车票预订、酒店预订、租车服务、行程管理、费用报销等功能。"
+          }
+        },
+        {
+          "key_point": "行程管理",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 5,
+            "line_end": 5,
+            "co_located_point_count": 7,
+            "question_bigram_overlap": 10,
+            "snippet": "阿里商旅是公司统一的差旅管理平台，为员工提供一站式的差旅服务，包括差旅申请、机票预订、火车票预订、酒店预订、租车服务、行程管理、费用报销等功能。"
+          }
+        },
+        {
+          "key_point": "费用报销",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 5,
+            "line_end": 5,
+            "co_located_point_count": 7,
+            "question_bigram_overlap": 10,
+            "snippet": "阿里商旅是公司统一的差旅管理平台，为员工提供一站式的差旅服务，包括差旅申请、机票预订、火车票预订、酒店预订、租车服务、行程管理、费用报销等功能。"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_034",
+      "category": "platform",
+      "question": "企业协议价的优惠幅度和房源保障是什么？",
+      "answerable": true,
+      "expected_sources": [
+        "06_platform_guide.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "10%-30%",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 67,
+            "line_end": 69,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 7,
+            "snippet": "- 与数千家酒店、租车公司签订企业协议\n- 享受比市场价低10%-30%的优惠价格\n- 协议酒店优先保障房源"
+          }
+        },
+        {
+          "key_point": "协议酒店优先保障房源",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 67,
+            "line_end": 69,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 7,
+            "snippet": "- 与数千家酒店、租车公司签订企业协议\n- 享受比市场价低10%-30%的优惠价格\n- 协议酒店优先保障房源"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_035",
+      "category": "platform",
+      "question": "平台如何帮助员工控制差旅合规性？",
+      "answerable": true,
+      "expected_sources": [
+        "06_platform_guide.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "自动推荐合规产品",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 79,
+            "line_end": 80,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 2,
+            "snippet": "- 根据差旅标准自动推荐合规产品\n- 系统自动筛选超标产品"
+          }
+        },
+        {
+          "key_point": "筛选超标产品",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 79,
+            "line_end": 80,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 2,
+            "snippet": "- 根据差旅标准自动推荐合规产品\n- 系统自动筛选超标产品"
+          }
+        },
+        {
+          "key_point": "超标提醒和预警",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 86,
+            "line_end": 88,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 4,
+            "snippet": "- 超标提醒和预警\n- 自动关联审批流程\n- 确保差旅合规性"
+          }
+        },
+        {
+          "key_point": "自动关联审批流程",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 86,
+            "line_end": 88,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 4,
+            "snippet": "- 超标提醒和预警\n- 自动关联审批流程\n- 确保差旅合规性"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_036",
+      "category": "platform",
+      "question": "怎样注册为企业用户并自动获得企业政策与协议价格？",
+      "answerable": true,
+      "expected_sources": [
+        "06_platform_guide.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "企业邮箱注册",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 111,
+            "line_end": 113,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 10,
+            "snippet": "- 使用企业邮箱注册（如：zhangsan@alibaba-inc.com）\n- 系统自动识别为企业用户\n- 自动关联企业差旅政策和协议价格"
+          }
+        },
+        {
+          "key_point": "系统自动识别为企业用户",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 111,
+            "line_end": 113,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 10,
+            "snippet": "- 使用企业邮箱注册（如：zhangsan@alibaba-inc.com）\n- 系统自动识别为企业用户\n- 自动关联企业差旅政策和协议价格"
+          }
+        },
+        {
+          "key_point": "关联企业差旅政策",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 111,
+            "line_end": 113,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 10,
+            "snippet": "- 使用企业邮箱注册（如：zhangsan@alibaba-inc.com）\n- 系统自动识别为企业用户\n- 自动关联企业差旅政策和协议价格"
+          }
+        },
+        {
+          "key_point": "协议价格",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 111,
+            "line_end": 113,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 10,
+            "snippet": "- 使用企业邮箱注册（如：zhangsan@alibaba-inc.com）\n- 系统自动识别为企业用户\n- 自动关联企业差旅政策和协议价格"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_037",
+      "category": "platform",
+      "question": "在平台提交报销时，订单和发票如何处理？",
+      "answerable": true,
+      "expected_sources": [
+        "06_platform_guide.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "关联差旅申请",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 52,
+            "line_end": 54,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 5,
+            "snippet": "- 在线提交报销申请\n- 自动关联差旅申请和订单\n- 上传发票影像"
+          }
+        },
+        {
+          "key_point": "系统自动导入已预订的交通和住宿费用",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 248,
+            "line_end": 250,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 1,
+            "snippet": "d) 系统自动导入已预订的交通和住宿费用\ne) 手工添加其他费用（如餐饮、打车等）\nf) 上传发票影像（扫描或拍照）"
+          }
+        },
+        {
+          "key_point": "添加其他费用",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 248,
+            "line_end": 250,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 1,
+            "snippet": "d) 系统自动导入已预订的交通和住宿费用\ne) 手工添加其他费用（如餐饮、打车等）\nf) 上传发票影像（扫描或拍照）"
+          }
+        },
+        {
+          "key_point": "上传发票影像",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 248,
+            "line_end": 250,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 1,
+            "snippet": "d) 系统自动导入已预订的交通和住宿费用\ne) 手工添加其他费用（如餐饮、打车等）\nf) 上传发票影像（扫描或拍照）"
+          }
+        },
+        {
+          "key_point": "提交审批",
+          "evidence": {
+            "source": "06_platform_guide.txt",
+            "line_start": 253,
+            "line_end": 255,
+            "co_located_point_count": 1,
+            "question_bigram_overlap": 3,
+            "snippet": "i) 提交审批\nj) 等待审批和支付\nk) 打印报销单，连同纸质发票提交财务部"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_038",
+      "category": "city_guide",
+      "question": "从北京首都机场到市区有哪些方式，机场快轨大约多久到东直门？",
+      "answerable": true,
+      "expected_sources": [
+        "07_city_specific_tips.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "机场快轨",
+          "evidence": {
+            "source": "07_city_specific_tips.txt",
+            "line_start": 9,
+            "line_end": 11,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 7,
+            "snippet": "- 位置：北京市东北方向，距市中心约25公里\n- 航站楼：T1、T2、T3三个航站楼\n- 交通：机场快轨（30分钟到东直门）、机场巴士、出租车"
+          }
+        },
+        {
+          "key_point": "机场巴士",
+          "evidence": {
+            "source": "07_city_specific_tips.txt",
+            "line_start": 9,
+            "line_end": 11,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 7,
+            "snippet": "- 位置：北京市东北方向，距市中心约25公里\n- 航站楼：T1、T2、T3三个航站楼\n- 交通：机场快轨（30分钟到东直门）、机场巴士、出租车"
+          }
+        },
+        {
+          "key_point": "出租车",
+          "evidence": {
+            "source": "07_city_specific_tips.txt",
+            "line_start": 9,
+            "line_end": 11,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 7,
+            "snippet": "- 位置：北京市东北方向，距市中心约25公里\n- 航站楼：T1、T2、T3三个航站楼\n- 交通：机场快轨（30分钟到东直门）、机场巴士、出租车"
+          }
+        },
+        {
+          "key_point": "30分钟",
+          "evidence": {
+            "source": "07_city_specific_tips.txt",
+            "line_start": 9,
+            "line_end": 11,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 7,
+            "snippet": "- 位置：北京市东北方向，距市中心约25公里\n- 航站楼：T1、T2、T3三个航站楼\n- 交通：机场快轨（30分钟到东直门）、机场巴士、出租车"
+          }
+        },
+        {
+          "key_point": "东直门",
+          "evidence": {
+            "source": "07_city_specific_tips.txt",
+            "line_start": 9,
+            "line_end": 11,
+            "co_located_point_count": 5,
+            "question_bigram_overlap": 7,
+            "snippet": "- 位置：北京市东北方向，距市中心约25公里\n- 航站楼：T1、T2、T3三个航站楼\n- 交通：机场快轨（30分钟到东直门）、机场巴士、出租车"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_039",
+      "category": "city_guide",
+      "question": "上海虹桥机场可以乘坐哪两条地铁线路？",
+      "answerable": true,
+      "expected_sources": [
+        "07_city_specific_tips.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "2号线",
+          "evidence": {
+            "source": "07_city_specific_tips.txt",
+            "line_start": 63,
+            "line_end": 65,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 3,
+            "snippet": "- 位置：上海西部，距市中心约13公里\n- 航站楼：T1、T2两个航站楼\n- 交通：地铁2号线、10号线直达，机场巴士、出租车"
+          }
+        },
+        {
+          "key_point": "10号线",
+          "evidence": {
+            "source": "07_city_specific_tips.txt",
+            "line_start": 63,
+            "line_end": 65,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 3,
+            "snippet": "- 位置：上海西部，距市中心约13公里\n- 航站楼：T1、T2两个航站楼\n- 交通：地铁2号线、10号线直达，机场巴士、出租车"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_040",
+      "category": "city_guide",
+      "question": "深圳宝安机场到福田南山可用什么地铁，大约需要多久？",
+      "answerable": true,
+      "expected_sources": [
+        "07_city_specific_tips.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "地铁11号线",
+          "evidence": {
+            "source": "07_city_specific_tips.txt",
+            "line_start": 148,
+            "line_end": 149,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 6,
+            "snippet": "- 交通：地铁11号线、机场巴士、出租车\n- 到福田、南山约30-40分钟"
+          }
+        },
+        {
+          "key_point": "30-40分钟",
+          "evidence": {
+            "source": "07_city_specific_tips.txt",
+            "line_start": 148,
+            "line_end": 149,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 6,
+            "snippet": "- 交通：地铁11号线、机场巴士、出租车\n- 到福田、南山约30-40分钟"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_041",
+      "category": "city_guide",
+      "question": "成都双流机场和天府机场分别可乘哪条地铁，哪个离市中心更远？",
+      "answerable": true,
+      "expected_sources": [
+        "07_city_specific_tips.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "双流国际机场",
+          "evidence": {
+            "source": "07_city_specific_tips.txt",
+            "line_start": 227,
+            "line_end": 228,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 5,
+            "snippet": "双流国际机场（CTU）：\n- 位置：成都西南，距市中心约16公里"
+          }
+        },
+        {
+          "key_point": "地铁10号线",
+          "evidence": {
+            "source": "07_city_specific_tips.txt",
+            "line_start": 228,
+            "line_end": 230,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 5,
+            "snippet": "- 位置：成都西南，距市中心约16公里\n- 航站楼：T1、T2两个航站楼\n- 交通：地铁10号线、机场大巴、出租车"
+          }
+        },
+        {
+          "key_point": "距市中心约16公里",
+          "evidence": {
+            "source": "07_city_specific_tips.txt",
+            "line_start": 227,
+            "line_end": 228,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 5,
+            "snippet": "双流国际机场（CTU）：\n- 位置：成都西南，距市中心约16公里"
+          }
+        },
+        {
+          "key_point": "天府国际机场",
+          "evidence": {
+            "source": "07_city_specific_tips.txt",
+            "line_start": 233,
+            "line_end": 234,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 5,
+            "snippet": "天府国际机场（TFU）：\n- 位置：成都东部，距市中心约50公里"
+          }
+        },
+        {
+          "key_point": "地铁18号线",
+          "evidence": {
+            "source": "07_city_specific_tips.txt",
+            "line_start": 234,
+            "line_end": 236,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 5,
+            "snippet": "- 位置：成都东部，距市中心约50公里\n- 航站楼：T1、T2两个航站楼，2021年投用\n- 交通：地铁18号线、机场大巴、出租车"
+          }
+        },
+        {
+          "key_point": "距市中心约50公里",
+          "evidence": {
+            "source": "07_city_specific_tips.txt",
+            "line_start": 233,
+            "line_end": 234,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 5,
+            "snippet": "天府国际机场（TFU）：\n- 位置：成都东部，距市中心约50公里"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_042",
+      "category": "environment",
+      "question": "多少公里以内应优先高铁，时间充裕时建议可以放宽到多少公里？",
+      "answerable": true,
+      "expected_sources": [
+        "08_environmental_initiatives.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "500公里以内",
+          "evidence": {
+            "source": "08_environmental_initiatives.txt",
+            "line_start": 10,
+            "line_end": 12,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 10,
+            "snippet": "- 500公里以内的出差，优先选择高铁\n- 高铁相比飞机，碳排放量降低约90%\n- 时间充裕时，800公里以内也建议选高铁"
+          }
+        },
+        {
+          "key_point": "800公里以内",
+          "evidence": {
+            "source": "08_environmental_initiatives.txt",
+            "line_start": 10,
+            "line_end": 12,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 10,
+            "snippet": "- 500公里以内的出差，优先选择高铁\n- 高铁相比飞机，碳排放量降低约90%\n- 时间充裕时，800公里以内也建议选高铁"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_043",
+      "category": "environment",
+      "question": "目的地三公里以内推荐哪些绿色交通方式？",
+      "answerable": true,
+      "expected_sources": [
+        "08_environmental_initiatives.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "共享单车",
+          "evidence": {
+            "source": "08_environmental_initiatives.txt",
+            "line_start": 45,
+            "line_end": 45,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 3,
+            "snippet": "- 3公里以内可选择共享单车或步行"
+          }
+        },
+        {
+          "key_point": "步行",
+          "evidence": {
+            "source": "08_environmental_initiatives.txt",
+            "line_start": 45,
+            "line_end": 45,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 3,
+            "snippet": "- 3公里以内可选择共享单车或步行"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_044",
+      "category": "environment",
+      "question": "环保酒店常见的认证标识有哪些？",
+      "answerable": true,
+      "expected_sources": [
+        "08_environmental_initiatives.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "绿色饭店认证",
+          "evidence": {
+            "source": "08_environmental_initiatives.txt",
+            "line_start": 65,
+            "line_end": 67,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 1,
+            "snippet": "- 绿色饭店认证\n- LEED认证（能源与环境设计先锋）\n- 中国环境标志认证"
+          }
+        },
+        {
+          "key_point": "LEED认证",
+          "evidence": {
+            "source": "08_environmental_initiatives.txt",
+            "line_start": 66,
+            "line_end": 68,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 2,
+            "snippet": "- LEED认证（能源与环境设计先锋）\n- 中国环境标志认证\n- 国际环保认证（如Green Key、EarthCheck等）"
+          }
+        },
+        {
+          "key_point": "中国环境标志认证",
+          "evidence": {
+            "source": "08_environmental_initiatives.txt",
+            "line_start": 66,
+            "line_end": 68,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 2,
+            "snippet": "- LEED认证（能源与环境设计先锋）\n- 中国环境标志认证\n- 国际环保认证（如Green Key、EarthCheck等）"
+          }
+        },
+        {
+          "key_point": "Green Key",
+          "evidence": {
+            "source": "08_environmental_initiatives.txt",
+            "line_start": 66,
+            "line_end": 68,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 2,
+            "snippet": "- LEED认证（能源与环境设计先锋）\n- 中国环境标志认证\n- 国际环保认证（如Green Key、EarthCheck等）"
+          }
+        },
+        {
+          "key_point": "EarthCheck",
+          "evidence": {
+            "source": "08_environmental_initiatives.txt",
+            "line_start": 66,
+            "line_end": 68,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 2,
+            "snippet": "- LEED认证（能源与环境设计先锋）\n- 中国环境标志认证\n- 国际环保认证（如Green Key、EarthCheck等）"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_045",
+      "category": "environment",
+      "question": "北京上海往返三天两夜选择高铁而不是飞机，文档估算可减排约多少？",
+      "answerable": true,
+      "expected_sources": [
+        "08_environmental_initiatives.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "约75%",
+          "evidence": {
+            "source": "08_environmental_initiatives.txt",
+            "line_start": 333,
+            "line_end": 333,
+            "co_located_point_count": 1,
+            "question_bigram_overlap": 6,
+            "snippet": "- 减排效果：选择高铁比飞机减排约75%"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_046",
+      "category": "cross_document",
+      "question": "因特殊情况自行订酒店后报销，需要事前做什么，价格高于平台时按什么金额报？",
+      "answerable": true,
+      "expected_sources": [
+        "03_booking_guide.txt",
+        "02_reimbursement_policy.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "提前申请",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 217,
+            "line_end": 218,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 8,
+            "snippet": "- 特殊情况下自行预订需提前申请并说明理由\n- 自行预订的价格超过平台价格时，按平台价格报销"
+          }
+        },
+        {
+          "key_point": "说明理由",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 217,
+            "line_end": 218,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 8,
+            "snippet": "- 特殊情况下自行预订需提前申请并说明理由\n- 自行预订的价格超过平台价格时，按平台价格报销"
+          }
+        },
+        {
+          "key_point": "按平台价格报销",
+          "evidence": {
+            "source": "03_booking_guide.txt",
+            "line_start": 217,
+            "line_end": 218,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 8,
+            "snippet": "- 特殊情况下自行预订需提前申请并说明理由\n- 自行预订的价格超过平台价格时，按平台价格报销"
+          }
+        },
+        {
+          "key_point": "正式发票",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 88,
+            "line_end": 90,
+            "co_located_point_count": 1,
+            "question_bigram_overlap": 1,
+            "snippet": "1. 明确不予报销项目\n- 超出差旅标准的部分（未经审批）\n- 无正式发票的费用（白条、收据等）"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_047",
+      "category": "cross_document",
+      "question": "航班延误导致临时住宿，处理和报销分别需要哪些证明？",
+      "answerable": true,
+      "expected_sources": [
+        "05_emergency_procedures.txt",
+        "02_reimbursement_policy.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "延误证明",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 18,
+            "line_end": 20,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 3,
+            "snippet": "- 延误证明（向航空公司或机场索取）\n- 改签凭证\n- 住宿发票"
+          }
+        },
+        {
+          "key_point": "住宿发票",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 18,
+            "line_end": 20,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 3,
+            "snippet": "- 延误证明（向航空公司或机场索取）\n- 改签凭证\n- 住宿发票"
+          }
+        },
+        {
+          "key_point": "住宿日期",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 32,
+            "line_end": 32,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 1,
+            "snippet": "- 发票上应显示住宿日期、天数、金额"
+          }
+        },
+        {
+          "key_point": "天数",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 32,
+            "line_end": 32,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 1,
+            "snippet": "- 发票上应显示住宿日期、天数、金额"
+          }
+        },
+        {
+          "key_point": "金额",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 32,
+            "line_end": 32,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 1,
+            "snippet": "- 发票上应显示住宿日期、天数、金额"
+          }
+        },
+        {
+          "key_point": "提供说明和凭证",
+          "evidence": {
+            "source": "05_emergency_procedures.txt",
+            "line_start": 20,
+            "line_end": 22,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 3,
+            "snippet": "- 住宿发票\n- 餐饮发票（合理范围内）\ng) 因延误产生的合理费用（改签费、住宿费、餐费）可在报销时提供说明和凭证"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_048",
+      "category": "cross_document",
+      "question": "酒店因旺季超过住宿标准时，申请和最终报销应如何处理？",
+      "answerable": true,
+      "expected_sources": [
+        "01_travel_standards.txt",
+        "04_faq.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "提前申请",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 127,
+            "line_end": 129,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 3,
+            "snippet": "- 如确因特殊原因需超标准，须提前申请并说明理由\n- 审批权限：超标30%以内由主管审批，超标30%以上需总监审批\n- 未经审批的超标部分不予报销"
+          }
+        },
+        {
+          "key_point": "说明理由",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 127,
+            "line_end": 129,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 3,
+            "snippet": "- 如确因特殊原因需超标准，须提前申请并说明理由\n- 审批权限：超标30%以内由主管审批，超标30%以上需总监审批\n- 未经审批的超标部分不予报销"
+          }
+        },
+        {
+          "key_point": "审批",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 70,
+            "line_end": 71,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 5,
+            "snippet": "- 如果是旺季或特殊时期导致价格普遍上涨：可在申请中说明情况，经审批后可适当上浮\n- 如果是个人选择了更高档酒店：按标准报销，超出部分自理"
+          }
+        },
+        {
+          "key_point": "适当上浮",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 70,
+            "line_end": 71,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 5,
+            "snippet": "- 如果是旺季或特殊时期导致价格普遍上涨：可在申请中说明情况，经审批后可适当上浮\n- 如果是个人选择了更高档酒店：按标准报销，超出部分自理"
+          }
+        },
+        {
+          "key_point": "超出部分自理",
+          "evidence": {
+            "source": "04_faq.txt",
+            "line_start": 70,
+            "line_end": 71,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 5,
+            "snippet": "- 如果是旺季或特殊时期导致价格普遍上涨：可在申请中说明情况，经审批后可适当上浮\n- 如果是个人选择了更高档酒店：按标准报销，超出部分自理"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_049",
+      "category": "cross_document",
+      "question": "国际出差的漫游费用怎样控制和报销，需要提供什么记录？",
+      "answerable": true,
+      "expected_sources": [
+        "01_travel_standards.txt",
+        "02_reimbursement_policy.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "国际漫游套餐",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 94,
+            "line_end": 96,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 6,
+            "snippet": "1. 通讯费用\n- 出差期间产生的业务相关通讯费可报销\n- 国际漫游费：提前开通国际漫游套餐，选择最经济的方案"
+          }
+        },
+        {
+          "key_point": "最经济的方案",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 94,
+            "line_end": 96,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 6,
+            "snippet": "1. 通讯费用\n- 出差期间产生的业务相关通讯费可报销\n- 国际漫游费：提前开通国际漫游套餐，选择最经济的方案"
+          }
+        },
+        {
+          "key_point": "业务相关通话费用",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 143,
+            "line_end": 144,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 6,
+            "snippet": "- 国际漫游：可报销业务相关通话费用，需提供通话记录\n- 国际漫游数据流量：开通套餐后可报销"
+          }
+        },
+        {
+          "key_point": "通话记录",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 143,
+            "line_end": 144,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 6,
+            "snippet": "- 国际漫游：可报销业务相关通话费用，需提供通话记录\n- 国际漫游数据流量：开通套餐后可报销"
+          }
+        },
+        {
+          "key_point": "国际漫游数据流量",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 143,
+            "line_end": 144,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 6,
+            "snippet": "- 国际漫游：可报销业务相关通话费用，需提供通话记录\n- 国际漫游数据流量：开通套餐后可报销"
+          }
+        },
+        {
+          "key_point": "开通套餐后可报销",
+          "evidence": {
+            "source": "02_reimbursement_policy.txt",
+            "line_start": 143,
+            "line_end": 144,
+            "co_located_point_count": 4,
+            "question_bigram_overlap": 6,
+            "snippet": "- 国际漫游：可报销业务相关通话费用，需提供通话记录\n- 国际漫游数据流量：开通套餐后可报销"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_050",
+      "category": "cross_document",
+      "question": "短途出差选择高铁的制度建议和环保建议分别是什么？",
+      "answerable": true,
+      "expected_sources": [
+        "01_travel_standards.txt",
+        "08_environmental_initiatives.txt"
+      ],
+      "point_evidence": [
+        {
+          "key_point": "300公里以内",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 155,
+            "line_end": 156,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 6,
+            "snippet": "- 优先选择高铁等低碳交通方式\n- 短途出差（300公里以内）：鼓励使用高铁而非飞机"
+          }
+        },
+        {
+          "key_point": "高铁而非飞机",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 155,
+            "line_end": 156,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 6,
+            "snippet": "- 优先选择高铁等低碳交通方式\n- 短途出差（300公里以内）：鼓励使用高铁而非飞机"
+          }
+        },
+        {
+          "key_point": "500公里以内",
+          "evidence": {
+            "source": "08_environmental_initiatives.txt",
+            "line_start": 10,
+            "line_end": 12,
+            "co_located_point_count": 2,
+            "question_bigram_overlap": 5,
+            "snippet": "- 500公里以内的出差，优先选择高铁\n- 高铁相比飞机，碳排放量降低约90%\n- 时间充裕时，800公里以内也建议选高铁"
+          }
+        },
+        {
+          "key_point": "优先选择高铁",
+          "evidence": {
+            "source": "01_travel_standards.txt",
+            "line_start": 155,
+            "line_end": 156,
+            "co_located_point_count": 3,
+            "question_bigram_overlap": 6,
+            "snippet": "- 优先选择高铁等低碳交通方式\n- 短途出差（300公里以内）：鼓励使用高铁而非飞机"
+          }
+        },
+        {
+          "key_point": "碳排放低",
+          "evidence": {
+            "source": "08_environmental_initiatives.txt",
+            "line_start": 12,
+            "line_end": 13,
+            "co_located_point_count": 1,
+            "question_bigram_overlap": 2,
+            "snippet": "- 时间充裕时，800公里以内也建议选高铁\n- 优点：准点率高、舒适、碳排放低"
+          }
+        }
+      ],
+      "unanswerable_rationale": null
+    },
+    {
+      "id": "rag_formal_051",
+      "category": "unanswerable",
+      "question": "公司给员工购买生日礼物的年度预算是多少？",
+      "answerable": false,
+      "expected_sources": [],
+      "point_evidence": [],
+      "unanswerable_rationale": "八份知识文档没有员工生日礼物预算制度。"
+    },
+    {
+      "id": "rag_formal_052",
+      "category": "unanswerable",
+      "question": "远程办公显示器的报销上限是多少？",
+      "answerable": false,
+      "expected_sources": [],
+      "point_evidence": [],
+      "unanswerable_rationale": "环保文档只提到关闭电脑显示器，没有远程办公设备采购或报销标准。"
+    },
+    {
+      "id": "rag_formal_053",
+      "category": "unanswerable",
+      "question": "公司的婚假一共有多少天？",
+      "answerable": false,
+      "expected_sources": [],
+      "point_evidence": [],
+      "unanswerable_rationale": "知识库不包含婚假或人事休假制度。"
+    },
+    {
+      "id": "rag_formal_054",
+      "category": "unanswerable",
+      "question": "去日本出差每天的国际餐饮补贴具体是多少日元？",
+      "answerable": false,
+      "expected_sources": [],
+      "point_evidence": [],
+      "unanswerable_rationale": "文档只说明国际补贴因国家地区而异，未提供日本的日元金额。"
+    },
+    {
+      "id": "rag_formal_055",
+      "category": "unanswerable",
+      "question": "公司为宠物寄养提供多少差旅补贴？",
+      "answerable": false,
+      "expected_sources": [],
+      "point_evidence": [],
+      "unanswerable_rationale": "知识库没有宠物寄养或相关补贴制度。"
+    },
+    {
+      "id": "rag_formal_056",
+      "category": "unanswerable",
+      "question": "购买差旅碳信用可以报销的金额上限是多少？",
+      "answerable": false,
+      "expected_sources": [],
+      "point_evidence": [],
+      "unanswerable_rationale": "环保文档提到可购买碳信用，但没有差旅报销规则或金额上限。"
+    },
+    {
+      "id": "rag_formal_057",
+      "category": "unanswerable",
+      "question": "酒店会员积分归员工还是归公司？",
+      "answerable": false,
+      "expected_sources": [],
+      "point_evidence": [],
+      "unanswerable_rationale": "FAQ只说明使用个人里程或积分后的报销规则，没有会员积分归属制度。"
+    },
+    {
+      "id": "rag_formal_058",
+      "category": "unanswerable",
+      "question": "经理级员工每年有几次无条件乘坐商务舱的额度？",
+      "answerable": false,
+      "expected_sources": [],
+      "point_evidence": [],
+      "unanswerable_rationale": "文档列出特殊情况升舱及审批要求，没有经理年度无条件商务舱额度。"
+    },
+    {
+      "id": "rag_formal_059",
+      "category": "unanswerable",
+      "question": "出国前接种疫苗的费用是否全额报销？",
+      "answerable": false,
+      "expected_sources": [],
+      "point_evidence": [],
+      "unanswerable_rationale": "FAQ只说部分国家要求接种疫苗，未说明疫苗费用报销政策。"
+    },
+    {
+      "id": "rag_formal_060",
+      "category": "unanswerable",
+      "question": "公司健身房会员费每年可以报销多少？",
+      "answerable": false,
+      "expected_sources": [],
+      "point_evidence": [],
+      "unanswerable_rationale": "知识库没有健身房会员费或福利报销制度。"
+    }
+  ]
+}

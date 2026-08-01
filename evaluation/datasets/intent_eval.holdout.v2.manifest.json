@@ -1,0 +1,14 @@
+{
+  "dataset": "evaluation/datasets/intent_eval.holdout.v2.jsonl",
+  "sha256": "3c89c80ab5fbd92d28269571b3f4e7adb8699f8c3164561f86c29350cd0ba526",
+  "sample_count": 60,
+  "frozen_at": "2026-07-27T06:48:45.962623+00:00",
+  "reviewer": "project_owner",
+  "approval_phrase": "I_REVIEWED_ALL_60",
+  "status": "frozen",
+  "rules": [
+    "Do not edit the frozen JSONL file.",
+    "Create a new version when annotations must change.",
+    "Run evaluation before inspecting or changing model rules."
+  ]
+}

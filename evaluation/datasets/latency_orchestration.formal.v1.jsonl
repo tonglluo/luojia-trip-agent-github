@@ -1,0 +1,4 @@
+{"id":"latency_formal_001","category":"memory_preference","query":"先告诉我原来的酒店偏好，再记住我以后优先住亚朵。","expected_schedule":{"memory_query":1,"preference":1}}
+{"id":"latency_formal_002","category":"rag_preference","query":"查询公司一线城市住宿报销标准，同时记住我以后优先选择有健身房的酒店。","expected_schedule":{"rag_knowledge":1,"preference":1}}
+{"id":"latency_formal_003","category":"memory_rag","query":"告诉我以前保存过哪些座位偏好，再查询公司高铁座位等级规定。","expected_schedule":{"memory_query":1,"rag_knowledge":1}}
+{"id":"latency_formal_004","category":"memory_preference_rag","query":"先告诉我原来的酒店偏好，再改成优先住汉庭，同时查询公司酒店报销需要哪些凭证。","expected_schedule":{"memory_query":1,"preference":1,"rag_knowledge":1}}

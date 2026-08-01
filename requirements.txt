@@ -1,0 +1,3 @@
+# Install everything, including the optional local RAG stack.
+-r requirements-core.txt
+-r requirements-rag.txt

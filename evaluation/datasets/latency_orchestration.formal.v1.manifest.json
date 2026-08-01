@@ -1,0 +1,34 @@
+{
+  "dataset": "evaluation/datasets/latency_orchestration.formal.v1.jsonl",
+  "sha256": "ccd36766214fe7536fe57a8c31838e286e886938eaeb87bc767f63cf8f975db5",
+  "status": "frozen_before_formal_run",
+  "sample_count": 4,
+  "task_design": {
+    "memory_preference": 1,
+    "rag_preference": 1,
+    "memory_rag": 1,
+    "memory_preference_rag": 1
+  },
+  "agent_count_range": [
+    2,
+    3
+  ],
+  "priority_design": "All measured tasks contain at least two Priority-1 agents.",
+  "formal_protocol": {
+    "modes": [
+      "sequential",
+      "parallel"
+    ],
+    "warmup_rounds_per_mode": 1,
+    "measured_repeats_per_mode": 10,
+    "measured_requests_per_mode": 40,
+    "thinking": "disabled",
+    "cooldown_seconds_between_top_level_requests": 10,
+    "order_control": "Alternating paired order by repeat and case",
+    "required_schedule_match_rate": 1.0
+  },
+  "exclusions": [
+    "No live weather or web-search task, to avoid external-source latency confounding.",
+    "No itinerary-planning task, because the experiment targets same-priority orchestration concurrency."
+  ]
+}

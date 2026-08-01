@@ -1,0 +1,135 @@
+{
+  "evaluation_type": "intent_repeated",
+  "dataset": "evaluation/datasets/intent_eval.holdout.v2.jsonl",
+  "dataset_sha256": "3c89c80ab5fbd92d28269571b3f4e7adb8699f8c3164561f86c29350cd0ba526",
+  "model": "glm-4.7",
+  "thinking": "disabled",
+  "sample_count_per_run": 60,
+  "valid_run_count": 3,
+  "attempt_count": 3,
+  "attempts": [
+    {
+      "attempt": 1,
+      "result": "evaluation\\reports\\intent_holdout_v2_repeated\\attempt_1.json",
+      "log": "evaluation\\reports\\intent_holdout_v2_repeated\\attempt_1.log",
+      "process_exit_code": 0,
+      "valid": true,
+      "error_rate": 0.0
+    },
+    {
+      "attempt": 2,
+      "result": "evaluation\\reports\\intent_holdout_v2_repeated\\attempt_2.json",
+      "log": "evaluation\\reports\\intent_holdout_v2_repeated\\attempt_2.log",
+      "process_exit_code": 0,
+      "valid": true,
+      "error_rate": 0.0
+    },
+    {
+      "attempt": 3,
+      "result": "evaluation\\reports\\intent_holdout_v2_repeated\\attempt_3.json",
+      "log": "evaluation\\reports\\intent_holdout_v2_repeated\\attempt_3.log",
+      "process_exit_code": 0,
+      "valid": true,
+      "error_rate": 0.0
+    }
+  ],
+  "metrics": {
+    "exact_match": {
+      "mean": 0.9944,
+      "min": 0.9833,
+      "max": 1.0
+    },
+    "macro_f1": {
+      "mean": 0.9968,
+      "min": 0.9905,
+      "max": 1.0
+    },
+    "schedule_exact_match": {
+      "mean": 0.9944,
+      "min": 0.9833,
+      "max": 1.0
+    },
+    "schedule_intent_consistency": {
+      "mean": 1.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "entity_field_accuracy": {
+      "mean": 0.9086,
+      "min": 0.8952,
+      "max": 0.9274
+    },
+    "error_rate": {
+      "mean": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    }
+  },
+  "latency_all_valid_requests": {
+    "request_count": 180,
+    "mean_seconds": 23.4133,
+    "p50_seconds": 15.9906,
+    "p95_seconds": 64.4753,
+    "max_seconds": 222.3165
+  },
+  "per_run": [
+    {
+      "valid_run": 1,
+      "generated_at": "2026-07-27T07:20:16.362688+00:00",
+      "metrics": {
+        "exact_match": 0.9833,
+        "macro_f1": 0.9905,
+        "schedule_exact_match": 0.9833,
+        "schedule_intent_consistency": 1.0,
+        "entity_field_accuracy": 0.8952,
+        "error_rate": 0.0
+      },
+      "rate_limit_retry_count": 3,
+      "latency": {
+        "mean_seconds": 25.8881,
+        "p50_seconds": 15.9906,
+        "p95_seconds": 66.0192,
+        "max_seconds": 184.1393
+      }
+    },
+    {
+      "valid_run": 2,
+      "generated_at": "2026-07-27T07:43:27.517736+00:00",
+      "metrics": {
+        "exact_match": 1.0,
+        "macro_f1": 1.0,
+        "schedule_exact_match": 1.0,
+        "schedule_intent_consistency": 1.0,
+        "entity_field_accuracy": 0.9032,
+        "error_rate": 0.0
+      },
+      "rate_limit_retry_count": 4,
+      "latency": {
+        "mean_seconds": 20.7339,
+        "p50_seconds": 15.102,
+        "p95_seconds": 31.6112,
+        "max_seconds": 222.3165
+      }
+    },
+    {
+      "valid_run": 3,
+      "generated_at": "2026-07-27T08:09:27.372009+00:00",
+      "metrics": {
+        "exact_match": 1.0,
+        "macro_f1": 1.0,
+        "schedule_exact_match": 1.0,
+        "schedule_intent_consistency": 1.0,
+        "entity_field_accuracy": 0.9274,
+        "error_rate": 0.0
+      },
+      "rate_limit_retry_count": 3,
+      "latency": {
+        "mean_seconds": 23.6178,
+        "p50_seconds": 17.6383,
+        "p95_seconds": 40.5512,
+        "max_seconds": 177.8991
+      }
+    }
+  ],
+  "caveat": "All attempts are retained. Only runs with matching dataset hash, complete sample count and zero API/parse errors are included in aggregate metrics."
+}

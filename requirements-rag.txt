@@ -1,0 +1,5 @@
+# Optional local RAG stack. This download is much larger than the core runtime.
+# milvus_lite requires pkg_resources and setuptools < 82.
+setuptools>=69.0.0,<82
+pymilvus[milvus_lite]==2.6.9
+sentence-transformers==5.2.3
