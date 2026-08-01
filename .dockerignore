@@ -13,3 +13,11 @@ showcase/.tools/
 showcase/.npm-cache/
 showcase/dist/
 showcase/outputs/
+showcase/.openai/
+showcase/build/
+showcase/db/
+showcase/drizzle/
+showcase/examples/
+showcase/worker/
+showcase/vite.config.ts
+showcase/drizzle.config.ts
