@@ -1,5 +1,3 @@
-import { env } from "cloudflare:workers";
-
 type ChatMessage = {
   role: "user" | "assistant";
   content: string;
@@ -105,7 +103,7 @@ export async function POST(request: Request) {
       );
     }
 
-    const runtimeEnv = env as unknown as Record<string, string | undefined>;
+    const runtimeEnv = process.env;
     const apiKey = runtimeEnv.ZHIPUAI_API_KEY;
     const model = runtimeEnv.ZHIPUAI_MODEL || "glm-4.7";
     const baseUrl =

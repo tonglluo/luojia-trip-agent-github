@@ -1,0 +1,15 @@
+*
+!Dockerfile
+!showcase/
+!showcase/**
+
+showcase/.git/
+showcase/.env*
+showcase/node_modules/
+showcase/.next/
+showcase/.vinext/
+showcase/.wrangler/
+showcase/.tools/
+showcase/.npm-cache/
+showcase/dist/
+showcase/outputs/
