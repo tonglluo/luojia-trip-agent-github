@@ -531,11 +531,17 @@ export default function Home() {
             </div>
             <div className="qr-code-panel">
               <div className="qr-image-shell">
-                <img src="/experience-qr.png" alt="珞珈行旅扫码体验二维码" />
+                <img
+                  src="/experience-qr.png?v=cloudbase-20260801"
+                  alt="珞珈行旅扫码体验二维码"
+                />
               </div>
               <strong>珞珈行旅 · LIVE</strong>
               <small>真实 GLM API · 支持多轮对话</small>
-              <a href="/experience-qr.png" download="珞珈行旅-扫码体验.png">
+              <a
+                href="/experience-qr.png?v=cloudbase-20260801"
+                download="珞珈行旅-扫码体验.png"
+              >
                 下载二维码 ↓
               </a>
             </div>
